@@ -13,13 +13,11 @@ function General() {
                     <div className="general__subtitle">
                         Tracker  - мобильные технологии на страже вашего здоровья.
                     </div>
-                    <div className="general__button">
+                    <a className="general__button">
                         Скачать
-                    </div>
+                    </a>
                 </div>
-                <div className="general_img">
-                    <img src={Images.general} alt='general_img'/>
-                </div>
+                <img className='general__img' src={Images.general} alt='general_img'/>
             </div>
         </div>
     )

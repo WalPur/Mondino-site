@@ -1,4 +1,6 @@
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import Pages from './pages/index'
 import {
   BrowserRouter,

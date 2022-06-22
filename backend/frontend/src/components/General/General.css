@@ -1,0 +1,139 @@
+.general__block{
+    margin-top: 95px;
+}
+.general__container{
+    margin-left: 150px;
+    display: flex;
+    justify-content: space-between;
+}
+.general__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.general__title{
+    max-width: 586.41px;
+    margin-bottom: 58px;
+}
+.general__title img{
+    width: 100%;
+}
+.general__subtitle{
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 42px;
+    margin-bottom: 110px;
+}
+.general__button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 449px;
+    height: 100px;
+
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 42px;
+    color: #0E1B4F;
+    text-decoration: none;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 57px rgba(0, 0, 0, 0.1);
+    border-radius: 87px;
+}
+.general__button:hover{
+    color: #0E1B4F;
+}
+.general__button:active{
+    color: #0E1B4F;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.general__img{
+    max-height: 811px;
+}
+
+@media (max-width: 1024px){
+    .general__block{
+        margin-top: 67px;
+    }
+    .general__container{
+        margin-left: 100px;
+    }
+    .general__title{
+        max-width: 418px;
+        margin-bottom: 41.7px;
+    }
+    .general__subtitle{
+        font-size: 25px;
+        line-height: 30px;
+        margin-bottom: 79px;
+    }
+    .general__button{
+        width: 320px;
+        height: 71px;
+        font-size: 25px;
+        line-height: 30px;
+    }
+    .general__img{
+        max-height: 580px;
+    }
+}
+
+@media (max-width: 768px){
+    .general__block{
+        margin-top: 50px;
+    }
+    .general__container{
+        margin-left: 50px;
+    }
+    .general__title{
+        max-width: 312px;
+    }
+    .general__subtitle{
+        font-size: 19.2px;
+        line-height: 22.4px;
+    }
+    .general__button{
+        height: 53.33px;
+        width: 240px;
+        font-size: 19.2px;
+        line-height: 22.4px;
+    }
+    .general__img{
+        max-height: 400px;
+    }
+}
+
+@media (max-width: 576px){
+    .general__block{
+        margin-top: 30px;
+    }
+    .general__container{
+        flex-direction: column;
+        margin: 0;
+    }
+    .general__content{
+        margin: 0 35px 0;
+    }
+    .general__title{
+        max-width: 292px;
+        margin-bottom: 18px;
+    }
+    .general__subtitle{
+        font-size: 16px;
+        line-height: 19px;
+        margin-bottom: 50px;
+    }
+    .general__button{
+        width: 211px;
+        height: 46.99px;
+        font-size: 16.9176px;
+        line-height: 20px;
+        margin-bottom: 67px;
+    }
+    .general__img{
+        align-items: flex-end;
+        max-height: 430px;
+    }
+}
+

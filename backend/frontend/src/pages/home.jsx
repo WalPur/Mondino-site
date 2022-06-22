@@ -2,8 +2,11 @@ import Components from '../components/index'
 
 function Home() {
     return(
-        <div>
+        <div className='wrapper'>
             <Components.General/>
+            <div className="container">
+                <Components.Functional/>
+            </div>
         </div>
     )
 }
