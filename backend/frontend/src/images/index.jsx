@@ -26,6 +26,7 @@ import health_3_2 from './health_3_2.svg'
 import icon_1 from './icon_1.svg'
 import icon_2 from './icon_2.svg'
 import icon_3 from './icon_3.svg'
+import icon_4 from './icon_4.svg'
 import mondino_icon from './mondino_icon.svg'
 import mondino_logo from './mondino_logo.svg'
 import mondino_title from './mondino_title.svg'
@@ -60,6 +61,7 @@ const Images = {
     icon_1,
     icon_2,
     icon_3,
+    icon_4,
     mondino_icon,
     mondino_logo,
     mondino_title,
