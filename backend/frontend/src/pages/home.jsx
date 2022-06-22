@@ -7,6 +7,9 @@ function Home() {
             <Components.Functional/>
             <Components.Economize/>
             <Components.Health/>
+            <Components.Community/>
+            <Components.Advantage/>
+            <Components.Ease/>
         </div>
     )
 }

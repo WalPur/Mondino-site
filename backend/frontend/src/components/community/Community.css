@@ -1,0 +1,20 @@
+.community__container{
+    display: flex;
+}
+.community__img{
+    max-width: 725px;
+}
+.community__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.community__title{
+    margin-bottom: 34px;
+}
+.community__text{
+    margin-bottom: 60px;
+}
+.community__icon{
+    max-width: 152px;
+}

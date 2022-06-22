@@ -10,6 +10,9 @@ import community from './community_img.svg'
 import ease_1 from './ease_img_1.svg'
 import ease_2 from './ease_img_2.svg'
 import ease_3 from './ease_img_3.svg'
+import ease_1_2 from './ease_img_1_2.svg'
+import ease_2_2 from './ease_img_2_2.svg'
+import ease_3_2 from './ease_img_3_2.svg'
 import economize from './economize_img.svg'
 import footer_geo from './footer_geo.svg'
 import footer_mail from './footer_mail.svg'
@@ -66,6 +69,10 @@ const Images = {
     mondino_logo,
     mondino_title,
     mondino_icon_dark,
+    ease_1_2,
+    ease_2_2,
+    ease_3_2,
+
 }
 
 export default Images;

@@ -1,0 +1,28 @@
+.ease__block{
+    padding: 87px 0 60px;
+    background: #1B1642;
+}
+.ease__container{
+    display: flex;
+    flex-direction: column;
+}
+.ease__content{
+    align-self: center;
+    text-align: center;
+    margin-bottom: 75px;
+}
+.ease__text{
+    color: #EA5775;
+}
+.ease__title{
+    color: #FFFFFF;
+    width: 645px;
+}
+.ease__images{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 36px;
+}
+.ease__button{
+    margin-right: 25px;
+}
