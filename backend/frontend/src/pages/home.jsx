@@ -6,6 +6,7 @@ function Home() {
             <Components.General/>
             <div className="container">
                 <Components.Functional/>
+                <Components.Economize/>
             </div>
         </div>
     )

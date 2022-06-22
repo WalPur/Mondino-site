@@ -26,6 +26,7 @@ import icon_3 from './icon_3.svg'
 import mondino_icon from './mondino_icon.svg'
 import mondino_logo from './mondino_logo.svg'
 import mondino_title from './mondino_title.svg'
+import mondino_icon_dark from './mondino_icon_dark.svg'
 
 const Images = {
     advantage_icon_1,
@@ -56,6 +57,7 @@ const Images = {
     mondino_icon,
     mondino_logo,
     mondino_title,
+    mondino_icon_dark,
 }
 
 export default Images;
