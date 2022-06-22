@@ -20,6 +20,9 @@ import googlePlay_dark from './googlePlay_dark.svg'
 import health_1 from './health_img_1.svg'
 import health_2 from './health_img_2.svg'
 import health_3 from './health_img_3.svg'
+import health_1_2 from './health_1_2.svg'
+import health_2_2 from './health_2_2.svg'
+import health_3_2 from './health_3_2.svg'
 import icon_1 from './icon_1.svg'
 import icon_2 from './icon_2.svg'
 import icon_3 from './icon_3.svg'
@@ -51,6 +54,9 @@ const Images = {
     health_1,
     health_2,
     health_3,
+    health_1_2,
+    health_2_2,
+    health_3_2,
     icon_1,
     icon_2,
     icon_3,

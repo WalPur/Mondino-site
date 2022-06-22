@@ -5,7 +5,7 @@ import Images from '../../images/index'
 function Economize(){
     return(
         <div className="economize__block">
-            <div className="economize__container">
+            <div className="economize__container container">
                 <img src={Images.economize} alt="phone" className="economize__img" />
                 <div className="economize__content">
                     <div className="economize__title title">

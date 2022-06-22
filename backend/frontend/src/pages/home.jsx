@@ -4,10 +4,9 @@ function Home() {
     return(
         <div className='wrapper'>
             <Components.General/>
-            <div className="container">
-                <Components.Functional/>
-                <Components.Economize/>
-            </div>
+            <Components.Functional/>
+            <Components.Economize/>
+            <Components.Health/>
         </div>
     )
 }
