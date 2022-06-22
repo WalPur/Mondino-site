@@ -7,6 +7,7 @@ import {
   Routes,
 } from "react-router-dom";
 
+import Footer from './components/footer/Footer';
 import Header from './components/header/Header';
 import Pages from './pages/index'
 
@@ -19,6 +20,7 @@ function App() {
           <Route path="" element={<Pages.Home/>}></Route>
           <Route path="/team" element={<Pages.Team/>}></Route>
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </div>
   );
