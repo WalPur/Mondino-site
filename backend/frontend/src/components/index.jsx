@@ -1,4 +1,4 @@
-import General from './General/General'
+import General from './general/General'
 
 const Components = {
     General,
