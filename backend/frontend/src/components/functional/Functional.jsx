@@ -1,9 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class Functional extends Component {
-  render() {
-    return (
-      <div>Functional</div>
-    )
-  }
+function Functional() {
+  return (
+    <div>
+      Functional
+    </div>
+  )
 }
+
+export default Functional;
