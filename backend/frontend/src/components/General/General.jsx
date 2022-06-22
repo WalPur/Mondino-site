@@ -1,3 +1,5 @@
+import './General.css'
+
 function General() {
     return (
         <div>
