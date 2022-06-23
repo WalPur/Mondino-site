@@ -2,7 +2,7 @@
     display: flex;
 }
 .community__img{
-    max-width: 725px;
+    max-width: 650px;
 }
 .community__content{
     display: flex;
@@ -17,4 +17,79 @@
 }
 .community__icon{
     max-width: 152px;
+}
+
+@media (max-width: 1200px){
+    .community__img{
+        max-width: 580px;
+    }
+    .community__icon{
+        max-width: 140px;
+    }
+}
+
+@media (max-width: 991px){
+    .community__block{
+        margin: 50px 0;
+    }
+    .community__content{
+        max-width: 420px;
+    }
+    .community__img{
+        max-width: 350px;
+    }
+    .community__title{
+        margin-bottom: 16px;
+    }
+    .community__text{
+        margin-bottom: 30px;
+    }
+    .community__icon{
+        max-width: 100px;
+    }
+}
+
+@media (max-width: 768px){
+    .community__block{
+        margin: 25px 0;
+    }
+    .community__content{
+        max-width: 360px;
+    }
+    .community__img{
+        max-width: 280px;
+    }
+    .community__title{
+        margin-bottom: 16px;
+    }
+    .community__text{
+        margin-bottom: 30px;
+    }
+    .community__icon{
+        max-width: 70px;
+    }
+}
+
+@media (max-width: 576px){
+    .community__block{
+        margin: 25px 0;
+    }
+    .community__container{
+        justify-content: center;
+    }
+    .community__content{
+        max-width: 170px;
+    }
+    .community__img{
+        max-width: 150px;
+    }
+    .community__title{
+        margin-bottom: 16px;
+    }
+    .community__text{
+        margin-bottom: 30px;
+    }
+    .community__icon{
+        max-width: 70px;
+    }
 }

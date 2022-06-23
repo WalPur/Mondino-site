@@ -16,13 +16,100 @@
 }
 .health__title{
     color: #FFFFFF;
-    width: 645px;
+    max-width: 645px;
 }
 .health__images{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     margin-bottom: 36px;
 }
 .health__button{
     margin-right: 25px;
+}
+
+@media (min-width: 1440px){
+    .health__images{
+        justify-content: center;
+    }
+}
+
+@media (max-width: 1300px){
+    .health__content-img{
+        max-height: 500px;
+    }
+    .health__button{
+        max-width: 180px;
+    }
+}
+
+@media (max-width: 1200px){
+    .health__content-img{
+        max-height: 450px;
+    }
+    .health__button{
+        max-width: 160px;
+    }
+}
+
+@media (max-width: 1024px){
+    .health__block{
+        padding: 50px 0;
+    }
+    .health__content{
+        margin-bottom: 40px;
+    }
+    .health__images{
+        margin-bottom: 20px;
+    }
+    .health__content-img{
+        max-height: 340px;
+    }
+    .health__button{
+        max-width: 120px;
+    }
+}
+
+@media (max-width: 768px){
+    .health__content-img{
+        max-height: 250px;
+    }
+    .health__button{
+        max-width: 110px;
+    }
+}
+
+@media (max-width: 576px){
+    .health__block{
+        padding: 25px 0;
+    }
+    .health__content{
+        margin-bottom: 20px;
+    }
+    .health__images{
+        margin-bottom: 10px;
+    }
+    .health__content-img{
+        max-height: 220px;
+    }
+    .health__button{
+        max-width: 60px;
+    }
+}
+
+@media (max-width: 480px){
+    .health__content-img{
+        max-height: 150px;
+    }
+    .health__button{
+        max-width: 60px;
+    }
+}
+
+@media (max-width: 360px){
+    .health__content-img{
+        max-height: 130px;
+    }
+    .health__button{
+        max-width: 60px;
+    }
 }

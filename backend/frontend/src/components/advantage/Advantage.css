@@ -1,5 +1,5 @@
 .advantage__block{
-    margin: 40px 0;
+    padding: 40px 0;
     background: #ffffff;
 }
 .advantage__container{
@@ -12,7 +12,7 @@
     justify-content: space-evenly;
 }
 .advantage__item{
-    margin: 85px 0 85px;
+    margin: 85px 0;
     max-width: 460px;
     display: flex;
 }
@@ -35,4 +35,98 @@
     line-height: 24px;
 
     color: #000000;
+}
+
+@media (max-width: 1200px){
+    .advantage__item{
+        max-width: 420px;
+    }
+    .advantage__item-logo{
+        max-width: 110px;
+    }
+    .advantage__content-title{
+        font-size: 28px;
+        line-height: 34px;
+    }
+    .advantage__content-text{
+        font-size: 16px;
+        line-height: 20px;
+    }
+}
+
+@media (max-width: 1024px){
+    .advantage__item{
+        max-width: 300px;
+        margin: 40px 0;
+    }
+    .advantage__item-logo{
+        max-width: 80px;
+    }
+    .advantage__content-title{
+        font-size: 20px;
+        line-height: 28px;
+    }
+    .advantage__content-text{
+        font-size: 12px;
+        line-height: 16px;
+    }
+}
+
+/* @media (max-width: 768px){
+    .advantage__item{
+        max-width: 300px;
+    }
+    .advantage__item-logo{
+        max-width: 80px;
+    }
+    .advantage__content-title{
+        font-size: 20px;
+        line-height: 28px;
+    }
+    .advantage__content-text{
+        font-size: 12px;
+        line-height: 16px;
+    }
+} */
+
+@media (max-width: 768px){
+    .advantage__block{
+        padding: 10px 0;
+    }
+    .advantage__item{
+        max-width: 160px;
+        margin: 20px 0;
+    }
+    .advantage__item-logo{
+        max-width: 40px;
+        margin-right: 16px;
+    }
+    .advantage__content-title{
+        font-size: 10px;
+        line-height: 14px;
+        margin-bottom: 4px;
+    }
+    .advantage__content-text{
+        font-size: 8px;
+        line-height: 14px;
+    }
+}
+
+@media (max-width: 400px){
+    .advantage__item{
+        max-width: 130px;
+        margin: 20px 0;
+    }
+    .advantage__item-logo{
+        max-width: 30px;
+    }
+    .advantage__content-title{
+        font-size: 8px;
+        line-height: 10px;
+        margin-bottom: 4px;
+    }
+    .advantage__content-text{
+        font-size: 6px;
+        line-height: 10px;
+    }
 }

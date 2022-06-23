@@ -34,3 +34,70 @@
 
     color: #000000;
 }
+
+@media (max-width:1024px){
+    .functional__block{
+        padding: 40px 0;
+    }
+    .functional__item{
+        max-width: 150px;
+    }
+    .functional__item-icon{
+        max-width: 90px;
+        margin-bottom: 18px;
+    }
+    .functional__item-title{
+        margin-bottom: 12px;
+        font-size: 22px;
+        line-height: 25px;
+    }
+    .functional__item-text{
+        font-size: 12px;
+        line-height: 14px;
+    }
+}
+
+@media (max-width:768px){
+    .functional__block{
+        padding: 40px 0;
+    }
+    .functional__item{
+        max-width: 120px;
+    }
+    .functional__item-icon{
+        max-width: 60px;
+        margin-bottom: 8px;
+    }
+    .functional__item-title{
+        margin-bottom: 3.5px;
+        font-size: 16px;
+        line-height: 19px;
+    }
+    .functional__item-text{
+        font-size: 12px;
+        line-height: 14px;
+    }
+}
+
+@media (max-width:576px){
+    .functional__block{
+        padding: 25px 0;
+    }
+    .functional__item{
+        max-width: 80px;
+    }
+    .functional__item-icon{
+        max-width: 43px;
+        margin-bottom: 8px;
+    }
+    .functional__item-title{
+        margin-bottom: 3.5px;
+        font-size: 12px;
+        line-height: 14px;
+    }
+    .functional__item-text{
+        font-size: 8px;
+        line-height: 9px;
+    }
+}
+
