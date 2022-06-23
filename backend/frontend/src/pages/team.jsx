@@ -1,10 +1,12 @@
 import Components from '../components/index'
+import {Helmet} from "react-helmet";
 
 function Team() {
-    Components.Title("О команде");
     return(
         <div>
-
+            <Helmet>
+                <title>Mondino Tracker - О команде</title>
+            </Helmet>
         </div>)
 }
 
