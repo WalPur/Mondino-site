@@ -26,6 +26,15 @@
     margin-right: 25px;
 }
 
+@media (max-width: 1400px){
+    .ease__content-img{
+        max-height: 550px;
+    }
+    .ease__button{
+        max-width: 200px;
+    }
+}
+
 @media (max-width: 1300px){
     .ease__content-img{
         max-height: 500px;

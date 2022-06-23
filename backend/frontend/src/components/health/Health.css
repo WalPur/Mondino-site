@@ -33,6 +33,15 @@
     }
 }
 
+@media (max-width: 1440px){
+    .health__content-img{
+        max-height: 550px;
+    }
+    .health__button{
+        max-width: 200px;
+    }
+}
+
 @media (max-width: 1300px){
     .health__content-img{
         max-height: 500px;
