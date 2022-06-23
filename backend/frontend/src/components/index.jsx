@@ -5,6 +5,7 @@ import Health from './health/Health'
 import Community from './community/Community'
 import Advantage from './advantage/Advantage'
 import Ease from './ease/Ease'
+import Title from './title/Title'
 
 const Components = {
     General,
@@ -14,6 +15,7 @@ const Components = {
     Community,
     Advantage,
     Ease,
+    Title,
 }
 
 export default Components;

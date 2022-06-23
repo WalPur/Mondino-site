@@ -1,6 +1,7 @@
 import Components from '../components/index'
 
 function Home() {
+    Components.Title("Главная");
     return(
         <div className='wrapper'>
             <Components.General/>
