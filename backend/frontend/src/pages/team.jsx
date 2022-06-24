@@ -5,7 +5,7 @@ function Team() {
     return(
         <div>
             <Helmet>
-                <title>Mondino Tracker - О команде</title>
+                <title>Mondino Tracker - Команде</title>
             </Helmet>
         </div>)
 }

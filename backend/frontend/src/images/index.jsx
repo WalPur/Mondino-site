@@ -34,8 +34,34 @@ import mondino_icon from './mondino_icon.svg'
 import mondino_logo from './mondino_logo.svg'
 import mondino_title from './mondino_title.svg'
 import mondino_icon_dark from './mondino_icon_dark.svg'
+import team_general from './team_general_img.svg'
+import mondino_tech from './mondino_technologies.svg'
+import team_icon_1 from './team_icon_1.svg'
+import team_icon_2 from './team_icon_2.svg'
+import team_icon_3 from './team_icon_3.svg'
+import team_icon_4 from './team_icon_4.svg'
+import team_icon_5 from './team_icon_5.svg'
+import team_icon_6 from './team_icon_6.svg'
+import team_img_1 from './team_img_1.svg'
+import team_img_2 from './team_img_2.svg'
+import team_img_3 from './team_img_3.svg'
+import team_img_4 from './team_img_4.svg'
+import team_medicine from './team_medicine_img.svg'
 
 const Images = {
+    team_general,
+    mondino_tech,
+    team_icon_1,
+    team_icon_2,
+    team_icon_3,
+    team_icon_4,
+    team_icon_5,
+    team_icon_6,
+    team_img_1,
+    team_img_2,
+    team_img_3,
+    team_img_4,
+    team_medicine,
     advantage_icon_1,
     advantage_icon_2,
     advantage_icon_3,
