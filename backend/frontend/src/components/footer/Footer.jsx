@@ -40,8 +40,8 @@ function Footer(){
                 <div className="col-2 right_footer">
                     <div className="footer_menu">
                         <NavLink to="/">Главная</NavLink>
-                        <NavLink to="/team">Команда</NavLink>
-                        <NavLink to="/contacts">Контакты</NavLink>
+                        {/* <NavLink to="/team">Команда</NavLink>
+                        <NavLink to="/contacts">Контакты</NavLink> */}
                     </div>
                 </div>
             </div>
