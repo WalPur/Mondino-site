@@ -1,5 +1,6 @@
 .contactsMap__block{
     background: #1B1641;
+    margin-bottom: 1px;
 }
 .contactsMap__container{
     display: flex;
@@ -31,6 +32,12 @@
     font-weight: 400;
     font-size: 20px;
     line-height: 116.64%;
+}
+
+@media(max-width:1440px){
+    .contactsMap__content{
+        width: 480px;
+    }
 }
 
 @media(max-width:1440px){
