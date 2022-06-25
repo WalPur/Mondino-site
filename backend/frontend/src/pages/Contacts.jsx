@@ -7,7 +7,7 @@ function Contacts(){
              <Helmet>
                 <title>Mondino Tracker - Контакты</title>
             </Helmet>
-            <Components.Map/>
+            <Components.ContactsMap/>
         </div>
     )
 }

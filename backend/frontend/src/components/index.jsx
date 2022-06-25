@@ -5,7 +5,7 @@ import Health from './health/Health'
 import Community from './community/Community'
 import Advantage from './advantage/Advantage'
 import Ease from './ease/Ease'
-import Map from './map/Map'
+import ContactsMap from './contactsMap/ContactsMap'
 
 const Components = {
     General,
@@ -15,7 +15,7 @@ const Components = {
     Community,
     Advantage,
     Ease,
-    Map,
+    ContactsMap,
 }
 
 export default Components;
