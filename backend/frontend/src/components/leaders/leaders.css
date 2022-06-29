@@ -1,0 +1,133 @@
+
+
+.leaders_block {
+    padding: 62px;
+}
+
+.leaders_title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 108%;
+
+    color: #1B1642;
+}
+.leaders_text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 160%;
+
+    color: #8D9AAE;
+}
+.leaders_content_under {
+    display: flex;
+    justify-content: center;
+    margin: 47px 0 73px;
+}
+.leaders_title_block {
+    margin-bottom: 10px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 160%;
+
+
+    text-align: center;
+
+    color: #1B1641;
+}
+.leaders_text_block {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+
+    text-align: center;
+
+    color: #575A7B;
+}
+.leaders_content_lower {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 130px;
+}
+.leaders_img {
+    margin-bottom: 14px;
+}
+
+@media (max-width: 1200px){
+    .leaders_img{
+        max-height: 720px;
+    }
+    .leaders_content{
+        max-width: 541px;
+    }
+    .leaders_content-img{
+        max-width: 181px;
+    }
+}
+
+@media (max-width: 1024px){
+    .leaders_block{
+        margin: 60px 0;
+    }
+    .leaders_img{
+        max-height: 550px;
+    }
+    .leaders_content{
+        max-width: 420px;
+    }
+    .leaders_content-img{
+        max-width: 120px;
+    }
+    .leaders_title{
+        margin-bottom: 16px;
+    }
+    .leaders_text{
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 768px){
+    .leaders_img{
+        max-height: 400px;
+    }
+    .leaders_content{
+        max-width: 360px;
+    }
+    .leaders_content-img{
+        max-width: 80px;
+    }
+    .leaders_title{
+        margin-bottom: 12px;
+    }
+    .leaders_text{
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 576px){
+    .leaders_block{
+        margin: 45px 0;
+    }
+    .leaders_container{
+        justify-content: center;
+    }
+    .leaders_img{
+        max-height: 230px;
+    }
+    .leaders_content{
+        max-width: 170px;
+    }
+    .leaders_content-img{
+        max-width: 50px;
+    }
+    .leaders_title{
+        margin-bottom: 12px;
+    }
+    .leaders_text{
+        margin-bottom: 20px;
+    }
+}

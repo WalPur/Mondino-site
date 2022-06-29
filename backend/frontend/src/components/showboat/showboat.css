@@ -1,0 +1,41 @@
+.showboat_block {
+    padding: 98px 0 141px;
+    background: #1B1641;
+}
+.showboat_title {
+    margin-bottom: 24px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 160%;
+
+    text-align: center;
+
+    color: #FFFFFF;
+}
+.showboat_text {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 160%;
+
+    text-align: center;
+
+    color: #FFFFFF;
+}
+.showboat_container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.showboat_block_img {
+    width: 395px;
+    height: 423px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.showboat_img {
+   margin-bottom: 45px;
+}
