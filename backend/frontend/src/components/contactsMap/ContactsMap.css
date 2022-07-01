@@ -74,11 +74,11 @@
     }
     .contactsMap__content{
         padding: 30px;
-        height: 350px;
+        height: auto;
         width: 100%;
     }
     .contactsMap__map{
-        height: 350px;
+        height: 500px;
         width: 100%;
     }
     .contactsMap__content-title{
@@ -100,8 +100,7 @@
         height: 500px;
     }
     .contactsMap__content{
-        padding: 20px;
-        height: 220px;
+        padding: 30px 50px;
     }
     .contactsMap__content-title{
         margin-bottom: 24px;
@@ -119,11 +118,10 @@
 
 @media(max-width: 576px){
     .contactsMap__map{
-        height: 400px;
+        height: 550px;
     }
     .contactsMap__content{
-        padding: 20px;
-        height: 220px;
+        padding: 25px;
     }
     .contactsMap__content-title{
         margin-bottom: 24px;
@@ -140,7 +138,4 @@
 }
 
 @media(max-width: 375px){
-    .contactsMap__map{
-        height: 300px;
-    }
 }
