@@ -15,7 +15,7 @@ function leaders (){
                     </div>
                 </div>
                 <div className="leaders_content_under">
-                    <div className="leaders_title">
+                    <div className="leaders_title_leader">
                         Руководители
                     </div>
                 </div>
@@ -38,7 +38,7 @@ function leaders (){
                             CEO, team lead
                         </div>
                     </div>
-                    <div className="leaders_img">
+                    <div className="leaders_block_img">
                         <img src={Images.team_img_3} alt="team_img_3" className="leaders_img" />
                         <div className="leaders_title_block">
                             Виктор Павлов
@@ -47,7 +47,7 @@ function leaders (){
                             CTO, Full stack developer
                         </div>
                     </div>
-                    <div className="leaders_img">
+                    <div className="leaders_block_img">
                         <img src={Images.team_img_4} alt="team_img_4" className="leaders_img" />
                         <div className="leaders_title_block">
                             Слава Скосырский

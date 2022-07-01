@@ -1,13 +1,14 @@
 .advertising_block {
-    padding: 73px 0 124px;
+    padding: 73px 0 73px;
 }
 .advertising_container {
     display: flex;
     justify-content: center;
+    flex-direction: row;
 }
 .advertising_title {
-    width: 845px;
-    height: 126px;
+    margin-bottom: 100px;
+    max-width: 845px;
     font-style: normal;
     font-weight: 700;
     font-size: 48px;
@@ -24,11 +25,97 @@
 
     color: #575A7B;
 }
-.advertising_container {
-    display: flex;
-    flex-direction: row;
-}
 .advertising__img {
-    height: 312px;
     width: 274px;
+}
+
+@media (max-width: 1200px){
+    .advertising_container{
+        justify-self: center;
+        text-align: left;
+        flex-direction: column;
+        padding: 0 25px;
+    }
+    .advertising_title{
+        font-weight: 700;
+        font-size: 60px;
+        width: 100%;
+        margin-bottom: 35px;
+    }
+    .advertising__img{
+        align-self: center;
+        max-height: 230px;
+    }
+    .advertising_text{
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 1024px){
+    .advertising_container{
+        text-align: left;
+    }
+    .advertising__img{
+        align-self: center;
+        width: 170px;
+        max-height: 230px;
+    }
+    .advertising_title{
+        font-weight: 700;
+        font-size: 47px;
+        width: 100%;
+        margin-bottom: 35px;
+    }
+    .advertising_text{
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px){
+    .advertising_container{
+        text-align: left;
+    }
+    .advertising__img{
+        align-self: center;
+        width: 170px;
+        max-height: 230px;
+    }
+    .advertising_text{
+        width: 260px;
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+    .advertising_title{
+        font-weight: 700;
+        font-size: 37px;
+        width: 100%;
+        margin-bottom: 35px;
+    }
+}
+
+@media (max-width: 576px){
+    .advertising_container{
+        text-align: left;
+    }
+    .advertising__img{
+        align-self: center;
+        width: 170px;
+        max-height: 230px;
+    }
+    .advertising_content-img{
+        max-width: 50px;
+    }
+    .advertising_title{
+        font-weight: 700;
+        font-size: 27px;
+        width: 100%;
+        margin-bottom: 35px;
+    }
+    .advertising_text{
+        width: 250px;
+        font-size: 10px;
+        margin-bottom: 20px;
+    }
 }
