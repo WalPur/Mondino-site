@@ -9,9 +9,7 @@ function Footer(){
         <div className='footer__block'>
             <div className="footer__container">
                 <div className="col-10 left_footer">
-                    <div className="top_footer">
-                        <img src={Images.logo} alt="" />
-                    </div>
+                    <img src={Images.logo} alt="" className="top_footer" />
                     <div className="mid_footer">
                         <div className="phone">
                             <img src={Images.phone} alt="" className='phone_image' />

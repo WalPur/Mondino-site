@@ -42,7 +42,8 @@
         max-width: 420px;
     }
     .advantage__item-logo{
-        max-width: 110px;
+        width: 110px;
+        height: 110px;
     }
     .advantage__content-title{
         font-size: 28px;
@@ -60,7 +61,8 @@
         margin: 40px 0;
     }
     .advantage__item-logo{
-        max-width: 80px;
+        width: 80px;
+        height: 80px;
     }
     .advantage__content-title{
         font-size: 20px;
@@ -89,7 +91,7 @@
     }
 } */
 
-@media (max-width: 768px){
+@media (max-width: 767px){
     .advantage__block{
         padding: 10px 0;
     }
@@ -98,7 +100,8 @@
         margin: 20px 0;
     }
     .advantage__item-logo{
-        max-width: 40px;
+        width: 40px;
+        height: 40px;
         margin-right: 16px;
     }
     .advantage__content-title{
@@ -118,7 +121,8 @@
         margin: 20px 0;
     }
     .advantage__item-logo{
-        max-width: 30px;
+        width: 30px;
+        height: 30px;
     }
     .advantage__content-title{
         font-size: 8px;

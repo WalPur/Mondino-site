@@ -72,6 +72,9 @@
 }
 
 @media (max-width: 768px){
+    .ease__container{
+        align-items: center;
+    }
     .ease__content-img{
         max-height: 250px;
     }
