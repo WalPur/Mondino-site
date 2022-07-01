@@ -1,6 +1,8 @@
-import './General.css'
+import './General.css';
 
-import Images from '../../images/index'
+import { HashLink } from 'react-router-hash-link';
+
+import Images from '../../images/index';
 
 function General() {
     return (
@@ -13,9 +15,10 @@ function General() {
                     <div className="general__subtitle">
                         Tracker  - мобильные технологии на страже вашего здоровья.
                     </div>
-                    <a className="general__button">
+                    <HashLink to="#download" className="general__button">
+                        <img className='general__button-img' src={Images.download_icon}/>
                         Скачать
-                    </a>
+                    </HashLink>
                 </div>
                 <img className='general__img' src={Images.general} alt='general_img'/>
             </div>

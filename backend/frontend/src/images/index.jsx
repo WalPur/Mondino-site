@@ -47,6 +47,7 @@ import team_img_2 from './team_img_2.svg'
 import team_img_3 from './team_img_3.svg'
 import team_img_4 from './team_img_4.svg'
 import team_medicine from './team_medicine_img.svg'
+import download_icon from './download_icon.png'
 
 const Images = {
     team_general,
@@ -98,7 +99,7 @@ const Images = {
     ease_1_2,
     ease_2_2,
     ease_3_2,
-
+    download_icon,
 }
 
 export default Images;

@@ -20,10 +20,10 @@ function Ease(){
                     <img src={Images.ease_3_2} alt="phone" className="ease__content-img" />   
                 </div>
                 <div className="ease__buttons">
-                    <a href="">
+                    <a href="https://apps.apple.com/ru/app/%D0%BA%D0%B0%D1%80%D0%BC%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9-%D0%B4%D0%BE%D0%BA%D1%82%D0%BE%D1%80/id1582953573">
                         <img src={Images.appStore_dark} alt="appStore" className="ease__button" />
                     </a>
-                    <a href="">
+                    <a href="https://play.google.com/store/apps/details?id=com.mondino.pocketmedic">
                         <img src={Images.googlePlay_dark} alt="googlePlay" className="ease__button" />
                     </a>
                 </div>
