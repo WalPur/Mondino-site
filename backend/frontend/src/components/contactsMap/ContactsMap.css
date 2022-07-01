@@ -7,11 +7,11 @@
 }
 .contactsMap__map{
     flex-grow: 1;
-    height: 490px;
+    height: 600px;
 }
 .contactsMap__content{
     width: 670px;
-    height: 490px;
+    height: 600px;
     padding: 0 50px;
     display: flex;
     flex-direction: column;
@@ -48,11 +48,11 @@
 
 @media(max-width: 1024px){
     .contactsMap__content{
-        height: 400px;
+        height: 600px;
         width: 400px;
     }
     .contactsMap__map{
-        height: 400px;
+        height: 600px;
     }
     .contactsMap__content-title{
         margin-bottom: 50px;
@@ -69,14 +69,17 @@
 }
 
 @media(max-width: 992px){
+    .contactsMap__container{
+        flex-direction: column;
+    }
     .contactsMap__content{
         padding: 30px;
         height: 350px;
-        width: 350px;
+        width: 100%;
     }
     .contactsMap__map{
         height: 350px;
-        width: 350px;
+        width: 100%;
     }
     .contactsMap__content-title{
         margin-bottom: 30px;
@@ -94,38 +97,32 @@
 
 @media(max-width: 768px){
     .contactsMap__map{
-        height: 250px;
+        height: 500px;
     }
     .contactsMap__content{
         padding: 20px;
-        width: 270px;
-        height: 250px;
+        height: 220px;
     }
     .contactsMap__content-title{
         margin-bottom: 24px;
-        font-size: 18px;
-        line-height: 24px;
+        font-size: 24px;
+        line-height: 28px;
     }
     .contactsMap__content-address{
         margin-bottom: 16px;
     }
     .contactsMap__content-name,
     .contactsMap__content-address{
-        font-size: 12px;
+        font-size: 16px;
     }
 }
 
 @media(max-width: 576px){
-    .contactsMap__container{
-        flex-direction: column;
-    }
     .contactsMap__map{
-        height: 300px;
-        width: 100%;
+        height: 400px;
     }
     .contactsMap__content{
         padding: 20px;
-        width: 100%;
         height: 220px;
     }
     .contactsMap__content-title{
@@ -144,6 +141,6 @@
 
 @media(max-width: 375px){
     .contactsMap__map{
-        height: 240px;
+        height: 300px;
     }
 }
