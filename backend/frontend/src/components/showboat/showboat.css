@@ -30,8 +30,9 @@
     justify-content: space-evenly;
 }
 .showboat_block_img {
-    width: 395px;
-    height: 423px;
+    margin-bottom: 53px;
+    width: 345px;
+    height: 373px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,10 +40,32 @@
 .showboat_img {
    margin-bottom: 45px;
 }
+@media (max-width: 1200px){
+    .showboat_block_img {
+        height: auto;
+        width: 25.01%;
+    }
+    .showboat_title {
+        font-weight: 700;
+        font-size: 12px;
+        width: 100%;
+        margin-bottom: 11px;
+    }
+    .showboat_text {
+        font-weight: 300;
+        font-size: 10px;
+        margin-bottom: 21px;
+    }
+    .showboat_img {
+        width: 55.44px;
+        height: 55.44px;
+        margin-bottom: 29px;
+    }
+}
 @media (max-width: 1024px){
     .showboat_block_img {
         height: auto;
-        width: 40%;
+        width: 25.1%;
     }
     .showboat_title {
         font-weight: 700;
@@ -64,7 +87,7 @@
 @media (max-width: 768px){
     .showboat_block_img {
         height: auto;
-        width: 40%;
+        width: 26%;
     }
     .showboat_title {
         font-weight: 700;
@@ -74,7 +97,7 @@
     }
     .showboat_text {
         font-weight: 300;
-        font-size: 10px;
+        font-size: 8px;
         margin-bottom: 21px;
     }
     .showboat_img {
@@ -90,17 +113,42 @@
     }
     .showboat_block_img {
         height: auto;
-        width: 45%;
+        width: 26%;
     }
     .showboat_title {
         font-weight: 700;
-        font-size: 12px;
+        font-size: 11px;
         width: 100%;
         margin-bottom: 11px;
     }
     .showboat_text {
         font-weight: 300;
-        font-size: 9px;
+        font-size: 7px;
+        margin-bottom: 21px;
+    }
+    .showboat_img {
+        width: 55.44px;
+        height: 55.44px;
+        margin-bottom: 29px;
+    }
+}
+@media (max-width: 300px){
+    .showboat_container{
+        justify-content: space-between;
+    }
+    .showboat_block_img {
+        height: 10%;
+        width: 25.1%;
+    }
+    .showboat_title {
+        font-weight: 700;
+        font-size: 10px;
+        width: 100%;
+        margin-bottom: 11px;
+    }
+    .showboat_text {
+        font-weight: 300;
+        font-size: 7px;
         margin-bottom: 21px;
     }
     .showboat_img {
