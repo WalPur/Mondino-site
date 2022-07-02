@@ -55,9 +55,6 @@
         height: 220px;
         width: 100%;
     }
-    .contactsMap__map{
-        /* height: 900px; */
-    }
     .contactsMap__content-title{
         margin-bottom: 30px;
         font-size: 24px;
@@ -92,9 +89,6 @@
 }
 
 @media(max-width: 768px){
-    .contactsMap__map{
-        /* height: 500px; */
-    }
     .contactsMap__content{
         padding: 30px 50px;
     }
@@ -113,9 +107,6 @@
 }
 
 @media(max-width: 576px){
-    .contactsMap__map{
-        /* height: 550px; */
-    }
     .contactsMap__content{
         padding: 25px;
     }
