@@ -1,8 +1,8 @@
-import './showboat.css'
+import './Showboat.css'
 
 import Images from '../../images/index'
 
-function showboat (){
+function Showboat (){
     return(
         <div className="showboat_block">
             <div className="showboat_container container">
@@ -65,4 +65,4 @@ function showboat (){
     )
 }
 
-export default showboat;
+export default Showboat;

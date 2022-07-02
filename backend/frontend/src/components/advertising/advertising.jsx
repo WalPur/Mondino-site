@@ -1,11 +1,11 @@
-import './advertising.css'
+import './Advertising.css'
 
 import Images from '../../images/index'
 
-function advertising (){
+function Advertising (){
     return(
         <div className="advertising_block">
-            <div className="advertising_container">
+            <div className="advertising_container container">
                 <div className="advertising_content">
                     <div className="advertising_title">
                         Медицинская ИТ-компания
@@ -20,4 +20,4 @@ function advertising (){
     )
 }
 
-export default advertising;
+export default Advertising;

@@ -7,10 +7,10 @@ function Team() {
             <Helmet>
                 <title>Mondino Tracker - Команде</title>
             </Helmet>
-            <Components.tasks/>
-            <Components.leaders/>
-            <Components.showboat/>
-            <Components.advertising/>
+            <Components.Tasks/>
+            <Components.Leaders/>
+            <Components.Showboat/>
+            <Components.Advertising/>
         </div>
     )
 }

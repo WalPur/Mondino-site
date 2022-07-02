@@ -1,8 +1,8 @@
-import './tasks.css'
+import './Tasks.css'
 
 import Images from '../../images/index'
 
-function tasks(){
+function Tasks(){
     return(
         <div className="tasks__block">
             <div className="tasks__container container">
@@ -62,4 +62,4 @@ function tasks(){
     )
 }
 
-export default tasks;
+export default Tasks;

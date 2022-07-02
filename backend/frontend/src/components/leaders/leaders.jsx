@@ -1,8 +1,8 @@
-import './leaders.css'
+import './Leaders.css'
 
 import Images from '../../images/index'
 
-function leaders (){
+function Leaders (){
     return(
         <div className="leaders_block">
             <div className="leaders__container container">
@@ -62,4 +62,4 @@ function leaders (){
     )
 }
 
-export default leaders;
+export default Leaders;

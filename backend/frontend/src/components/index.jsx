@@ -6,10 +6,10 @@ import Community from './community/Community'
 import Advantage from './advantage/Advantage'
 import Ease from './ease/Ease'
 import ContactsMap from './contactsMap/ContactsMap'
-import tasks from './tasks/tasks'
-import leaders from './leaders/leaders'
-import showboat from './showboat/showboat'
-import advertising from './advertising/advertising'
+import Tasks from './tasks/Tasks'
+import Leaders from './leaders/Leaders'
+import Showboat from './showboat/Showboat'
+import Advertising from './advertising/Advertising'
 
 const Components = {
     General,
@@ -20,10 +20,10 @@ const Components = {
     Advantage,
     Ease,
     ContactsMap,
-    tasks,
-    leaders,
-    showboat,
-    advertising,
+    Tasks,
+    Leaders,
+    Showboat,
+    Advertising,
 }
 
 export default Components;
