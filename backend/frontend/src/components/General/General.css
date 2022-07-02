@@ -153,8 +153,13 @@
         margin-right: 5px;
     }
     .general__img{
-        align-items: flex-end;
+        align-self: flex-end;
         max-height: 430px;
     }
 }
 
+@media (max-width: 320px){
+    .general__img{
+        max-height: 400px;
+    }
+}
