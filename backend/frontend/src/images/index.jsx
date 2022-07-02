@@ -6,26 +6,26 @@ import advantage_icon_5 from './advantage_icon_5.svg'
 import advantage_icon_6 from './advantage_icon_6.svg'
 import appStore from './appStore.svg'
 import appStore_dark from './appStore_dark.svg'
-import community from './community_img.svg'
+import community from './community_img.png'
 import ease_1 from './ease_img_1.svg'
 import ease_2 from './ease_img_2.svg'
 import ease_3 from './ease_img_3.svg'
-import ease_1_2 from './ease_img_1_2.svg'
-import ease_2_2 from './ease_img_2_2.svg'
-import ease_3_2 from './ease_img_3_2.svg'
-import economize from './economize_img.svg'
+import ease_1_2 from './ease_img_1_2.png'
+import ease_2_2 from './ease_img_2_2.png'
+import ease_3_2 from './ease_img_3_2.png'
+import economize from './economize_img.png'
 import footer_geo from './footer_geo.svg'
 import footer_mail from './footer_mail.svg'
 import footer_phone from './footer_phone.svg'
-import general from './general_img.svg'
+import general from './general_img.png'
 import googlePlay from './googlePlay.svg'
 import googlePlay_dark from './googlePlay_dark.svg'
 import health_1 from './health_img_1.svg'
 import health_2 from './health_img_2.svg'
 import health_3 from './health_img_3.svg'
-import health_1_2 from './health_1_2.svg'
-import health_2_2 from './health_2_2.svg'
-import health_3_2 from './health_3_2.svg'
+import health_1_2 from './health_1_2.png'
+import health_2_2 from './health_2_2.png'
+import health_3_2 from './health_3_2.png'
 import icon_1 from './icon_1.svg'
 import icon_2 from './icon_2.svg'
 import icon_3 from './icon_3.svg'
@@ -47,6 +47,7 @@ import team_img_2 from './team_img_2.svg'
 import team_img_3 from './team_img_3.svg'
 import team_img_4 from './team_img_4.svg'
 import team_medicine from './team_medicine_img.svg'
+import download_icon from './download_icon.png'
 
 const Images = {
     team_general,
@@ -98,7 +99,7 @@ const Images = {
     ease_1_2,
     ease_2_2,
     ease_3_2,
-
+    download_icon,
 }
 
 export default Images;

@@ -7,11 +7,12 @@
 }
 .contactsMap__map{
     flex-grow: 1;
-    height: 600px;
+    height: 70vh;
 }
 .contactsMap__content{
-    width: 670px;
-    height: 600px;
+    width: 650px;
+    /* height: 700px; */
+    height: 70vh;
     padding: 0 50px;
     display: flex;
     flex-direction: column;
@@ -47,20 +48,20 @@
 }
 
 @media(max-width: 1024px){
-    .contactsMap__content{
-        height: 600px;
-        width: 400px;
+    .contactsMap__container{
+        flex-direction: column;
     }
-    .contactsMap__map{
-        height: 600px;
+    .contactsMap__content{
+        height: 220px;
+        width: 100%;
     }
     .contactsMap__content-title{
-        margin-bottom: 50px;
+        margin-bottom: 30px;
         font-size: 24px;
         line-height: 34px;
     }
     .contactsMap__content-address{
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
     .contactsMap__content-name,
     .contactsMap__content-address{
@@ -69,25 +70,17 @@
 }
 
 @media(max-width: 992px){
-    .contactsMap__container{
-        flex-direction: column;
-    }
     .contactsMap__content{
         padding: 30px;
         height: auto;
-        width: 100%;
     }
     .contactsMap__map{
-        height: 500px;
+        /* height: 500px; */
         width: 100%;
     }
     .contactsMap__content-title{
-        margin-bottom: 30px;
         font-size: 20px;
         line-height: 28px;
-    }
-    .contactsMap__content-address{
-        margin-bottom: 20px;
     }
     .contactsMap__content-name,
     .contactsMap__content-address{
@@ -96,9 +89,6 @@
 }
 
 @media(max-width: 768px){
-    .contactsMap__map{
-        height: 500px;
-    }
     .contactsMap__content{
         padding: 30px 50px;
     }
@@ -117,9 +107,6 @@
 }
 
 @media(max-width: 576px){
-    .contactsMap__map{
-        height: 550px;
-    }
     .contactsMap__content{
         padding: 25px;
     }
