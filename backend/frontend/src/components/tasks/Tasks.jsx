@@ -5,8 +5,8 @@ import Images from '../../images/index'
 function Tasks(){
     return(
         <div className="tasks__block">
-            <div className="tasks__container">
-                <div className="tasks__container container">
+            <div className="tasks__container container">
+                <div className="tasks__content-container">
                     <div className="tasks__content">
                         <div className="tasks_content_text">
                             <div className="tasks__title title">
@@ -57,10 +57,9 @@ function Tasks(){
                             </div>
                         </div>
                     </div>
-                    
                 </div>
+                <img src={Images.team_general} alt="team_general" className="tasks__img" />
             </div>
-            <img src={Images.team_general} alt="team_general" className="tasks__img" />
         </div>
     )
 }
