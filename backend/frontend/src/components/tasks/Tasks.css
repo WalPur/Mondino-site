@@ -349,7 +349,7 @@
         display: flex;
         align-items: center;
         flex-direction: column;
-        min-width: 90px;
+        min-width: 190px;
         margin-bottom: 35px;  
     }
     .tasks_text_title {
@@ -365,16 +365,16 @@
     .tasks__img {
         max-height: 370px;
     }
-    .tasks_content_under {
+    /* .tasks_content_under {
         height: 200px;
-    }
+    } */
     
     
 }
 @media (max-width: 405px){
-    .tasks__container.container{
+    /* .tasks__container.container{
         height: 300px;
-    }
+    } */
     .tasks__block {
         padding: 31px 0 0;
     }
@@ -389,7 +389,7 @@
         display: flex;
         align-items: center;
         flex-direction: column;
-        min-width: 90px;
+        min-width: 50%;
         margin-bottom: 35px;  
     }
     .tasks_text_title {
@@ -405,15 +405,15 @@
     .tasks__img {
         max-height: 300px;
     }
-    .tasks_content_under {
+    /* .tasks_content_under {
         height: 150px;
-    }
+    } */
     
     
 }
 @media (max-width: 367px){
     .tasks__container.container{
-        height: 300px;
+        height: 100%;
     }
     .tasks__block {
         padding: 31px 0 0;
@@ -429,9 +429,8 @@
         display: flex;
         align-items: center;
         flex-direction: column;
-        min-width: 70px;
-        min-height: 85px;
-        margin-bottom: 0;  
+        min-width: 50%;
+        margin-bottom: 15px;  
     }
     .tasks_text_title {
         font-size: 12px;
@@ -446,9 +445,9 @@
     .tasks__img {
         max-height: 250px;
     }
-    .tasks_content_under {
+    /* .tasks_content_under {
         height: 150px;
-    }  
+    }   */
 }
 @media (max-width: 285px){
     .tasks__container.container{
@@ -470,8 +469,7 @@
         display: flex;
         align-items: center;
         flex-direction: column;
-        min-width: 70px;
-        min-height: 85px;
+        min-width: 100px;
         margin-bottom: 0;  
     }
     .tasks_text_title {
@@ -494,6 +492,6 @@
         height: 80px;
     }
     .tasks__container.container {
-        height: 250px;
+        height: 100%;
     }
 }
