@@ -17,7 +17,6 @@ function Tasks(){
                             </div>
                         </div>
                         <div className="tasks_content_under">
-                            
                             <div className="tasks_under_text">
                                 <div className="tasks_text_block">
                                     <div className="tasks_text_title">

@@ -23,8 +23,6 @@
 }
 .tasks__title{
     margin-bottom: 12px;
-    width: 183px;
-    height: 32px;
     font-style: normal;
     font-weight: 300;
     font-size: 20px;
@@ -65,7 +63,6 @@
     flex-direction: column;
     min-width: 250px;
     margin-bottom: 35px;
-    
 }
 .tasks_text_title {
     font-style: normal;
@@ -91,11 +88,8 @@
     display: flex;
     flex-direction: row;
 }
+
 @media (max-width: 1480px){
-    .tasks__block{
-        /* display: flex; */
-        /* flex-direction: column; */
-    }
     .tasks__container.container {
         display: flex;
         flex-direction: row;
@@ -118,22 +112,14 @@
         justify-content: space-between;
     }
     .tasks_text_block {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
         min-width: 208px;
         margin-bottom: 35px;
-        
     }
     .tasks__content{
         width: 75%;
     }
 }
 @media (max-width: 1399px){
-    /* .tasks__block{
-        display: flex;
-        flex-direction: column;
-    } */
     .tasks__container.container {
         display: flex;
         flex-direction: row;
@@ -150,15 +136,7 @@
     .tasks_content-img{
         max-width: 181px;
     }
-    .tasks__content-container{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
     .tasks_text_block {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
         min-width: 208px;
         margin-bottom: 35px;
     }
@@ -168,10 +146,6 @@
 }
 
 @media (max-width: 1200px){
-    /* .tasks__block{
-        display: flex;
-        flex-direction: column;
-    } */
     .tasks__container-container {
         display: flex;
         flex-direction: row; 
@@ -187,15 +161,7 @@
     .tasks_content-img{
         max-width: 181px;
     }
-    .tasks__content-container{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
     .tasks_text_block {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
         min-width: 208px;
         margin-bottom: 35px;
         
@@ -216,9 +182,6 @@
 }
 
 @media (max-width: 1024px){
-    /* .tasks__block {
-        flex-direction: column;
-    } */
     .tasks__text {
         font-weight: 700;
         line-height: 108%;
@@ -233,9 +196,6 @@
         display: none;
     }
     .tasks_text_block {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
         min-width: 210px;
         margin-bottom: 35px;  
     }
@@ -248,9 +208,6 @@
 }
 @media (max-width: 991px){
     .tasks_text_block {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
         min-width: 140px;
         margin-bottom: 35px;  
     }
@@ -276,12 +233,8 @@
     }
     .tasks__text {
         font-size: 30px;
-        width: 500px;
     }
     .tasks_text_block {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
         min-width: 180px;
         margin-bottom: 35px;  
     }
@@ -308,16 +261,12 @@
     }
     .tasks__text {
         margin-bottom: 30px;
-        font-size: 20px;
-        width: auto;
+        font-size: 25px;
     }
     .tasks_under_text{
         justify-content: space-evenly;
     }
     .tasks_text_block {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
         min-width: 190px;
         margin-bottom: 35px;  
     }
@@ -328,7 +277,6 @@
         font-size: 15px;
     }
     .tasks_content_icon{
-        height: 50%;
         width: 80px;
     }
     .tasks__img {
@@ -342,14 +290,10 @@
         padding: 41px 0 0;
     }
     .tasks__text {
-        font-size: 19px;
-        width: auto;
+        font-size: 25px;
     }
     .tasks_text_block {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        min-width: 190px;
+        min-width: 50%;
         margin-bottom: 35px;  
     }
     .tasks_text_title {
@@ -365,41 +309,24 @@
     .tasks__img {
         max-height: 370px;
     }
-    /* .tasks_content_under {
-        height: 200px;
-    } */
-    
-    
 }
 @media (max-width: 405px){
-    /* .tasks__container.container{
-        height: 300px;
-    } */
     .tasks__block {
         padding: 31px 0 0;
     }
     .tasks__title {
-        font-size: 9px;
-    }
-    .tasks__text {
-        font-size: 17px;
-        width: auto;
+        font-size: 10px;
     }
     .tasks_text_block {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        min-width: 50%;
         margin-bottom: 35px;  
     }
     .tasks_text_title {
-        font-size: 20px;
+        font-size: 16px;
     }
     .tasks_text_text {
-        font-size: 10px;
+        font-size: 12px;
     }
     .tasks_content_icon{
-        height: 50%;
         width: 75px;
     }
     .tasks__img {
@@ -419,35 +346,21 @@
         padding: 31px 0 0;
     }
     .tasks__title {
-        font-size: 8px;
+        font-size: 10px;
     }
     .tasks__text {
-        font-size: 15px;
+        font-size: 25px;
         width: auto;
     }
     .tasks_text_block {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        min-width: 50%;
         margin-bottom: 15px;  
     }
-    .tasks_text_title {
-        font-size: 12px;
-    }
-    .tasks_text_text {
-        font-size: 8px;
-    }
     .tasks_content_icon{
-        height: 50%;
         width: 55px;
     }
     .tasks__img {
         max-height: 250px;
     }
-    /* .tasks_content_under {
-        height: 150px;
-    }   */
 }
 @media (max-width: 285px){
     .tasks__container.container{
@@ -456,30 +369,10 @@
     .tasks__block {
         padding: 21px 0 0;
     }
-    .tasks__title {
-        font-size: 8px;
-        height: 20px;
-    }
-    .tasks__text {
-        font-size: 13px;
-        width: auto;
-        margin: 0;
-    }
     .tasks_text_block {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        min-width: 100px;
         margin-bottom: 0;  
     }
-    .tasks_text_title {
-        font-size: 12px;
-    }
-    .tasks_text_text {
-        font-size: 8px;
-    }
     .tasks_content_icon{
-        height: 50%;
         width: 45px;
     }
     .tasks__img {
@@ -487,9 +380,6 @@
     }
     .tasks_content_under {
         height: 150px;
-    }  
-    .tasks_content_text {
-        height: 80px;
     }
     .tasks__container.container {
         height: 100%;
