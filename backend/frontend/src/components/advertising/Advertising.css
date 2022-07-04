@@ -1,5 +1,6 @@
 .advertising_block {
     padding: 73px 0 73px;
+    display: block!important;
 }
 .advertising_container {
     display: flex;
