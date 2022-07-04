@@ -118,6 +118,7 @@
     .tasks__content{
         width: 75%;
     }
+    
 }
 @media (max-width: 1399px){
     .tasks__container.container {
@@ -146,14 +147,18 @@
 }
 
 @media (max-width: 1200px){
+    .tasks__block {
+        padding: 51px 0 0;
+    }
     .tasks__container-container {
         display: flex;
         flex-direction: row; 
     }
     .tasks__text {
         font-weight: 700;
-        font-size: 42px;
+        font-size: 43px;
         line-height: 108%;
+        margin-bottom: 45px;
     }
     .tasks_content_under {
         width: auto;
@@ -185,8 +190,9 @@
     .tasks__text {
         font-weight: 700;
         line-height: 108%;
-        font-size: 39px;
+        font-size: 43px;
         width: auto;
+        margin-bottom: 45px;
     }
     .tasks__title { 
         font-size: 15px;
@@ -207,8 +213,12 @@
     }
 }
 @media (max-width: 991px){
+    .tasks__text {
+        margin-bottom: 35px;
+        font-size: 43px;
+    }
     .tasks_text_block {
-        min-width: 140px;
+        min-width: 25%;
         margin-bottom: 35px;  
     }
     .tasks_text_title {
@@ -228,14 +238,11 @@
 }
 
 @media (max-width: 767px){
-    .tasks__block {
-        padding: 51px 0 0;
-    }
     .tasks__text {
-        font-size: 30px;
+        font-size: 35px;
     }
     .tasks_text_block {
-        min-width: 180px;
+        min-width: 50%;
         margin-bottom: 35px;  
     }
     .tasks_text_title {
@@ -257,7 +264,7 @@
 
 @media (max-width: 576px){
     .tasks__block {
-        padding: 51px 0 0;
+        padding: 41px 0 0;
     }
     .tasks__text {
         margin-bottom: 30px;
@@ -267,14 +274,13 @@
         justify-content: space-evenly;
     }
     .tasks_text_block {
-        min-width: 190px;
         margin-bottom: 35px;  
     }
     .tasks_text_title {
-        font-size: 29px;
+        font-size: 22px;
     }
     .tasks_text_text {
-        font-size: 15px;
+        font-size: 12px;
     }
     .tasks_content_icon{
         width: 80px;
@@ -293,7 +299,6 @@
         font-size: 25px;
     }
     .tasks_text_block {
-        min-width: 50%;
         margin-bottom: 35px;  
     }
     .tasks_text_title {
@@ -311,9 +316,6 @@
     }
 }
 @media (max-width: 405px){
-    .tasks__block {
-        padding: 31px 0 0;
-    }
     .tasks__title {
         font-size: 10px;
     }
@@ -332,18 +334,12 @@
     .tasks__img {
         max-height: 300px;
     }
-    /* .tasks_content_under {
-        height: 150px;
-    } */
     
     
 }
 @media (max-width: 367px){
     .tasks__container.container{
         height: 100%;
-    }
-    .tasks__block {
-        padding: 31px 0 0;
     }
     .tasks__title {
         font-size: 10px;
@@ -367,7 +363,7 @@
         height: 300px;
     }
     .tasks__block {
-        padding: 21px 0 0;
+        padding: 31px 0 0;
     }
     .tasks_text_block {
         margin-bottom: 0;  
