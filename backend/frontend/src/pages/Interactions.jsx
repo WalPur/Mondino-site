@@ -16,74 +16,12 @@ import axios from 'axios';
 //         background: 'rgba(234, 251, 255, 0.91)',
 //         paddingTop: 50,
 //         paddingBottom: 50
-//     },
-//     activePart__inputBox_item: {
-//         display: 'flex',
-//         justifyContent: 'center',
-//         alignItems: 'center',
-//         flexDirection: 'row',
-//         marginTop: 10,
-//         width: '80%',
-//         [theme.breakpoints.down('sm')]: {
-//             width: '100%'
-//         },
-//     },
-//     activePart__cancelButton: {
-//         display: 'flex',
-//         justifyContent: 'center',
-//         alignItems: 'center',
-//         width: 50,
-//         height: 56,
-//         backgroundColor: 'red',
-//         color: 'white',
-//         marginLeft: 5,
-//         '&:focus': {
-//             outline: "none",
-//         },
-//         boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-//     },
-//     activePart__input: {
-//         width: '100%'
-//     },
-//     activePart__ButtonBox: {
-//         display: 'flex',
-//         justifyContent: 'center',
-//         alignItems: 'center',
-//         flexDirection: 'column',
-//         marginTop: 10,
-//         width: '100%',
-//         paddingRight: 20,
-
-//     },
-//     activePart__Button: {
-//         display: 'flex',
-//         justifyContent: 'center',
-//         alignItems: 'center',
-//         height: 48,
-//         backgroundColor: '#28d5a3',
-//         color: 'white',
-//         marginLeft: 5,
-//         '&:focus': {
-//             outline: "none",
-//         },
-//         boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-//         marginTop: 10,
-//         width: '100%'
-//     },
+//     },   
 //     textArea: {
 //         width: '100%',
 //         backgroundColor: '#fafafa',
 //         '&:focus': {
 //             outline: "none",
-//         },
-//     },
-//     TextAreaBox: {
-//         [theme.breakpoints.down('sm')]: {
-//             display: 'flex',
-//             justifyContent: 'center',
-//             alignItems: 'center',
-//             flexDirection: 'column',
-//             marginTop: 20,
 //         },
 //     },
 //     interactionsContent: {
@@ -96,35 +34,7 @@ import axios from 'axios';
 //         overflow: 'auto',
 
 //     },
-//     InfoBlock: {
-//         padding: 20,
-//         borderRadius: 10,
-//         backgroundColor: '#f0f0f0',
-//         width: '100%',
-//         minHeight: 300,
-//         marginTop: 10
-//     },
-//     InfoBlock_Content: {
-//         display: 'flex',
-//         justifyContent: 'center',
-//         alignItems: 'start',
-//         flexDirection: 'column'
-//     },
-//     InfoBlock_Item: {
-//         display: 'flex',
-//         flexDirection: 'row',
-//         marginTop: 5,
-//         borderTop: '1px solid #b9b9b9',
-//         width: '100%',
-//         [theme.breakpoints.down('xs')]: {
-//             flexDirection: 'column',
-
-//         },
-//     },
-//     InfoBLock_label: {
-//         width: 100,
-//         marginRight: 5,
-//     },
+//     
 // }))
 
 const Interactions = () => {
@@ -286,6 +196,104 @@ const Interactions = () => {
         alignItems: 'center',
         flexDirection: 'column',
     }));
+    const InfoBlock_Content = styled(Box)(({ theme }) => ({
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'start',
+        flexDirection: 'column'
+    }));
+    const ActivePart__inputBox_item = styled(Box)(({ theme }) => ({
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'row',
+        marginTop: 10,
+        width: '80%',
+        [theme.breakpoints.down('sm')]: {
+        width: '100%'
+        },
+    }));
+    const ActivePart__ButtonBox = styled(Box)(({ theme }) => ({
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'column',
+        marginTop: 10,
+        width: '100%',
+        paddingRight: 20,
+    }));
+    const InfoBlock = styled(Box)(({ theme }) => ({
+        padding: 20,
+        borderRadius: 10,
+        backgroundColor: '#f0f0f0',
+        width: '100%',
+        minHeight: 300,
+        marginTop: 10
+    }));
+    const InteractionsContent = styled(Box)(({ theme }) => ({
+        display: 'flex',
+        width: '100%',
+        height: 300,
+        border: '1px solid black',
+        paddingTop: 10,
+        flexDirection: 'column',
+        overflow: 'auto',
+    }));
+    const InfoBlock_Item = styled(Box)(({ theme }) => ({
+        display: 'flex',
+        flexDirection: 'row',
+        marginTop: 5,
+        borderTop: '1px solid #b9b9b9',
+        width: '100%',
+        [theme.breakpoints.down('xs')]: {
+        flexDirection: 'column',
+        },
+    }));
+    const TextAreaBox = styled(Grid)(({ theme }) => ({
+        [theme.breakpoints.down('sm')]: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'column',
+        marginTop: 20,
+        },
+    }));
+    const ActivePart__input = styled(Autocomplete)(({ theme }) => ({
+        width: '100%'
+    }));
+    const ActivePart__cancelButton = styled(Button)(({ theme }) => ({
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: 50,
+        height: 56,
+        backgroundColor: 'red',
+        color: 'white',
+        marginLeft: 5,
+        '&:focus': {
+        outline: "none",
+        },
+        boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+    }));
+    const ActivePart__Button = styled(Button)(({ theme }) => ({
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: 48,
+        backgroundColor: '#28d5a3',
+        color: 'white',
+        marginLeft: 5,
+        '&:focus': {
+        outline: "none",
+        },
+        boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+        marginTop: 10,
+        width: '100%'
+    }));
+    const InfoBLock_label = styled(Typography)(({ theme }) => ({
+        width: 100,
+        marginRight: 5,
+    }));
     return (
         <Box>
             <div>
@@ -302,53 +310,52 @@ const Interactions = () => {
                                 <Typography variant="body2">Международное непатентованное наименование (МНН)</Typography>
                                 <ActivePart__inputBox>
                                     {inputs.map((item, index) => (
-                                        <Box className={classes.activePart__inputBox_item} key={index}>
-                                            <Autocomplete
+                                        <ActivePart__inputBox_item key={index}>
+                                            <ActivePart__input
                                                 id="free-solo-demo"
                                                 freeSolo
                                                 options={AutoCompliteList}
-                                                className={classes.activePart__input}
                                                 onInputChange={(event, newInputValue) => handleAutoComplite(item.id, newInputValue)}
                                                 renderInput={(params) => (
                                                     <TextField  {...params} id="outlined-basic" label="Введите лекарство" variant="outlined" value={item.value} onChange={handleText(item.id)} />
                                                 )}
                                             />
                                             {item.close == false ? <Box style={{ width: 80, height: 56 }}></Box> :
-                                                <Button variant="contained" className={classes.activePart__cancelButton} onClick={() => { handleDelete(item.id) }}>x</Button>
+                                                <ActivePart__cancelButton variant="contained" onClick={() => { handleDelete(item.id) }}>x</ActivePart__cancelButton>
                                             }
-                                        </Box>
+                                        </ActivePart__inputBox_item>
                                     ))}
                                 </ActivePart__inputBox>
-                                <Box className={classes.activePart__ButtonBox}>
-                                    <Button variant="contained" className={classes.activePart__Button} onClick={() => { addInput() }}>Добавить лекастрва</Button>
-                                    <Button variant="contained" className={classes.activePart__Button} onClick={() => { compareInteractions() }}>Посмотреть совместимости</Button>
-                                </Box>
+                                <ActivePart__ButtonBox>
+                                    <ActivePart__Button variant="contained" onClick={() => { addInput() }}>Добавить лекастрва</ActivePart__Button>
+                                    <ActivePart__Button variant="contained" onClick={() => { compareInteractions() }}>Посмотреть совместимости</ActivePart__Button>
+                                </ActivePart__ButtonBox>
                             </ActivePart>
-                            <Grid item lg={6} sm={12} md={6} xl={6} xs={12} className={classes.TextAreaBox}>
+                            <TextAreaBox item lg={6} sm={12} md={6} xl={6} xs={12}>
                                 <Box style={{ display: 'flex', flexDirection: 'row', marginBottom: 10 }}>
                                     <Typography variant="body2">Взаимодействие:</Typography>
                                 </Box>
-                                <Box className={classes.interactionsContent}>
+                                <InteractionsContent>
                                     {/* <Box>{effect !== 'нету эффектов' ? mnn1 + ' и ' + mnn2 + ' взаимодействуют: ' : ''} {effect !== 'нету эффектов' ? colorBox() : ''}{effect}</Box> */}
                                     {effect ? effect.map((item, index) => (
                                         <div key={index}>
                                             <span style={{ fontWeight: 'bold' }}>{item.drug_1}</span> и <span style={{ fontWeight: 'bold' }}>{item.drug_2}</span> взаимодействуют: <span style={{ backgroundColor: `${item.effect !== 'not effect' ? item.color : 'grey'}`, width: 15, height: 20, margin: 5, border: '1px solid black', color: `${item.effect !== 'not effect' ? item.color : 'grey'}` }}>__</span> {Object.values(item.effect)}
                                         </div>
                                     )) : 'нету эффектов'}
-                                </Box>
-                                <Box className={classes.InfoBlock}>
+                                </InteractionsContent>
+                                <InfoBlock>
                                     <Typography variant="body1">Классификация взаимодействия с лекарствами</Typography>
                                     <Typography variant="body2">Эти классификации являются лишь ориентировочными. Уместность взаимодействия конкретных лекарств сложно определить для конкретного человека. Всегда консультируйтесь со своим врачом перед началом или завершением приема каких-либо лекарств. </Typography>
-                                    <Box className={classes.InfoBlock_Content}>
+                                    <InfoBlock_Content>
                                         {arrayInfoDrug.map((item, index) => (
-                                            <Box className={classes.InfoBlock_Item} key={index}>
-                                                <Box style={{ display: 'flex', flexDirection: 'row', alignItems: 'start', justifyContent: 'center' }}><Typography variant="body2" className={classes.InfoBLock_label}>{item.label}</Typography><Box style={{ height: 8, backgroundColor: `${item.color}`, width: 8, marginTop: 7, marginRight: 10 }}></Box></Box>
+                                            <InfoBlock_Item key={index}>
+                                                <Box style={{ display: 'flex', flexDirection: 'row', alignItems: 'start', justifyContent: 'center' }}><InfoBLock_label variant="body2">{item.label}</InfoBLock_label><Box style={{ height: 8, backgroundColor: `${item.color}`, width: 8, marginTop: 7, marginRight: 10 }}></Box></Box>
                                                 <Typography variant="boddy2" className={classes.InfoBLock_value}>{item.value}</Typography>
-                                            </Box>
+                                            </InfoBlock_Item>
                                         ))}
-                                    </Box>
-                                </Box>
-                            </Grid>
+                                    </InfoBlock_Content>
+                                </InfoBlock>
+                            </TextAreaBox>
                         </InteractionBox>
                     </ContentBox>
                 </Container>
