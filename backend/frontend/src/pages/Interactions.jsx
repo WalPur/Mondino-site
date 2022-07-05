@@ -350,7 +350,7 @@ const Interactions = () => {
                                         {arrayInfoDrug.map((item, index) => (
                                             <InfoBlock_Item key={index}>
                                                 <Box style={{ display: 'flex', flexDirection: 'row', alignItems: 'start', justifyContent: 'center' }}><InfoBLock_label variant="body2">{item.label}</InfoBLock_label><Box style={{ height: 8, backgroundColor: `${item.color}`, width: 8, marginTop: 7, marginRight: 10 }}></Box></Box>
-                                                <Typography variant="boddy2" className={classes.InfoBLock_value}>{item.value}</Typography>
+                                                <Typography variant="boddy2">{item.value}</Typography>
                                             </InfoBlock_Item>
                                         ))}
                                     </InfoBlock_Content>
