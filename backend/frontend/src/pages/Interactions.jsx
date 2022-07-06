@@ -178,7 +178,7 @@ const Interactions = () => {
     }));
     const InteractionBox = styled(Grid)(({ theme }) => ({
         display: 'flex',
-        
+        justifyContent: 'space-between',
         alignItems: 'start',
     }));
     const ActivePart = styled(Grid)(({ theme }) => ({
@@ -236,7 +236,7 @@ const Interactions = () => {
         width: '100%',
         display: 'flex',
         justifyContent: 'center',
-        alignItems: 'center',
+        alignItems: 'flex-start',
         flexDirection: 'column',
     }));
     const ActivePart__inputBox_item = styled(Box)(({ theme }) => ({
@@ -293,10 +293,9 @@ const Interactions = () => {
         paddingRight: 20,
     }));
     const InfoBlock = styled(Box)(({ theme }) => ({
-        padding: 20,
         width: '100%',
         minHeight: 300,
-        marginTop: 10
+        marginTop: 30,
     }));
     const InfoBLock_label = styled(Typography)(({ theme }) => ({
         width: 100,
@@ -340,7 +339,7 @@ const Interactions = () => {
     return (
         <Box sx={{ padding: "60px 0"}}>
             <div>
-                <Container>
+                <Container classname="container">
                     <ContentBox>
                         <TitleBox>
                             <MyTitle>DDI</MyTitle>
@@ -373,13 +372,13 @@ const Interactions = () => {
                                     <ActivePart__Button style={{backgroundColor: '#11A9E5'}} variant="contained" onClick={() => { compareInteractions() }}>Посмотреть совместимости</ActivePart__Button>
                                 </ActivePart__ButtonBox>
                             </ActivePart>
-                            <TextAreaBox item lg={8} sm={12} md={12} xl={8} xs={12}>
-                                <Box sx={{ display: "flex", justifyContent: "space-evenly" }}>
+                            <TextAreaBox item lg={7} sm={12} md={12} xl={7} xs={12}>
+                                <Box sx={{ display: "flex", justifyContent: "space-evenly", mb: 3 }}>
                                     <InfoBLock_Button>Взаимодействие</InfoBLock_Button>
                                     <InfoBLock_Button style={{backgroundColor: 'rgba(14, 27, 79, 0.2)', color: 'black'}}>Вопросы и ответы</InfoBLock_Button>
                                 </Box>
                                 <Box style={{ display: 'flex', flexDirection: 'row', marginBottom: 10 }}>
-                                    <Typography variant="body2">Взаимодействие:</Typography>
+                                    <Typography style={{ fontWeight: 700, fontSize: '12px', lineHeight: '150%' }} variant="body2">Взаимодействие:</Typography>
                                 </Box>
                                 <InteractionsContent>
                                     {/* <Box>{effect !== 'нету эффектов' ? mnn1 + ' и ' + mnn2 + ' взаимодействуют: ' : ''} {effect !== 'нету эффектов' ? colorBox() : ''}{effect}</Box> */}
@@ -390,13 +389,13 @@ const Interactions = () => {
                                     )) : 'нету эффектов'}
                                 </InteractionsContent>
                                 <InfoBlock>
-                                    <Typography variant="body1">Классификация взаимодействия с лекарствами</Typography>
-                                    <Typography variant="body2">Эти классификации являются лишь ориентировочными. Уместность взаимодействия конкретных лекарств сложно определить для конкретного человека. Всегда консультируйтесь со своим врачом перед началом или завершением приема каких-либо лекарств. </Typography>
+                                    <Typography style={{ fontWeight: 700, fontSize: '12px', lineHeight: '150%', marginBottom: 11 }} variant="body2">Классификация взаимодействия с лекарствами</Typography>
+                                    <Typography style={{ fontWeight: 400, fontSize: '12px', lineHeight: '150%', marginBottom: 34 }} variant="body2">Эти классификации являются лишь ориентировочными. Уместность взаимодействия конкретных лекарств сложно определить для конкретного человека. Всегда консультируйтесь со своим врачом перед началом или завершением приема каких-либо лекарств. </Typography>
                                     <InfoBlock_Content>
                                         {arrayInfoDrug.map((item, index) => (
                                             <InfoBlock_Item key={index}>
                                                 <Box style={{ display: 'flex', flexDirection: 'row', alignItems: 'start', justifyContent: 'center' }}><InfoBLock_label variant="body2">{item.label}</InfoBLock_label><Box style={{borderRadius: 45, height: 20, backgroundColor: `${item.color}`, width: 20, marginRight: 16 }}></Box></Box>
-                                                <Typography style={{fontWeight: 400, fontSize: '12px', lineHeight: '150%'}} variant="boddy2">{item.value}</Typography>
+                                                <Typography style={{fontWeight: 400, fontSize: '12px', lineHeight: '150%'}} variant="body2">{item.value}</Typography>
                                             </InfoBlock_Item>
                                         ))}
                                     </InfoBlock_Content>
