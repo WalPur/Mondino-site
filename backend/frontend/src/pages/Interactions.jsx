@@ -268,7 +268,7 @@ const Interactions = () => {
         color: 'white',
         borderRadius: '50%',
         '&:focus': {
-        outline: "none",
+            outline: "none",
         },
         boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
     }));
