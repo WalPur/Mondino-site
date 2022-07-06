@@ -125,22 +125,22 @@ const Interactions = () => {
         {
             label: 'Опасные',
             value: 'Потенциально опасные межлекарственные взаимодействия: риск от совместного применения ЛС превышает пользу для пациента, поэтому следует в большинстве случаев избегать подобных комбинаций ЛС или применять ЛС в минимальных дозах.',
-            color: 'red'
+            color: '#EE889D'
         },
         {
             label: 'Значимые ',
             value: 'Потенциальные межлекарственные взаимодействия средней степени значимости: такие комбинации часто требуют более тщательного клинического, лабораторного и инструментального контроля за эффективностью и безопасностью',
-            color: 'yellow'
+            color: '#EFDB95'
         },
         {
             label: 'Малозначимые ',
             value: 'Взаимодействия с минимальным клиническим значением. К этому уровню относятся взаимодействия, характеризующиеся минимальным риском развития неблагоприятных побочных реакций или неэффективности лечения.',
-            color: 'green'
+            color: '#A2F295'
         },
         {
             label: 'Неизвестные',
             value: 'Информация о взаимодействии недоступна.',
-            color: 'gray'
+            color: '#C6C6C6'
         },
     ]
     const searchAutoComplite = (inputs) => {
@@ -156,7 +156,7 @@ const Interactions = () => {
         display: 'flex',
         margin: '0 auto',
         minHeight: 700,
-        flexDirection: 'column'
+        flexDirection: 'column',
     }));
     const TitleBox = styled(Box)(({ theme }) => ({
         display: 'flex',
@@ -178,8 +178,8 @@ const Interactions = () => {
     }));
     const InteractionBox = styled(Grid)(({ theme }) => ({
         display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'start'
+        
+        alignItems: 'start',
     }));
     const ActivePart = styled(Grid)(({ theme }) => ({
         display: 'flex',
@@ -192,12 +192,6 @@ const Interactions = () => {
         justifyContent: 'center',
         alignItems: 'start',
         flexDirection: 'column'
-    }));
-    const InfoBlock = styled(Box)(({ theme }) => ({
-        padding: 20,
-        width: '100%',
-        minHeight: 300,
-        marginTop: 10
     }));
     const InteractionsContent = styled(Box)(({ theme }) => ({
         display: 'flex',
@@ -212,7 +206,6 @@ const Interactions = () => {
         display: 'flex',
         flexDirection: 'row',
         marginTop: 5,
-        borderTop: '1px solid #b9b9b9',
         width: '100%',
         [theme.breakpoints.down('xs')]: {
         flexDirection: 'column',
@@ -284,6 +277,9 @@ const Interactions = () => {
         '&:focus': {
         outline: "none",
         },
+        '&:hover': {
+            backgroundColor: '#0E1B4F',
+        },
         marginTop: 10,
         width: '100%'
     }));
@@ -296,9 +292,18 @@ const Interactions = () => {
         width: '100%',
         paddingRight: 20,
     }));
+    const InfoBlock = styled(Box)(({ theme }) => ({
+        padding: 20,
+        width: '100%',
+        minHeight: 300,
+        marginTop: 10
+    }));
     const InfoBLock_label = styled(Typography)(({ theme }) => ({
         width: 100,
         marginRight: 5,
+        fontWeight: 700,
+        fontSize: '12px',
+        lineHeight: '150%',
     }));
     const InfoBLock_Button = styled(Button)(({ theme }) => ({
         display: 'flex',
@@ -339,11 +344,12 @@ const Interactions = () => {
                     <ContentBox>
                         <TitleBox>
                             <MyTitle>DDI</MyTitle>
-                            <Typography sx={{ fontWeight: 500, mb: 0.7 }} variant="h5">Взаимодействия лекарственных средств</Typography>
-                            <Typography variant="body2">Международное непатентованное наименование (МНН)</Typography>
+                            
                         </TitleBox>
                         <InteractionBox container>
                             <ActivePart item lg={4} sm={12} md={12} xl={4} xs={12}>
+                            <Typography sx={{ fontWeight: 500, mb: 0.7, fontSize: '20px', lineHeight: '28px' }} variant="h5">Взаимодействия лекарственных средств</Typography>
+                            <Typography sx={{ fontWeight: 400, mb: 0.7, fontSize: '16px', lineHeight: '19px' }}  variant="body2">Международное непатентованное наименование (МНН)</Typography>
                                 <ActivePart__inputBox>
                                     {inputs.map((item, index) => (
                                         <ActivePart__inputBox_item key={index}>
@@ -389,8 +395,8 @@ const Interactions = () => {
                                     <InfoBlock_Content>
                                         {arrayInfoDrug.map((item, index) => (
                                             <InfoBlock_Item key={index}>
-                                                <Box style={{ display: 'flex', flexDirection: 'row', alignItems: 'start', justifyContent: 'center' }}><InfoBLock_label variant="body2">{item.label}</InfoBLock_label><Box style={{ height: 8, backgroundColor: `${item.color}`, width: 8, marginTop: 7, marginRight: 10 }}></Box></Box>
-                                                <Typography variant="boddy2">{item.value}</Typography>
+                                                <Box style={{ display: 'flex', flexDirection: 'row', alignItems: 'start', justifyContent: 'center' }}><InfoBLock_label variant="body2">{item.label}</InfoBLock_label><Box style={{borderRadius: 45, height: 20, backgroundColor: `${item.color}`, width: 20, marginRight: 16 }}></Box></Box>
+                                                <Typography style={{fontWeight: 400, fontSize: '12px', lineHeight: '150%'}} variant="boddy2">{item.value}</Typography>
                                             </InfoBlock_Item>
                                         ))}
                                     </InfoBlock_Content>
