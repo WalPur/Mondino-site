@@ -20,6 +20,8 @@ function Header() {
                             <NavLink className={({ isActive }) => (isActive ? 'active nav-link' : 'inactive nav-link')}  to="/">Главная</NavLink>
                             <NavLink className={({ isActive }) => (isActive ? 'active nav-link' : 'inactive nav-link')}  to="/team">Команда</NavLink>
                             <NavLink className={({ isActive }) => (isActive ? 'active nav-link' : 'inactive nav-link')}  to="/contacts">Контакты</NavLink>
+                            <NavLink className={({ isActive }) => (isActive ? 'active nav-link' : 'inactive nav-link')} to="/interactions">DDI</NavLink>
+                            <NavLink className={({ isActive }) => (isActive ? 'active nav-link' : 'inactive nav-link')} to="/application">Завяка для партнерства</NavLink>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
