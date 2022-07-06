@@ -21,7 +21,7 @@ function App() {
           <Route path="/team" element={<Pages.Team/>}></Route>
           <Route path="/contacts" element={<Pages.Contacts/>}></Route>
           <Route path="/interactions" element={<Pages.Interactions/>}></Route>
-          <Route path="/application-form" element={<Pages.Application/>}></Route>
+          <Route path="/application" element={<Pages.Application/>}></Route>
         </Routes>
         <Footer/>
       </BrowserRouter>
