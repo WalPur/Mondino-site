@@ -1,15 +1,16 @@
-import General from './general/General'
-import Functional from './functional/Functional'
-import Economize from './economize/Economize'
-import Health from './health/Health'
-import Community from './community/Community'
-import Advantage from './advantage/Advantage'
-import Ease from './ease/Ease'
-import ContactsMap from './contactsMap/ContactsMap'
-import Tasks from './tasks/Tasks'
-import Leaders from './leaders/Leaders'
-import Showboat from './showboat/Showboat'
-import Advertising from './advertising/Advertising'
+import General from './general/General';
+import Functional from './functional/Functional';
+import Economize from './economize/Economize';
+import Health from './health/Health';
+import Community from './community/Community';
+import Advantage from './advantage/Advantage';
+import Ease from './ease/Ease';
+import ContactsMap from './contactsMap/ContactsMap';
+import Tasks from './tasks/Tasks';
+import Leaders from './leaders/Leaders';
+import Showboat from './showboat/Showboat';
+import Advertising from './advertising/Advertising';
+import ApplicationForm from './application-form/index';
 
 const Components = {
     General,
@@ -24,6 +25,7 @@ const Components = {
     Leaders,
     Showboat,
     Advertising,
+    ApplicationForm,
 }
 
 export default Components;

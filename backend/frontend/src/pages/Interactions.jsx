@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { Box, TextField, Typography, Container, Grid, Button, Autocomplete } from "@mui/material";
 import { styled } from "@mui/system";
 // import { useHistory } from 'react-router-dom';
@@ -154,14 +155,12 @@ const Interactions = () => {
     const ContentBox = styled(Box)(({ theme }) => ({
         display: 'flex',
         margin: '0 auto',
-        boxShadow: '0px 0px 24px rgba(0, 0, 0, 0.04)',
         minHeight: 700,
-        padding: 20,
         flexDirection: 'column'
     }));
     const TitleBox = styled(Box)(({ theme }) => ({
         display: 'flex',
-        flexDirection: 'row',
+        flexDirection: 'column',
         justifyContent: 'space-between',
         width: '100%',
         [theme.breakpoints.down('sm')]: {
@@ -179,7 +178,7 @@ const Interactions = () => {
     }));
     const InteractionBox = styled(Grid)(({ theme }) => ({
         display: 'flex',
-        justifyContent: 'start',
+        justifyContent: 'space-between',
         alignItems: 'start'
     }));
     const ActivePart = styled(Grid)(({ theme }) => ({
@@ -220,8 +219,9 @@ const Interactions = () => {
         },
     }));
     const TextAreaBox = styled(Grid)(({ theme }) => ({
-        backgroundColor: 'white',
+        backgroundColor: '#fff',
         borderRadius: 40,
+        padding: "33px 55px",
         [theme.breakpoints.down('sm')]: {
         display: 'flex',
         justifyContent: 'center',
@@ -232,8 +232,12 @@ const Interactions = () => {
     }));
     const ActivePart__input = styled(Autocomplete)(({ theme }) => ({
         width: '100%',
-        borderRadius: 40,
-        backgroundColor: 'white'
+        backgroundColor: 'white',
+        boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.08)",
+        borderRadius: "119px",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
     }));
     const ActivePart__inputBox = styled(Box)(({ theme }) => ({
         width: '100%',
@@ -257,11 +261,12 @@ const Interactions = () => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        width: 50,
-        height: 56,
-        backgroundColor: 'red',
+        minWidth: "48px!important",
+        height: 48,
+        marginLeft: 10,
+        backgroundColor: '#EE889D',
         color: 'white',
-        marginLeft: 5,
+        borderRadius: '50%',
         '&:focus': {
         outline: "none",
         },
@@ -297,43 +302,48 @@ const Interactions = () => {
     }));
     const InfoBLock_Button = styled(Button)(({ theme }) => ({
         display: 'flex',
-        height: 55,
-        width: 200,
         backgroundColor: '#0E1B4F',
-        borderRadius: '74px',
-        color: 'white',
+        borderRadius: 53,
+        color: '#fff',
         justifyContent: 'center',
-        alignItems: 'center',        
+        alignItems: 'center',   
+        padding: "16px 20px",
         
-        fontFamily: 'Roboto',
-        fontStyle: 'normal',
         fontWeight: 500,
         fontSize: '20px',
         lineHeight: '23px',
         textAlign: 'center',
 
-        marginLeft: 5,
         '&:focus': {
-        outline: "none",
+            outline: "none",
+            backgroundColor: '#0E1B4F',
         },
-        marginTop: 10,
+        '&:hover': {
+            backgroundColor: '#0E1B4F',
+        },
         
     }));
-    
+    const MyTitle = styled(Typography)(({ theme }) => ({
+        fontWeight: 700,
+        fontSize: "96px",
+        lineHeight: "112px",
+        marginBottom: "10px",
+    }));
+    const CustomTextField = styled(TextField)(({ theme }) => ({
+        width: "80%",
+    }));
     return (
-        <Box>
+        <Box sx={{ padding: "60px 0"}}>
             <div>
                 <Container>
                     <ContentBox>
                         <TitleBox>
-                            <Typography variant="h5">Взаимодействия лекарственных средств</Typography>
-                            <ButtonBox>
-                                {/* <ButtonCustom text="Вопрос ответ" onClick={() => { history.push("/faq") }} /> */}
-                            </ButtonBox>
+                            <MyTitle>DDI</MyTitle>
+                            <Typography sx={{ fontWeight: 500, mb: 0.7 }} variant="h5">Взаимодействия лекарственных средств</Typography>
+                            <Typography variant="body2">Международное непатентованное наименование (МНН)</Typography>
                         </TitleBox>
-                        <InteractionBox>
-                            <ActivePart item lg={6} sm={12} md={6} xl={6} xs={12}>
-                                <Typography variant="body2">Международное непатентованное наименование (МНН)</Typography>
+                        <InteractionBox container>
+                            <ActivePart item lg={4} sm={12} md={12} xl={4} xs={12}>
                                 <ActivePart__inputBox>
                                     {inputs.map((item, index) => (
                                         <ActivePart__inputBox_item key={index}>
@@ -343,7 +353,7 @@ const Interactions = () => {
                                                 options={AutoCompliteList}
                                                 onInputChange={(event, newInputValue) => handleAutoComplite(item.id, newInputValue)}
                                                 renderInput={(params) => (
-                                                    <TextField  {...params} id="outlined-basic" label="Введите лекарство" variant="outlined" value={item.value} onChange={handleText(item.id)} />
+                                                    <CustomTextField  {...params} id="standard-basic" label="Введите лекарство" variant="standard" value={item.value} onChange={handleText(item.id)} />
                                                 )}
                                             />
                                             {item.close == false ? <Box style={{ width: 80, height: 56 }}></Box> :
@@ -357,9 +367,9 @@ const Interactions = () => {
                                     <ActivePart__Button style={{backgroundColor: '#11A9E5'}} variant="contained" onClick={() => { compareInteractions() }}>Посмотреть совместимости</ActivePart__Button>
                                 </ActivePart__ButtonBox>
                             </ActivePart>
-                            <TextAreaBox item lg={6} sm={12} md={6} xl={6} xs={12}>
-                                <Box>
-                                    <InfoBLock_Button>Вопросы</InfoBLock_Button>
+                            <TextAreaBox item lg={8} sm={12} md={12} xl={8} xs={12}>
+                                <Box sx={{ display: "flex", justifyContent: "space-evenly" }}>
+                                    <InfoBLock_Button>Взаимодействие</InfoBLock_Button>
                                     <InfoBLock_Button style={{backgroundColor: 'rgba(14, 27, 79, 0.2)', color: 'black'}}>Вопросы и ответы</InfoBLock_Button>
                                 </Box>
                                 <Box style={{ display: 'flex', flexDirection: 'row', marginBottom: 10 }}>

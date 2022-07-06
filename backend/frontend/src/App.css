@@ -1,7 +1,16 @@
-body {
+body,
+input,
+div,
+p,
+a,
+h1, h2, h3, h4, h5, h6,
+label {
+  font-family: "Roboto", sans-serif!important;
+  font-style: normal!important;
+}
+
+body{
   background: #F3F8FF!important;
-  font-family: 'Roboto';
-  font-style: normal;
 }
 
 .title{
