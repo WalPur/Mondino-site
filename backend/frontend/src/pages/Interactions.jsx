@@ -156,7 +156,6 @@ const Interactions = () => {
         margin: '0 auto',
         boxShadow: '0px 0px 24px rgba(0, 0, 0, 0.04)',
         minHeight: 700,
-        backgroundColor: 'white',
         padding: 20,
         flexDirection: 'column'
     }));
@@ -189,43 +188,14 @@ const Interactions = () => {
         alignItems: 'center',
         flexDirection: 'column',
     }));
-    const ActivePart__inputBox = styled(Box)(({ theme }) => ({
-        width: '100%',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'column',
-    }));
     const InfoBlock_Content = styled(Box)(({ theme }) => ({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'start',
         flexDirection: 'column'
     }));
-    const ActivePart__inputBox_item = styled(Box)(({ theme }) => ({
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'row',
-        marginTop: 10,
-        width: '80%',
-        [theme.breakpoints.down('sm')]: {
-        width: '100%'
-        },
-    }));
-    const ActivePart__ButtonBox = styled(Box)(({ theme }) => ({
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'column',
-        marginTop: 10,
-        width: '100%',
-        paddingRight: 20,
-    }));
     const InfoBlock = styled(Box)(({ theme }) => ({
         padding: 20,
-        borderRadius: 10,
-        backgroundColor: '#f0f0f0',
         width: '100%',
         minHeight: 300,
         marginTop: 10
@@ -250,6 +220,8 @@ const Interactions = () => {
         },
     }));
     const TextAreaBox = styled(Grid)(({ theme }) => ({
+        backgroundColor: 'white',
+        borderRadius: 40,
         [theme.breakpoints.down('sm')]: {
         display: 'flex',
         justifyContent: 'center',
@@ -259,7 +231,27 @@ const Interactions = () => {
         },
     }));
     const ActivePart__input = styled(Autocomplete)(({ theme }) => ({
+        width: '100%',
+        borderRadius: 40,
+        backgroundColor: 'white'
+    }));
+    const ActivePart__inputBox = styled(Box)(({ theme }) => ({
+        width: '100%',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'column',
+    }));
+    const ActivePart__inputBox_item = styled(Box)(({ theme }) => ({
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'row',
+        marginTop: 10,
+        width: '80%',
+        [theme.breakpoints.down('sm')]: {
         width: '100%'
+        },
     }));
     const ActivePart__cancelButton = styled(Button)(({ theme }) => ({
         display: 'flex',
@@ -280,27 +272,61 @@ const Interactions = () => {
         justifyContent: 'center',
         alignItems: 'center',
         height: 48,
-        backgroundColor: '#28d5a3',
+        backgroundColor: '#0E1B4F',
+        borderRadius: '119px',
         color: 'white',
         marginLeft: 5,
         '&:focus': {
         outline: "none",
         },
-        boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
         marginTop: 10,
         width: '100%'
+    }));
+    const ActivePart__ButtonBox = styled(Box)(({ theme }) => ({
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'column',
+        marginTop: 10,
+        width: '100%',
+        paddingRight: 20,
     }));
     const InfoBLock_label = styled(Typography)(({ theme }) => ({
         width: 100,
         marginRight: 5,
     }));
+    const InfoBLock_Button = styled(Button)(({ theme }) => ({
+        display: 'flex',
+        height: 55,
+        width: 200,
+        backgroundColor: '#0E1B4F',
+        borderRadius: '74px',
+        color: 'white',
+        justifyContent: 'center',
+        alignItems: 'center',        
+        
+        fontFamily: 'Roboto',
+        fontStyle: 'normal',
+        fontWeight: 500,
+        fontSize: '20px',
+        lineHeight: '23px',
+        textAlign: 'center',
+
+        marginLeft: 5,
+        '&:focus': {
+        outline: "none",
+        },
+        marginTop: 10,
+        
+    }));
+    
     return (
         <Box>
             <div>
                 <Container>
                     <ContentBox>
                         <TitleBox>
-                            <Typography variant="h5">Проверка взаимодействия лекарственных средств</Typography>
+                            <Typography variant="h5">Взаимодействия лекарственных средств</Typography>
                             <ButtonBox>
                                 {/* <ButtonCustom text="Вопрос ответ" onClick={() => { history.push("/faq") }} /> */}
                             </ButtonBox>
@@ -327,11 +353,15 @@ const Interactions = () => {
                                     ))}
                                 </ActivePart__inputBox>
                                 <ActivePart__ButtonBox>
-                                    <ActivePart__Button variant="contained" onClick={() => { addInput() }}>Добавить лекастрва</ActivePart__Button>
-                                    <ActivePart__Button variant="contained" onClick={() => { compareInteractions() }}>Посмотреть совместимости</ActivePart__Button>
+                                    <ActivePart__Button variant="contained" onClick={() => { addInput() }}>Добавить лекарства</ActivePart__Button>
+                                    <ActivePart__Button style={{backgroundColor: '#11A9E5'}} variant="contained" onClick={() => { compareInteractions() }}>Посмотреть совместимости</ActivePart__Button>
                                 </ActivePart__ButtonBox>
                             </ActivePart>
                             <TextAreaBox item lg={6} sm={12} md={6} xl={6} xs={12}>
+                                <Box>
+                                    <InfoBLock_Button>Вопросы</InfoBLock_Button>
+                                    <InfoBLock_Button style={{backgroundColor: 'rgba(14, 27, 79, 0.2)', color: 'black'}}>Вопросы и ответы</InfoBLock_Button>
+                                </Box>
                                 <Box style={{ display: 'flex', flexDirection: 'row', marginBottom: 10 }}>
                                     <Typography variant="body2">Взаимодействие:</Typography>
                                 </Box>
