@@ -8,35 +8,238 @@ import { styled } from "@mui/system";
 
 import axios from 'axios';
 
-// import Layout from '../../components/layout/Layout'
-// import ButtonCustom from '../../components/ButtonCustom'
-// import SimpleModal from '../../components/SimpleModal'
-
-// const useClasses = makeStyles(theme => ({
-//     container: {
-//         background: 'rgba(234, 251, 255, 0.91)',
-//         paddingTop: 50,
-//         paddingBottom: 50
-//     },   
-//     textArea: {
-//         width: '100%',
-//         backgroundColor: '#fafafa',
-//         '&:focus': {
-//             outline: "none",
-//         },
-//     },
-//     interactionsContent: {
-//         display: 'flex',
-//         width: '100%',
-//         height: 300,
-//         border: '1px solid black',
-//         paddingTop: 10,
-//         flexDirection: 'column',
-//         overflow: 'auto',
-
-//     },
-//     
-// }))
+const ContentBox = styled(Box)(({ theme }) => ({
+    display: 'flex',
+    margin: '0 auto',
+    minHeight: 700,
+    flexDirection: 'column',
+}));
+const TitleBox = styled(Box)(({ theme }) => ({
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    width: '100%',
+}));
+const MyTitle = styled(Typography)(({ theme }) => ({
+    fontWeight: 700,
+    fontSize: "96px",
+    lineHeight: "112px",
+    marginBottom: "10px",
+    [theme.breakpoints.down('md')]: {
+        fontSize: "80px",
+        marginBottom: "0px",
+        lineHeight: "90px",
+        },
+    [theme.breakpoints.down('sm')]: {
+        fontSize: "70px",
+        marginBottom: "0px",
+        lineHeight: "70px",
+    },    
+}));
+const ButtonBox = styled(Box)(({ theme }) => ({
+    [theme.breakpoints.down('sm')]: {
+        marginTop: 10,
+        marginBottom: 10
+    },
+}));
+const InteractionBox = styled(Grid)(({ theme }) => ({
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'start',
+}));
+const ActivePart = styled(Grid)(({ theme }) => ({
+    display: 'flex',
+    alignItems: 'left',
+    flexDirection: 'column',
+}));
+const InfoBlock_Content = styled(Box)(({ theme }) => ({
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'start',
+    flexDirection: 'column'
+}));
+const InteractionsContent = styled(Box)(({ theme }) => ({
+    display: 'flex',
+    width: '100%',
+    height: 300,
+    border: '1px solid black',
+    paddingTop: 10,
+    flexDirection: 'column',
+    overflow: 'auto',
+}));
+const InfoBlock_Item = styled(Box)(({ theme }) => ({
+    display: 'flex',
+    flexDirection: 'row',
+    marginTop: 5,
+    width: '100%',
+    [theme.breakpoints.down('xs')]: {
+    flexDirection: 'column',
+    },
+}));
+const TextAreaBox = styled(Grid)(({ theme }) => ({
+    backgroundColor: '#fff',
+    borderRadius: 40,
+    padding: "33px 55px",[theme.breakpoints.down('md')]: {
+        marginTop: 20,
+    },
+    [theme.breakpoints.down('sm')]: {
+        display: 'flex',
+        padding: "20px 20px",
+        justifyContent: 'center',
+        flexDirection: 'column',
+        marginTop: 20,
+    },
+}));
+const ActivePart__input = styled(Autocomplete)(({ theme }) => ({
+    width: '100%',
+    backgroundColor: 'white',
+    boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.08)",
+    borderRadius: "119px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+}));
+const ActivePart__inputBox = styled(Box)(({ theme }) => ({
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'flex-start',
+    flexDirection: 'column',
+}));
+const ActivePart__inputBox_item = styled(Box)(({ theme }) => ({
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+    marginTop: 10,
+    width: '80%',
+    // [theme.breakpoints.down("lg")]:{
+    //     width: 500,
+    // },
+}));
+const ActivePart__cancelButton = styled(Button)(({ theme }) => ({
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    minWidth: "48px!important",
+    height: 48,
+    marginLeft: 10,
+    backgroundColor: '#EE889D',
+    color: 'white',
+    borderRadius: '50%',
+    '&:focus': {
+        outline: "none",
+    },
+    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+}));
+const ActivePart__Button = styled(Button)(({ theme }) => ({
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 48,
+    backgroundColor: '#0E1B4F',
+    borderRadius: '119px',
+    color: 'white',
+    marginLeft: 5,
+    '&:focus': {
+    outline: "none",
+    },
+    '&:hover': {
+        backgroundColor: '#0E1B4F',
+    },
+    marginTop: 10,
+    width: '100%',
+    [theme.breakpoints.down('md')]: {
+        maxWidth: 500
+    },
+    
+}));
+const ActivePart__ButtonBox = styled(Box)(({ theme }) => ({
+    display: 'flex',
+    justifyContent: 'left',
+    alignItems: 'left',
+    flexDirection: 'column',
+    marginTop: 10,
+    width: '100%',
+    paddingRight: 20,
+    
+}));
+const InfoBlock = styled(Box)(({ theme }) => ({
+    width: '100%',
+    minHeight: 300,
+    marginTop: 30,
+}));
+const InfoBLock_label = styled(Typography)(({ theme }) => ({
+    width: 100,
+    marginRight: 5,
+    fontWeight: 700,
+    fontSize: '12px',
+    lineHeight: '150%',
+}));
+const InfoBLock_Button = styled(Button)(({ theme }) => ({
+    display: 'flex',
+    backgroundColor: '#0E1B4F',
+    borderRadius: 53,
+    color: '#fff',
+    justifyContent: 'center',
+    alignItems: 'center',   
+    padding: "16px 20px",
+    
+    fontWeight: 500,
+    fontSize: '20px',
+    lineHeight: '23px',
+    textAlign: 'center',
+    [theme.breakpoints.down("lg")]:{
+        padding: "16px 18px",
+        fontSize: "16px",
+        lineHeight: "15px",
+    },
+    [theme.breakpoints.down("md")]:{
+        padding: "16px 20px",
+        fontSize: 16,
+        lineHeight: "15px",
+    },
+    [theme.breakpoints.down("sm")]:{
+        padding: "16px 10px",
+        fontSize: 13,
+        lineHeight: "15px",
+    },
+    '&:focus': {
+        outline: "none",
+        backgroundColor: '#0E1B4F',
+    },
+    '&:hover': {
+        backgroundColor: '#0E1B4F',
+    },
+    
+}));
+const CustomTextField = styled(TextField)(({ theme }) => ({
+    width: "90%",
+}));
+const InteractionText = styled(Typography)(({ theme }) => ({
+    fontWeight: 500,
+    mb: 0.7,
+    fontSize: "20px",
+    lineHeight: "28px",
+    [theme.breakpoints.down("sm")]:{
+        fontSize: "16px",
+    }
+}));
+const InteractionTextD = styled(Typography)(({ theme }) => ({
+    fontWeight: 400,
+    mb: 0.7,
+    fontSize: "16px",
+    lineHeight: "19px",
+    [theme.breakpoints.down("sm")]:{
+        fontSize: "14px",
+    }
+}));
+const CustomBox = styled(Box)(({ theme }) => ({
+    padding: "60px 0",
+    [theme.breakpoints.down("md")]:{
+        padding: "30px 0",
+    }
+}));
 
 const Interactions = () => {
     // let history = useHistory();
@@ -151,241 +354,10 @@ const Interactions = () => {
             .get(`https://ddi.medic.fun/compare/drugs_search?drug=` + inputs)
             .then(response => {
                 const compares = response.data
-                // setAutoComplite(Object.values(compares))
+                setAutoComplite(Object.values(compares))
             }).catch(error => console.log('autoComplite error', error))
     }
-    const ContentBox = styled(Box)(({ theme }) => ({
-        display: 'flex',
-        margin: '0 auto',
-        minHeight: 700,
-        flexDirection: 'column',
-    }));
-    const TitleBox = styled(Box)(({ theme }) => ({
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-between',
-        width: '100%',
-    }));
-    const MyTitle = styled(Typography)(({ theme }) => ({
-        fontWeight: 700,
-        fontSize: "96px",
-        lineHeight: "112px",
-        marginBottom: "10px",
-        [theme.breakpoints.down('md')]: {
-            fontSize: "80px",
-            marginBottom: "0px",
-            lineHeight: "90px",
-            },
-        [theme.breakpoints.down('sm')]: {
-            fontSize: "70px",
-            marginBottom: "0px",
-            lineHeight: "70px",
-        },    
-    }));
-    const ButtonBox = styled(Box)(({ theme }) => ({
-        [theme.breakpoints.down('sm')]: {
-            marginTop: 10,
-            marginBottom: 10
-        },
-    }));
-    const InteractionBox = styled(Grid)(({ theme }) => ({
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'start',
-    }));
-    const ActivePart = styled(Grid)(({ theme }) => ({
-        display: 'flex',
-        alignItems: 'left',
-        flexDirection: 'column',
-    }));
-    const InfoBlock_Content = styled(Box)(({ theme }) => ({
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'start',
-        flexDirection: 'column'
-    }));
-    const InteractionsContent = styled(Box)(({ theme }) => ({
-        display: 'flex',
-        width: '100%',
-        height: 300,
-        border: '1px solid black',
-        paddingTop: 10,
-        flexDirection: 'column',
-        overflow: 'auto',
-    }));
-    const InfoBlock_Item = styled(Box)(({ theme }) => ({
-        display: 'flex',
-        flexDirection: 'row',
-        marginTop: 5,
-        width: '100%',
-        [theme.breakpoints.down('xs')]: {
-        flexDirection: 'column',
-        },
-    }));
-    const TextAreaBox = styled(Grid)(({ theme }) => ({
-        backgroundColor: '#fff',
-        borderRadius: 40,
-        padding: "33px 55px",[theme.breakpoints.down('md')]: {
-            marginTop: 20,
-        },
-        [theme.breakpoints.down('sm')]: {
-            display: 'flex',
-            padding: "20px 20px",
-            justifyContent: 'center',
-            flexDirection: 'column',
-            marginTop: 20,
-        },
-    }));
-    const ActivePart__input = styled(Autocomplete)(({ theme }) => ({
-        width: '100%',
-        backgroundColor: 'white',
-        boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.08)",
-        borderRadius: "119px",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-    }));
-    const ActivePart__inputBox = styled(Box)(({ theme }) => ({
-        width: '100%',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'flex-start',
-        flexDirection: 'column',
-    }));
-    const ActivePart__inputBox_item = styled(Box)(({ theme }) => ({
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'row',
-        marginTop: 10,
-        width: '80%',
-        // [theme.breakpoints.down("lg")]:{
-        //     width: 500,
-        // },
-    }));
-    const ActivePart__cancelButton = styled(Button)(({ theme }) => ({
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        minWidth: "48px!important",
-        height: 48,
-        marginLeft: 10,
-        backgroundColor: '#EE889D',
-        color: 'white',
-        borderRadius: '50%',
-        '&:focus': {
-            outline: "none",
-        },
-        boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-    }));
-    const ActivePart__Button = styled(Button)(({ theme }) => ({
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: 48,
-        backgroundColor: '#0E1B4F',
-        borderRadius: '119px',
-        color: 'white',
-        marginLeft: 5,
-        '&:focus': {
-        outline: "none",
-        },
-        '&:hover': {
-            backgroundColor: '#0E1B4F',
-        },
-        marginTop: 10,
-        width: '100%',
-        [theme.breakpoints.down('md')]: {
-            maxWidth: 500
-        },
-        
-    }));
-    const ActivePart__ButtonBox = styled(Box)(({ theme }) => ({
-        display: 'flex',
-        justifyContent: 'left',
-        alignItems: 'left',
-        flexDirection: 'column',
-        marginTop: 10,
-        width: '100%',
-        paddingRight: 20,
-        
-    }));
-    const InfoBlock = styled(Box)(({ theme }) => ({
-        width: '100%',
-        minHeight: 300,
-        marginTop: 30,
-    }));
-    const InfoBLock_label = styled(Typography)(({ theme }) => ({
-        width: 100,
-        marginRight: 5,
-        fontWeight: 700,
-        fontSize: '12px',
-        lineHeight: '150%',
-    }));
-    const InfoBLock_Button = styled(Button)(({ theme }) => ({
-        display: 'flex',
-        backgroundColor: '#0E1B4F',
-        borderRadius: 53,
-        color: '#fff',
-        justifyContent: 'center',
-        alignItems: 'center',   
-        padding: "16px 20px",
-        
-        fontWeight: 500,
-        fontSize: '20px',
-        lineHeight: '23px',
-        textAlign: 'center',
-        [theme.breakpoints.down("lg")]:{
-            padding: "16px 18px",
-            fontSize: "16px",
-            lineHeight: "15px",
-        },
-        [theme.breakpoints.down("md")]:{
-            padding: "16px 20px",
-            fontSize: 16,
-            lineHeight: "15px",
-        },
-        [theme.breakpoints.down("sm")]:{
-            padding: "16px 10px",
-            fontSize: 13,
-            lineHeight: "15px",
-        },
-        '&:focus': {
-            outline: "none",
-            backgroundColor: '#0E1B4F',
-        },
-        '&:hover': {
-            backgroundColor: '#0E1B4F',
-        },
-        
-    }));
-    const CustomTextField = styled(TextField)(({ theme }) => ({
-        width: "90%",
-    }));
-    const InteractionText = styled(Typography)(({ theme }) => ({
-        fontWeight: 500,
-        mb: 0.7,
-        fontSize: "20px",
-        lineHeight: "28px",
-        [theme.breakpoints.down("sm")]:{
-            fontSize: "16px",
-        }
-    }));
-    const InteractionTextD = styled(Typography)(({ theme }) => ({
-        fontWeight: 400,
-        mb: 0.7,
-        fontSize: "16px",
-        lineHeight: "19px",
-        [theme.breakpoints.down("sm")]:{
-            fontSize: "14px",
-        }
-    }));
-    const CustomBox = styled(Box)(({ theme }) => ({
-        padding: "60px 0",
-        [theme.breakpoints.down("md")]:{
-            padding: "30px 0",
-        }
-    }));
+   
     
     return (
         <CustomBox sx={{ padding: "60px 0"}}>
@@ -407,7 +379,7 @@ const Interactions = () => {
                                                 id="free-solo-demo"
                                                 freeSolo
                                                 options={AutoCompliteList}
-                                                // onInputChange={(event, newInputValue) => handleAutoComplite(item.id, newInputValue)}
+                                                onInputChange={(event, newInputValue) => handleAutoComplite(item.id, newInputValue)}
                                                 renderInput={(params) => (
                                                     <CustomTextField  {...params} id="standard-basic" label="Введите лекарство" variant="standard" value={item.value} onChange={handleText(item.id)} />
                                                 )}
