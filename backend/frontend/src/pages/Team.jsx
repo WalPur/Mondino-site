@@ -10,7 +10,7 @@ function Team() {
             <Components.Tasks/>
             <Components.Leaders/>
             <Components.Showboat/>
-            <Components.Advertising/>
+            <Components.Medicine/>
         </div>
     )
 }

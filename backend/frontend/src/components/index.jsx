@@ -9,7 +9,7 @@ import ContactsMap from './contactsMap/ContactsMap';
 import Tasks from './tasks/Tasks';
 import Leaders from './leaders/Leaders';
 import Showboat from './showboat/Showboat';
-import Advertising from './advertising/Advertising';
+import Medicine from './medicine/Medicine';
 import ApplicationForm from './application-form/index';
 
 const Components = {
@@ -24,7 +24,7 @@ const Components = {
     Tasks,
     Leaders,
     Showboat,
-    Advertising,
+    Medicine,
     ApplicationForm,
 }
 
