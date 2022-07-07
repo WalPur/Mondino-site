@@ -2,8 +2,15 @@ import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { Box, TextField, Typography, Container, Grid, Button, Autocomplete } from "@mui/material";
 import { styled } from "@mui/system";
+// import { useHistory } from 'react-router-dom';
+// import { makeStyles } from '@mui/core/styles';
+// import Autocomplete from '@mui/lab/Autocomplete';
 
 import axios from 'axios';
+
+// import Layout from '../../components/layout/Layout'
+// import ButtonCustom from '../../components/ButtonCustom'
+// import SimpleModal from '../../components/SimpleModal'
 
 // const useClasses = makeStyles(theme => ({
 //     container: {
@@ -99,7 +106,7 @@ const Interactions = () => {
         })
         console.log(getParams)
         axios
-            .get(`https://https://ddi.medic.fun/docs/compare/drugs_mnn?` + getParams)
+            .get(`https://ddi.medic.fun/compare/drugs_mnn?` + getParams)
             .then(response => {
                 const compares = response.data
                 let status = compares.some((item) => {
@@ -139,7 +146,7 @@ const Interactions = () => {
     const searchAutoComplite = (inputs) => {
         console.log(inputs)
         axios
-            .get(`https://https://ddi.medic.fun/docs/compare/drugs_search?` + inputs)
+            .get(`https://ddi.medic.fun/compare/drugs_search?drug=` + inputs)
             .then(response => {
                 const compares = response.data
                 setAutoComplite(Object.values(compares))
