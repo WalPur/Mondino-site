@@ -222,11 +222,11 @@ const Interactions = () => {
         borderRadius: 40,
         padding: "33px 55px",
         [theme.breakpoints.down('sm')]: {
-        display: 'flex',
-        padding: "20px 20px",
-        justifyContent: 'center',
-        flexDirection: 'column',
-        marginTop: 20,
+            display: 'flex',
+            padding: "20px 20px",
+            justifyContent: 'center',
+            flexDirection: 'column',
+            marginTop: 20,
         },
     }));
     const ActivePart__input = styled(Autocomplete)(({ theme }) => ({
@@ -244,6 +244,9 @@ const Interactions = () => {
         justifyContent: 'center',
         alignItems: 'flex-start',
         flexDirection: 'column',
+        [theme.breakpoints.down('md')]: {
+            width: 300,
+        }
     }));
     const ActivePart__inputBox_item = styled(Box)(({ theme }) => ({
         display: 'flex',
@@ -252,6 +255,9 @@ const Interactions = () => {
         flexDirection: 'row',
         marginTop: 10,
         width: '80%',
+        // [theme.breakpoints.down("lg")]:{
+        //     width: 500,
+        // },
     }));
     const ActivePart__cancelButton = styled(Button)(({ theme }) => ({
         display: 'flex',
@@ -336,7 +342,7 @@ const Interactions = () => {
         
     }));
     const CustomTextField = styled(TextField)(({ theme }) => ({
-        width: "80%",
+        width: "90%",
     }));
     const InteractionText = styled(Typography)(({ theme }) => ({
         fontWeight: 500,
@@ -372,7 +378,7 @@ const Interactions = () => {
                             <MyTitle>DDI</MyTitle>
                         </TitleBox>
                         <InteractionBox container>
-                            <ActivePart item lg={4} sm={12} md={12} xl={4} xs={12}>
+                            <ActivePart item lg={4} sm={12} md={4} xl={4} xs={12}>
                             <InteractionText variant="h5">Взаимодействия лекарственных средств</InteractionText>
                             <InteractionTextD variant="body2">Международное непатентованное наименование (МНН)</InteractionTextD>
                                 <ActivePart__inputBox>
@@ -398,7 +404,7 @@ const Interactions = () => {
                                     <ActivePart__Button style={{backgroundColor: '#11A9E5'}} variant="contained" onClick={() => { compareInteractions() }}>Посмотреть совместимости</ActivePart__Button>
                                 </ActivePart__ButtonBox>
                             </ActivePart>
-                            <TextAreaBox item lg={7} sm={12} md={12} xl={7} xs={12}>
+                            <TextAreaBox item lg={7} sm={12} md={7} xl={7} xs={12}>
                                 <Box sx={{ display: "flex", justifyContent: "space-evenly", mb: 3 }}>
                                     <InfoBLock_Button>Взаимодействие</InfoBLock_Button>
                                     <InfoBLock_Button style={{backgroundColor: 'rgba(14, 27, 79, 0.2)', color: 'black'}}>Вопросы и ответы</InfoBLock_Button>
