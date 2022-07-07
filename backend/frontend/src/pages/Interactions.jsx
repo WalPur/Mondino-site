@@ -45,6 +45,7 @@ const Interactions = () => {
     const [effect, setEffect] = useState([])
     const [showModal, setShowModal] = useState(false)
     const [AutoCompliteList, setAutoComplite] = useState([])
+    const [test, setTest] = useState('')
 
     const [inputs, setInputs] = useState([
         {
@@ -67,7 +68,7 @@ const Interactions = () => {
     const handleText = id => e => {
         let input = [...inputs]
         input[id].value = e.target.value
-        searchAutoComplite(e.target.value)
+        
         setInputs(
             input
         )
@@ -78,6 +79,7 @@ const Interactions = () => {
         setInputs(
             input
         )
+        searchAutoComplite(newInputValue)
     }
     const addInput = async (e) => {
         setIdCounter(idCounter += 1)
@@ -149,7 +151,7 @@ const Interactions = () => {
             .get(`https://ddi.medic.fun/compare/drugs_search?drug=` + inputs)
             .then(response => {
                 const compares = response.data
-                setAutoComplite(Object.values(compares))
+                // setAutoComplite(Object.values(compares))
             }).catch(error => console.log('autoComplite error', error))
     }
     const ContentBox = styled(Box)(({ theme }) => ({
@@ -393,6 +395,7 @@ const Interactions = () => {
                         <TitleBox>
                             <MyTitle>DDI</MyTitle>
                         </TitleBox>
+                        <TextField value={test} onChange={(e) => setTest(e.target.value)} />
                         <InteractionBox container>
                             <ActivePart item lg={4} sm={12} md={4} xl={4} xs={12}>
                             <InteractionText variant="h5">Взаимодействия лекарственных средств</InteractionText>
@@ -404,7 +407,7 @@ const Interactions = () => {
                                                 id="free-solo-demo"
                                                 freeSolo
                                                 options={AutoCompliteList}
-                                                onInputChange={(event, newInputValue) => handleAutoComplite(item.id, newInputValue)}
+                                                // onInputChange={(event, newInputValue) => handleAutoComplite(item.id, newInputValue)}
                                                 renderInput={(params) => (
                                                     <CustomTextField  {...params} id="standard-basic" label="Введите лекарство" variant="standard" value={item.value} onChange={handleText(item.id)} />
                                                 )}
