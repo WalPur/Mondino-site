@@ -169,11 +169,16 @@ const Interactions = () => {
         fontSize: "96px",
         lineHeight: "112px",
         marginBottom: "10px",
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.down('md')]: {
             fontSize: "80px",
             marginBottom: "0px",
             lineHeight: "90px",
             },
+        [theme.breakpoints.down('sm')]: {
+            fontSize: "70px",
+            marginBottom: "0px",
+            lineHeight: "70px",
+        },    
     }));
     const ButtonBox = styled(Box)(({ theme }) => ({
         [theme.breakpoints.down('sm')]: {
@@ -190,8 +195,6 @@ const Interactions = () => {
         display: 'flex',
         alignItems: 'left',
         flexDirection: 'column',
-        [theme.breakpoints.down('sm')]: {
-        },
     }));
     const InfoBlock_Content = styled(Box)(({ theme }) => ({
         display: 'flex',
@@ -220,7 +223,9 @@ const Interactions = () => {
     const TextAreaBox = styled(Grid)(({ theme }) => ({
         backgroundColor: '#fff',
         borderRadius: 40,
-        padding: "33px 55px",
+        padding: "33px 55px",[theme.breakpoints.down('md')]: {
+            marginTop: 20,
+        },
         [theme.breakpoints.down('sm')]: {
             display: 'flex',
             padding: "20px 20px",
@@ -244,9 +249,6 @@ const Interactions = () => {
         justifyContent: 'center',
         alignItems: 'flex-start',
         flexDirection: 'column',
-        [theme.breakpoints.down('md')]: {
-            width: 300,
-        }
     }));
     const ActivePart__inputBox_item = styled(Box)(({ theme }) => ({
         display: 'flex',
@@ -290,16 +292,21 @@ const Interactions = () => {
             backgroundColor: '#0E1B4F',
         },
         marginTop: 10,
-        width: '100%'
+        width: '100%',
+        [theme.breakpoints.down('md')]: {
+            maxWidth: 500
+        },
+        
     }));
     const ActivePart__ButtonBox = styled(Box)(({ theme }) => ({
         display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
+        justifyContent: 'left',
+        alignItems: 'left',
         flexDirection: 'column',
         marginTop: 10,
         width: '100%',
         paddingRight: 20,
+        
     }));
     const InfoBlock = styled(Box)(({ theme }) => ({
         width: '100%',
@@ -326,7 +333,16 @@ const Interactions = () => {
         fontSize: '20px',
         lineHeight: '23px',
         textAlign: 'center',
-
+        [theme.breakpoints.down("lg")]:{
+            padding: "16px 18px",
+            fontSize: "16px",
+            lineHeight: "15px",
+        },
+        [theme.breakpoints.down("md")]:{
+            padding: "16px 20px",
+            fontSize: 16,
+            lineHeight: "15px",
+        },
         [theme.breakpoints.down("sm")]:{
             padding: "16px 10px",
             fontSize: 13,
@@ -364,8 +380,8 @@ const Interactions = () => {
     }));
     const CustomBox = styled(Box)(({ theme }) => ({
         padding: "60px 0",
-        [theme.breakpoints.down("sm")]:{
-            padding: "20px 0",
+        [theme.breakpoints.down("md")]:{
+            padding: "30px 0",
         }
     }));
     
