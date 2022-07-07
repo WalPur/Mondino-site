@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { Box, TextField, Typography, Container, Grid, Button, Autocomplete } from "@mui/material";
 import { styled } from "@mui/system";
-// import { useHistory } from 'react-router-dom';
-// import { makeStyles } from '@mui/core/styles';
-// import Autocomplete from '@mui/lab/Autocomplete';
 
 import axios from 'axios';
 
@@ -113,9 +110,6 @@ const ActivePart__inputBox_item = styled(Box)(({ theme }) => ({
     flexDirection: 'row',
     marginTop: 10,
     width: '80%',
-    // [theme.breakpoints.down("lg")]:{
-    //     width: 500,
-    // },
 }));
 const ActivePart__cancelButton = styled(Button)(({ theme }) => ({
     display: 'flex',
@@ -242,8 +236,6 @@ const CustomBox = styled(Box)(({ theme }) => ({
 }));
 
 const Interactions = () => {
-    // let history = useHistory();
-
     let [idCounter, setIdCounter] = useState(1)
     const [effect, setEffect] = useState([])
     const [showModal, setShowModal] = useState(false)
@@ -284,6 +276,15 @@ const Interactions = () => {
         )
         searchAutoComplite(newInputValue)
     }
+    const searchAutoComplite = (inputs) => {
+        console.log(inputs)
+        axios
+            .get(`https://ddi.medic.fun/compare/drugs_search?drug=` + inputs)
+            .then(response => {
+                const compares = response.data
+                setAutoComplite(Object.values(compares))
+            }).catch(error => console.log('autoComplite error', error))
+    }
     const addInput = async (e) => {
         setIdCounter(idCounter += 1)
         let newInput = inputs.concat({
@@ -317,10 +318,13 @@ const Interactions = () => {
                 let status = compares.some((item) => {
                     return item.effect !== 'not effect'
                 })
+                console.log(compares)
+                console.log(status)
                 if (status) {
-                    setEffect(response.data)
-                } else {
-                    setShowModal(true)
+                    setEffect(compares)
+                }
+                else {
+                    setEffect('')
                 }
             }).catch((error) => {
                 console.log('error', error)
@@ -348,26 +352,17 @@ const Interactions = () => {
             color: '#C6C6C6'
         },
     ]
-    const searchAutoComplite = (inputs) => {
-        console.log(inputs)
-        axios
-            .get(`https://ddi.medic.fun/compare/drugs_search?drug=` + inputs)
-            .then(response => {
-                const compares = response.data
-                setAutoComplite(Object.values(compares))
-            }).catch(error => console.log('autoComplite error', error))
-    }
-   
-    
     return (
         <CustomBox sx={{ padding: "60px 0"}}>
             <div>
+                <Helmet>
+                    <title>Mondino Tracker - DDI</title>
+                </Helmet>
                 <Container classname="container">
                     <ContentBox>
                         <TitleBox>
                             <MyTitle>DDI</MyTitle>
                         </TitleBox>
-                        <TextField value={test} onChange={(e) => setTest(e.target.value)} />
                         <InteractionBox container>
                             <ActivePart item lg={4} sm={12} md={4} xl={4} xs={12}>
                             <InteractionText variant="h5">Взаимодействия лекарственных средств</InteractionText>
@@ -406,6 +401,7 @@ const Interactions = () => {
                                 <InteractionsContent>
                                     {/* <Box>{effect !== 'нету эффектов' ? mnn1 + ' и ' + mnn2 + ' взаимодействуют: ' : ''} {effect !== 'нету эффектов' ? colorBox() : ''}{effect}</Box> */}
                                     {effect ? effect.map((item, index) => (
+                                        console.log(item.drug_1, " ", item.drug_2),
                                         <div key={index}>
                                             <span style={{ fontWeight: 'bold' }}>{item.drug_1}</span> и <span style={{ fontWeight: 'bold' }}>{item.drug_2}</span> взаимодействуют: <span style={{ backgroundColor: `${item.effect !== 'not effect' ? item.color : 'grey'}`, width: 15, height: 20, margin: 5, border: '1px solid black', color: `${item.effect !== 'not effect' ? item.color : 'grey'}` }}>__</span> {Object.values(item.effect)}
                                         </div>

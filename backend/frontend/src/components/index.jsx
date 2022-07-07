@@ -12,7 +12,7 @@ import Showboat from './showboat/Showboat';
 import Medicine from './medicine/Medicine';
 import ApplicationForm from './application-form/index';
 
-const Components = {
+export {
     General,
     Functional,
     Economize,
@@ -26,6 +26,4 @@ const Components = {
     Showboat,
     Medicine,
     ApplicationForm,
-}
-
-export default Components;
+};

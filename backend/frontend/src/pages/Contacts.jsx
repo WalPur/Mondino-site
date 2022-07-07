@@ -1,4 +1,4 @@
-import Components from "../components/index";
+import { ContactsMap } from "../components/index";
 import {Helmet} from "react-helmet";
 
 function Contacts(){
@@ -7,7 +7,7 @@ function Contacts(){
              <Helmet>
                 <title>Mondino Tracker - Контакты</title>
             </Helmet>
-            <Components.ContactsMap/>
+            <ContactsMap/>
         </div>
     )
 }

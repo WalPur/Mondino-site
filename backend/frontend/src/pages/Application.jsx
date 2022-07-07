@@ -1,4 +1,4 @@
-import Components from "../components";
+import { ApplicationForm } from "../components";
 import {Helmet} from "react-helmet";
 
 function Application(){
@@ -7,7 +7,7 @@ function Application(){
              <Helmet>
                 <title>Mondino Tracker - Заявка для партнерства</title>
             </Helmet>
-            <Components.ApplicationForm/>
+            <ApplicationForm/>
         </div>
     )
 }

@@ -9,8 +9,13 @@ import {
 
 import Footer from './components/footer/Footer';
 import Header from './components/header/Header';
-import Pages from './pages/index';
-import Interactions from './pages/Interactions';
+import {
+  Home,
+  Team,
+  Contacts,
+  Application,
+  Interactions,
+} from './pages';
 
 function App() {
   return (
@@ -18,11 +23,11 @@ function App() {
       <BrowserRouter>
         <Header/>
         <Routes>
-          <Route path="" element={<Pages.Home/>}></Route>
-          <Route path="/team" element={<Pages.Team/>}></Route>
-          <Route path="/contacts" element={<Pages.Contacts/>}></Route>
-          <Route path="/interactions" element={<Interactions />}></Route>
-          <Route path="/application" element={<Pages.Application/>}></Route>
+          <Route path="" element={<Home/>}></Route>
+          <Route path="/team" element={<Team/>}></Route>
+          <Route path="/contacts" element={<Contacts/>}></Route>
+          <Route path="/interactions" element={<Interactions/>}></Route>
+          <Route path="/application" element={<Application/>}></Route>
         </Routes>
         <Footer/>
       </BrowserRouter>

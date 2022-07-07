@@ -1,5 +1,5 @@
 import React from "react";
-import Components from '../components/index'
+import { General, Functional, Economize, Health, Community, Advantage, Ease } from '../components/index'
 import {Helmet} from "react-helmet";
 
 function Home() {
@@ -8,13 +8,13 @@ function Home() {
             <Helmet>
                 <title>Mondino Tracker - Главная</title>
             </Helmet>
-            <Components.General/>
-            <Components.Functional/>
-            <Components.Economize/>
-            <Components.Health/>
-            <Components.Community/>
-            <Components.Advantage/>
-            <Components.Ease/>
+            <General/>
+            <Functional/>
+            <Economize/>
+            <Health/>
+            <Community/>
+            <Advantage/>
+            <Ease/>
         </div>
     )
 }
