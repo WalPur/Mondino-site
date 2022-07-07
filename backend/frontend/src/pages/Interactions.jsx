@@ -163,12 +163,17 @@ const Interactions = () => {
         flexDirection: 'column',
         justifyContent: 'space-between',
         width: '100%',
+    }));
+    const MyTitle = styled(Typography)(({ theme }) => ({
+        fontWeight: 700,
+        fontSize: "96px",
+        lineHeight: "112px",
+        marginBottom: "10px",
         [theme.breakpoints.down('sm')]: {
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            textAlign: 'center'
-        },
+            fontSize: "80px",
+            marginBottom: "0px",
+            lineHeight: "90px",
+            },
     }));
     const ButtonBox = styled(Box)(({ theme }) => ({
         [theme.breakpoints.down('sm')]: {
@@ -183,9 +188,10 @@ const Interactions = () => {
     }));
     const ActivePart = styled(Grid)(({ theme }) => ({
         display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
+        alignItems: 'left',
         flexDirection: 'column',
+        [theme.breakpoints.down('sm')]: {
+        },
     }));
     const InfoBlock_Content = styled(Box)(({ theme }) => ({
         display: 'flex',
@@ -217,8 +223,8 @@ const Interactions = () => {
         padding: "33px 55px",
         [theme.breakpoints.down('sm')]: {
         display: 'flex',
+        padding: "20px 20px",
         justifyContent: 'center',
-        alignItems: 'center',
         flexDirection: 'column',
         marginTop: 20,
         },
@@ -246,9 +252,6 @@ const Interactions = () => {
         flexDirection: 'row',
         marginTop: 10,
         width: '80%',
-        [theme.breakpoints.down('sm')]: {
-        width: '100%'
-        },
     }));
     const ActivePart__cancelButton = styled(Button)(({ theme }) => ({
         display: 'flex',
@@ -318,6 +321,11 @@ const Interactions = () => {
         lineHeight: '23px',
         textAlign: 'center',
 
+        [theme.breakpoints.down("sm")]:{
+            padding: "16px 10px",
+            fontSize: 13,
+            lineHeight: "15px",
+        },
         '&:focus': {
             outline: "none",
             backgroundColor: '#0E1B4F',
@@ -327,28 +335,46 @@ const Interactions = () => {
         },
         
     }));
-    const MyTitle = styled(Typography)(({ theme }) => ({
-        fontWeight: 700,
-        fontSize: "96px",
-        lineHeight: "112px",
-        marginBottom: "10px",
-    }));
     const CustomTextField = styled(TextField)(({ theme }) => ({
         width: "80%",
     }));
+    const InteractionText = styled(Typography)(({ theme }) => ({
+        fontWeight: 500,
+        mb: 0.7,
+        fontSize: "20px",
+        lineHeight: "28px",
+        [theme.breakpoints.down("sm")]:{
+            fontSize: "16px",
+        }
+    }));
+    const InteractionTextD = styled(Typography)(({ theme }) => ({
+        fontWeight: 400,
+        mb: 0.7,
+        fontSize: "16px",
+        lineHeight: "19px",
+        [theme.breakpoints.down("sm")]:{
+            fontSize: "14px",
+        }
+    }));
+    const CustomBox = styled(Box)(({ theme }) => ({
+        padding: "60px 0",
+        [theme.breakpoints.down("sm")]:{
+            padding: "20px 0",
+        }
+    }));
+    
     return (
-        <Box sx={{ padding: "60px 0"}}>
+        <CustomBox sx={{ padding: "60px 0"}}>
             <div>
                 <Container classname="container">
                     <ContentBox>
                         <TitleBox>
                             <MyTitle>DDI</MyTitle>
-                            
                         </TitleBox>
                         <InteractionBox container>
                             <ActivePart item lg={4} sm={12} md={12} xl={4} xs={12}>
-                            <Typography sx={{ fontWeight: 500, mb: 0.7, fontSize: '20px', lineHeight: '28px' }} variant="h5">Взаимодействия лекарственных средств</Typography>
-                            <Typography sx={{ fontWeight: 400, mb: 0.7, fontSize: '16px', lineHeight: '19px' }}  variant="body2">Международное непатентованное наименование (МНН)</Typography>
+                            <InteractionText variant="h5">Взаимодействия лекарственных средств</InteractionText>
+                            <InteractionTextD variant="body2">Международное непатентованное наименование (МНН)</InteractionTextD>
                                 <ActivePart__inputBox>
                                     {inputs.map((item, index) => (
                                         <ActivePart__inputBox_item key={index}>
@@ -408,7 +434,7 @@ const Interactions = () => {
                     <SimpleModal showModal={showModal} setShowModal={setShowModal} />
                 </Box> */}
             </div>
-        </Box >
+        </CustomBox >
     );
 };
 
