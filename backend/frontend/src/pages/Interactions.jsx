@@ -135,36 +135,37 @@ const ActivePart__cancelButton = styled(Button)(({ theme }) => ({
     boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
 }));
 const ActivePart__Button = styled(Button)(({ theme }) => ({
+    textTransform: "none",
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    height: 48,
+    height: 70,
     backgroundColor: '#0E1B4F',
     borderRadius: '119px',
     color: 'white',
     marginLeft: 5,
+    marginTop: 10,
+    width: '100%',
+    fontSize: 24,
+    lineHeight: "28.13px",
     '&:focus': {
     outline: "none",
     },
     '&:hover': {
         backgroundColor: '#0E1B4F',
     },
-    marginTop: 10,
-    width: '100%',
     [theme.breakpoints.down('md')]: {
         maxWidth: 500
     },
     
 }));
-const ActivePart__ButtonBox = styled(Box)(({ theme }) => ({
+const ActivePart__ButtonBox = styled(Box)(({ theme }) => ({    
     display: 'flex',
     justifyContent: 'left',
     alignItems: 'left',
     flexDirection: 'column',
     marginTop: 10,
     width: '100%',
-    paddingRight: 20,
-    
 }));
 const InfoBlock = styled(Box)(({ theme }) => ({
     width: '100%',

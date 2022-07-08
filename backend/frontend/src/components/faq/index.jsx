@@ -1,16 +1,44 @@
 import React, { useState } from 'react';
 
 import { Box, Typography, Accordion, AccordionSummary, AccordionDetails } from "@mui/material";
+import { styled } from '@mui/system';
 
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+
+const CustomAccordion = styled(Accordion)(({ theme }) => ({
+    boxShadow: 'none',
+    '&:before': {display: "none"},
+}));
+const TextTitle = styled(Typography)(({ theme }) => ({
+    fontSize: '16px',
+    lineHeight: '19px',
+    align: 'left',
+    verticalAlign: 'top',
+    [theme.breakpoints.down("sm")]:{
+    }
+}));
+const TextBody = styled(Typography)(({ theme }) => ({
+    whiteSpace: "pre-wrap",
+    fontSize: '14px',
+    lineHeight: '16px',
+    align: 'left',
+    marginBottom: 16,
+    '&:last-child':{
+        marginBottom: 0,
+    },
+    verticalAlign: 'top',
+    [theme.breakpoints.down("sm")]:{
+    }
+}));
 function Faq() {
     const texts = [
         {
             buttonText: "Почему существует этот проект?",
             texts: [
                 "DDI Pocket Medic Online Сервис вырос из конкретной цели: сделать удобную единую платформу, где врачи и обычные пользователи проверяли взаимодействие выписанных лекарственных препаратов при одновременном приеме.",
-                "Команда из «Мондино Технолоджес» обучила нейронную сеть (на базе TensorFlow 2.0) на основе данных, предоставленных фармакологами Медцентра.",
-                "Важно понимать, что сервис не заменяет врача, она разработана для того, чтобы понизить риск назначения лекарств с опасным взаимодействием.",
-                "Мы рады, что можем предоставить продукт которая служит для повышения качества жизни обычных граждан.",
+                "   Команда из «Мондино Технолоджес» обучила нейронную сеть (на базе TensorFlow 2.0) на основе данных, предоставленных фармакологами Медцентра.",
+                "   Важно понимать, что сервис не заменяет врача, она разработана для того, чтобы понизить риск назначения лекарств с опасным взаимодействием.",
+                "   Мы рады, что можем предоставить продукт которая служит для повышения качества жизни обычных граждан.",
             ],
         },
         {
@@ -19,6 +47,19 @@ function Faq() {
                 "Интернатура дерматовенерология, хирургия. Ординатура на кафедре пластической хирургии ПМГМУ им. И.М. Сеченова",
             ],
         },
+        {
+            buttonText: "Как проверить взаимодействие лекарственных препаратов?",
+            texts: [
+                "Интернатура дерматовенерология , хирургия Ординатура на кафедре пластической хирургии ПМГМУ им. И.М. Сеченова",
+            ],
+        },
+        {
+            buttonText: "Кто за этим стоит?",
+            texts: [
+                "Интернатура дерматовенерология , хирургия Ординатура на кафедре пластической хирургии ПМГМУ им. И.М. Сеченова",
+            ],
+        },
+        
     ]
     // const handleFaqText = (id) => {
     //     texts[id].close ? texts[id].close = false : texts[id].close = true
@@ -27,18 +68,22 @@ function Faq() {
     return(
         <Box>
             {texts.map((item, index) => (
-                <Accordion key={index}>
-                    <AccordionSummary>
-                        <Typography sx={{ display: "inline-block", cursor: "pointer" }}>{item.buttonText}</Typography>
+                <CustomAccordion key={index}>
+                    <AccordionSummary 
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel1a-content"
+                        id="panel1a-header"
+                    >
+                        <TextTitle sx={{ cursor: "pointer" }}>{item.buttonText}</TextTitle>
                     </AccordionSummary>
-                    <AccordionDetails>
+                    <AccordionDetails sx={{ width: '80%' }}>
                         {item.texts.map((itemText, index) => (
-                            <Typography key={index}>
+                            <TextBody key={index}>
                                 {itemText}
-                            </Typography>
+                            </TextBody>
                         ))}
                     </AccordionDetails>
-                </Accordion>
+                </CustomAccordion>
             ))}
         </Box>
     )
