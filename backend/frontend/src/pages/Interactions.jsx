@@ -404,7 +404,7 @@ const Interactions = () => {
                                     <InfoBLock_Button onClick={() => {setPage(1)}} style={{backgroundColor: 'rgba(14, 27, 79, 0.2)', color: 'black'}}>Вопросы и ответы</InfoBLock_Button>
                                 </Box>
                                 {page === 0 ? 
-                                    <>
+                                    <Box>
                                         <Box style={{ display: 'flex', flexDirection: 'row', marginBottom: 10 }}>
                                             <Typography style={{ fontWeight: 700, fontSize: '12px', lineHeight: '150%' }} variant="body2">Взаимодействие:</Typography>
                                         </Box>
@@ -429,10 +429,10 @@ const Interactions = () => {
                                                 ))}
                                             </InfoBlock_Content>
                                         </InfoBlock>
-                                    </> : 
-                                    <>
-                                        <Typography>sdfsdfsdf</Typography>
-                                    </>
+                                    </Box> : 
+                                    <Box>
+                                        
+                                    </Box>
                                 }
                             </TextAreaBox>
                         </InteractionBox>
