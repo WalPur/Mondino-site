@@ -11,6 +11,7 @@ import Leaders from './leaders/Leaders';
 import Showboat from './showboat/Showboat';
 import Medicine from './medicine/Medicine';
 import ApplicationForm from './application-form/index';
+import Faq from './faq';
 
 export {
     General,
@@ -26,4 +27,5 @@ export {
     Showboat,
     Medicine,
     ApplicationForm,
+    Faq,
 };

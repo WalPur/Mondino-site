@@ -7,6 +7,8 @@ import axios from 'axios';
 
 import Images from '../images/index';
 
+import { Faq } from '../components';
+
 const ContentBox = styled(Box)(({ theme }) => ({
     display: 'flex',
     margin: '0 auto',
@@ -245,7 +247,6 @@ const Interactions = () => {
     let [idCounter, setIdCounter] = useState(1)
     const [page, setPage] = useState(0)
     const [effect, setEffect] = useState([])
-    const [showModal, setShowModal] = useState(false)
     const [AutoCompliteList, setAutoComplite] = useState([])
 
     const [inputs, setInputs] = useState([
@@ -364,7 +365,7 @@ const Interactions = () => {
                 <Helmet>
                     <title>Mondino Tracker - DDI</title>
                 </Helmet>
-                <Container classname="container">
+                <Container className="container">
                     <ContentBox>
                         <TitleBox>
                             <MyTitle>DDI</MyTitle>
@@ -430,9 +431,7 @@ const Interactions = () => {
                                             </InfoBlock_Content>
                                         </InfoBlock>
                                     </Box> : 
-                                    <Box>
-                                        
-                                    </Box>
+                                    <Faq/>
                                 }
                             </TextAreaBox>
                         </InteractionBox>
