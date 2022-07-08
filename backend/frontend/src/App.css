@@ -25,6 +25,10 @@ body{
   line-height: 160%;
 }
 
+.block-show{
+  display: "block!important"
+}
+
 @media (max-width: 1200px){
   .title{
     font-size: 36px;
