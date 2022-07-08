@@ -243,10 +243,10 @@ const CustomBox = styled(Box)(({ theme }) => ({
 
 const Interactions = () => {
     let [idCounter, setIdCounter] = useState(1)
+    const [page, setPage] = useState(0)
     const [effect, setEffect] = useState([])
     const [showModal, setShowModal] = useState(false)
     const [AutoCompliteList, setAutoComplite] = useState([])
-    const [test, setTest] = useState('')
 
     const [inputs, setInputs] = useState([
         {
@@ -400,33 +400,40 @@ const Interactions = () => {
                             </ActivePart>
                             <TextAreaBox item lg={7} sm={12} md={7} xl={7} xs={12}>
                                 <Box sx={{ display: "flex", justifyContent: "space-evenly", mb: 3 }}>
-                                    <InfoBLock_Button>Взаимодействие</InfoBLock_Button>
-                                    <InfoBLock_Button style={{backgroundColor: 'rgba(14, 27, 79, 0.2)', color: 'black'}}>Вопросы и ответы</InfoBLock_Button>
+                                    <InfoBLock_Button onClick={() => {setPage(0)}}>Взаимодействие</InfoBLock_Button>
+                                    <InfoBLock_Button onClick={() => {setPage(1)}} style={{backgroundColor: 'rgba(14, 27, 79, 0.2)', color: 'black'}}>Вопросы и ответы</InfoBLock_Button>
                                 </Box>
-                                <Box style={{ display: 'flex', flexDirection: 'row', marginBottom: 10 }}>
-                                    <Typography style={{ fontWeight: 700, fontSize: '12px', lineHeight: '150%' }} variant="body2">Взаимодействие:</Typography>
-                                </Box>
-                                <InteractionsContent>
-                                    {/* <Box>{effect !== 'нету эффектов' ? mnn1 + ' и ' + mnn2 + ' взаимодействуют: ' : ''} {effect !== 'нету эффектов' ? colorBox() : ''}{effect}</Box> */}
-                                    {effect ? effect.map((item, index) => (
-                                        console.log(item.drug_1, " ", item.drug_2),
-                                        <div key={index}>
-                                            <span style={{ fontWeight: 'bold' }}>{item.drug_1}</span> и <span style={{ fontWeight: 'bold' }}>{item.drug_2}</span> взаимодействуют: <span style={{ backgroundColor: `${item.effect !== 'not effect' ? item.color : 'grey'}`, width: 15, height: 20, margin: 5, border: '1px solid black', color: `${item.effect !== 'not effect' ? item.color : 'grey'}` }}>__</span> {Object.values(item.effect)}
-                                        </div>
-                                    )) : 'нету эффектов'}
-                                </InteractionsContent>
-                                <InfoBlock>
-                                    <Typography style={{ fontWeight: 700, fontSize: '12px', lineHeight: '150%', marginBottom: 11 }} variant="body2">Классификация взаимодействия с лекарствами</Typography>
-                                    <Typography style={{ fontWeight: 400, fontSize: '12px', lineHeight: '150%', marginBottom: 34 }} variant="body2">Эти классификации являются лишь ориентировочными. Уместность взаимодействия конкретных лекарств сложно определить для конкретного человека. Всегда консультируйтесь со своим врачом перед началом или завершением приема каких-либо лекарств. </Typography>
-                                    <InfoBlock_Content>
-                                        {arrayInfoDrug.map((item, index) => (
-                                            <InfoBlock_Item key={index}>
-                                                <Box style={{ display: 'flex', flexDirection: 'row', alignItems: 'start', justifyContent: 'center', marginTop: 5 }}><InfoBLock_label variant="body2">{item.label}</InfoBLock_label><Box style={{borderRadius: 45, height: 20, backgroundColor: `${item.color}`, width: 20, marginRight: 16,  }}></Box></Box>
-                                                <Typography style={{fontWeight: 400, fontSize: '12px', lineHeight: '150%', marginTop: 5}} variant="body2">{item.value}</Typography>
-                                            </InfoBlock_Item>
-                                        ))}
-                                    </InfoBlock_Content>
-                                </InfoBlock>
+                                {page === 0 ? 
+                                    <>
+                                        <Box style={{ display: 'flex', flexDirection: 'row', marginBottom: 10 }}>
+                                            <Typography style={{ fontWeight: 700, fontSize: '12px', lineHeight: '150%' }} variant="body2">Взаимодействие:</Typography>
+                                        </Box>
+                                        <InteractionsContent>
+                                            {/* <Box>{effect !== 'нету эффектов' ? mnn1 + ' и ' + mnn2 + ' взаимодействуют: ' : ''} {effect !== 'нету эффектов' ? colorBox() : ''}{effect}</Box> */}
+                                            {effect ? effect.map((item, index) => (
+                                                console.log(item.drug_1, " ", item.drug_2),
+                                                <div key={index}>
+                                                    <span style={{ fontWeight: 'bold' }}>{item.drug_1}</span> и <span style={{ fontWeight: 'bold' }}>{item.drug_2}</span> взаимодействуют: <span style={{ backgroundColor: `${item.effect !== 'not effect' ? item.color : 'grey'}`, width: 15, height: 20, margin: 5, border: '1px solid black', color: `${item.effect !== 'not effect' ? item.color : 'grey'}` }}>__</span> {Object.values(item.effect)}
+                                                </div>
+                                            )) : 'нету эффектов'}
+                                        </InteractionsContent>
+                                        <InfoBlock>
+                                            <Typography style={{ fontWeight: 700, fontSize: '12px', lineHeight: '150%', marginBottom: 11 }} variant="body2">Классификация взаимодействия с лекарствами</Typography>
+                                            <Typography style={{ fontWeight: 400, fontSize: '12px', lineHeight: '150%', marginBottom: 34 }} variant="body2">Эти классификации являются лишь ориентировочными. Уместность взаимодействия конкретных лекарств сложно определить для конкретного человека. Всегда консультируйтесь со своим врачом перед началом или завершением приема каких-либо лекарств. </Typography>
+                                            <InfoBlock_Content>
+                                                {arrayInfoDrug.map((item, index) => (
+                                                    <InfoBlock_Item key={index}>
+                                                        <Box style={{ display: 'flex', flexDirection: 'row', alignItems: 'start', justifyContent: 'center', marginTop: 5 }}><InfoBLock_label variant="body2">{item.label}</InfoBLock_label><Box style={{borderRadius: 45, height: 20, backgroundColor: `${item.color}`, width: 20, marginRight: 16,  }}></Box></Box>
+                                                        <Typography style={{fontWeight: 400, fontSize: '12px', lineHeight: '150%', marginTop: 5}} variant="body2">{item.value}</Typography>
+                                                    </InfoBlock_Item>
+                                                ))}
+                                            </InfoBlock_Content>
+                                        </InfoBlock>
+                                    </> : 
+                                    <>
+                                        <Typography>sdfsdfsdf</Typography>
+                                    </>
+                                }
                             </TextAreaBox>
                         </InteractionBox>
                     </ContentBox>
