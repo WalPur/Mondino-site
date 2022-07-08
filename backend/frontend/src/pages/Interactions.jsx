@@ -5,6 +5,8 @@ import { styled } from "@mui/system";
 
 import axios from 'axios';
 
+import Images from '../images/index';
+
 const ContentBox = styled(Box)(({ theme }) => ({
     display: 'flex',
     margin: '0 auto',
@@ -91,9 +93,6 @@ const TextAreaBox = styled(Grid)(({ theme }) => ({
 }));
 const ActivePart__input = styled(Autocomplete)(({ theme }) => ({
     width: '100%',
-    backgroundColor: 'white',
-    boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.08)",
-    borderRadius: "119px",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -107,22 +106,26 @@ const ActivePart__inputBox = styled(Box)(({ theme }) => ({
     
 }));
 const ActivePart__inputBox_item = styled(Box)(({ theme }) => ({
+    height: 70,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: 'white',
+    boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.08)",
+    borderRadius: "119px",
     flexDirection: 'row',
     marginTop: 10,
-    width: '80%',
+    padding: "0 20px",
+    width: '100%',
 }));
 const ActivePart__cancelButton = styled(Button)(({ theme }) => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    minWidth: "48px!important",
-    height: 48,
+    minWidth: "auto",
+    maxWidth: "48px!important",
+    height: "48px",
     marginLeft: 10,
-    backgroundColor: '#EE889D',
-    color: 'white',
     borderRadius: '50%',
     '&:focus': {
         outline: "none",
@@ -211,7 +214,7 @@ const InfoBLock_Button = styled(Button)(({ theme }) => ({
     
 }));
 const CustomTextField = styled(TextField)(({ theme }) => ({
-    width: "90%",
+    width: "100%",
 }));
 const InteractionText = styled(Typography)(({ theme }) => ({
     fontWeight: 500,
@@ -379,11 +382,13 @@ const Interactions = () => {
                                                 options={AutoCompliteList}
                                                 onInputChange={(event, newInputValue) => handleAutoComplite(item.id, newInputValue)}
                                                 renderInput={(params) => (
-                                                    <CustomTextField  {...params} id="standard-basic" label="Введите лекарство" variant="standard" value={item.value} onChange={handleText(item.id)} />
+                                                    <CustomTextField  {...params} id="standard-basic" label="Введите лекарство" variant="standard" value={item.value} onChange={handleText(item.id)}/>
                                                 )}
                                             />
-                                            {item.close == false ? <Box style={{ width: 80, height: 56 }}></Box> :
-                                                <ActivePart__cancelButton variant="contained" onClick={() => { handleDelete(item.id) }}>x</ActivePart__cancelButton>
+                                            {item.close == false ? <Box style={{ display: "none" }}></Box> :
+                                                // <ActivePart__cancelButton variant="contained" >
+                                                    <img src={Images.cancel_button} onClick={() => { handleDelete(item.id) }} style={{ marginLeft: 10, marginRight: -12, width: 57, height: 57, cursor: "pointer" }}/>
+                                                // </ActivePart__cancelButton>
                                             }
                                         </ActivePart__inputBox_item>
                                     ))}
