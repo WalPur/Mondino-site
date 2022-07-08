@@ -60,6 +60,7 @@ const InteractionsContent = styled(Box)(({ theme }) => ({
     width: '100%',
     height: 300,
     border: '1px solid black',
+    borderRadius: '10px',
     paddingTop: 10,
     flexDirection: 'column',
     overflow: 'auto',
@@ -69,6 +70,7 @@ const InfoBlock_Item = styled(Box)(({ theme }) => ({
     flexDirection: 'row',
     marginTop: 5,
     width: '100%',
+    borderTop: '1px solid black',
     [theme.breakpoints.down('xs')]: {
     flexDirection: 'column',
     },
@@ -102,6 +104,7 @@ const ActivePart__inputBox = styled(Box)(({ theme }) => ({
     justifyContent: 'center',
     alignItems: 'flex-start',
     flexDirection: 'column',
+    
 }));
 const ActivePart__inputBox_item = styled(Box)(({ theme }) => ({
     display: 'flex',
@@ -363,7 +366,7 @@ const Interactions = () => {
                         <TitleBox>
                             <MyTitle>DDI</MyTitle>
                         </TitleBox>
-                        <InteractionBox container>
+                        <InteractionBox container >
                             <ActivePart item lg={4} sm={12} md={4} xl={4} xs={12}>
                             <InteractionText variant="h5">Взаимодействия лекарственных средств</InteractionText>
                             <InteractionTextD variant="body2">Международное непатентованное наименование (МНН)</InteractionTextD>
@@ -413,8 +416,8 @@ const Interactions = () => {
                                     <InfoBlock_Content>
                                         {arrayInfoDrug.map((item, index) => (
                                             <InfoBlock_Item key={index}>
-                                                <Box style={{ display: 'flex', flexDirection: 'row', alignItems: 'start', justifyContent: 'center' }}><InfoBLock_label variant="body2">{item.label}</InfoBLock_label><Box style={{borderRadius: 45, height: 20, backgroundColor: `${item.color}`, width: 20, marginRight: 16 }}></Box></Box>
-                                                <Typography style={{fontWeight: 400, fontSize: '12px', lineHeight: '150%'}} variant="body2">{item.value}</Typography>
+                                                <Box style={{ display: 'flex', flexDirection: 'row', alignItems: 'start', justifyContent: 'center', marginTop: 5 }}><InfoBLock_label variant="body2">{item.label}</InfoBLock_label><Box style={{borderRadius: 45, height: 20, backgroundColor: `${item.color}`, width: 20, marginRight: 16,  }}></Box></Box>
+                                                <Typography style={{fontWeight: 400, fontSize: '12px', lineHeight: '150%', marginTop: 5}} variant="body2">{item.value}</Typography>
                                             </InfoBlock_Item>
                                         ))}
                                     </InfoBlock_Content>
