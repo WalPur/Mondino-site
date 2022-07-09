@@ -361,17 +361,7 @@ const Interactions = () => {
             .get(`https://ddi.medic.fun/compare/drugs_mnn?` + getParams)
             .then(response => {
                 const compares = response.data
-                let status = compares.some((item) => {
-                    return item.effect !== 'not effect'
-                })
-                console.log(compares)
-                console.log(status)
-                if (status) {
-                    setEffect(compares)
-                }
-                else {
-                    setEffect('')
-                }
+                setEffect(compares)
             }).catch((error) => {
                 console.log('error', error)
             })
@@ -394,7 +384,7 @@ const Interactions = () => {
         },
         {
             label: 'Неизвестные',
-            value: 'Информация о взаимодействии недоступна.',
+            value: 'Информация о взаимодействии отсутствует.',
             color: '#C6C6C6'
         },
     ]
@@ -426,9 +416,7 @@ const Interactions = () => {
                                                 )}
                                             />
                                             {item.close == false ? <Box style={{ display: "none" }}></Box> :
-                                                // <ActivePart__cancelButton variant="contained" >
-                                                    <img src={Images.cancel_button} onClick={() => { handleDelete(item.id) }} style={{ marginLeft: 10, marginRight: -12, width: "auto", height: "80%", cursor: "pointer" }}/>
-                                                // </ActivePart__cancelButton>
+                                                <img src={Images.cancel_button} onClick={() => { handleDelete(item.id) }} style={{ marginLeft: 10, marginRight: -12, width: "auto", height: "80%", cursor: "pointer" }}/>
                                             }
                                         </ActivePart__inputBox_item>
                                     ))}
@@ -446,13 +434,12 @@ const Interactions = () => {
                                 {page === 0 ? 
                                     <Box>
                                         <InteractionsContent sx={{gap: 1}}>
-                                            {/* <Box>{effect !== 'нету эффектов' ? mnn1 + ' и ' + mnn2 + ' взаимодействуют: ' : ''} {effect !== 'нету эффектов' ? colorBox() : ''}{effect}</Box> */}
-                                            {effect ? effect.map((item, index) => (
+                                            {effect.map((item, index) => (
                                                 console.log(item.drug_1, " ", item.drug_2),
                                                 <div key={index} >
-                                                    <span style={{ fontWeight: 'bold' }}>{item.drug_1}</span> и <span style={{ fontWeight: 'bold' }}>{item.drug_2}</span> взаимодействуют: <span style={{ backgroundColor: `${item.effect !== 'not effect' ? item.color === 'red' ? '#EE889D' : item.color === 'yellow' ? '#EFDB95' : item.color === 'green' ? '#A2F295' : 'grey' : 'grey'}`, width: 20, height: 20, borderRadius: 45, margin: 5, border: '1px solid black', color: `${item.effect !== 'not effect' ? item.color === 'red' ? '#EE889D' : item.color === 'yellow' ? '#EFDB95' : item.color === 'green' ? '#A2F295' : 'grey' : 'grey'}` }}>....</span> {item.effect !== 'not effect' ? Object.values(item.effect) : "нету эффектов."}
+                                                    <span style={{ fontWeight: 'bold' }}>{item.drug_1}</span> и <span style={{ fontWeight: 'bold' }}>{item.drug_2}</span> взаимодействуют: <span style={{ backgroundColor: `${item.effect !== 'not effect' ? item.color === 'red' ? '#EE889D' : item.color === 'yellow' ? '#EFDB95' : item.color === 'green' ? '#A2F295' : 'grey' : 'grey'}`, width: 20, height: 20, borderRadius: 45, margin: 5, border: '1px solid black', color: `${item.effect !== 'not effect' ? item.color === 'red' ? '#EE889D' : item.color === 'yellow' ? '#EFDB95' : item.color === 'green' ? '#A2F295' : 'grey' : 'grey'}` }}>....</span> {item.effect !== 'not effect' ? Object.values(item.effect) : "информация о взаимодействии отсутствует."}
                                                 </div>
-                                            )) : 'нету эффектов'}
+                                            ))}
                                         </InteractionsContent>
                                         <InfoBlock>
                                             <Typography style={{ fontWeight: 700, fontSize: '12px', lineHeight: '150%', marginBottom: 11 }} variant="body2">Классификация взаимодействия с лекарствами</Typography>
@@ -473,9 +460,6 @@ const Interactions = () => {
                         </InteractionBox>
                     </ContentBox>
                 </Container>
-                {/* <Box style={{ margin: '0 auto' }}>
-                    <SimpleModal showModal={showModal} setShowModal={setShowModal} />
-                </Box> */}
             </div>
         </CustomBox >
     );

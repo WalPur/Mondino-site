@@ -93,7 +93,7 @@ function Faq() {
                         aria-controls="panel1a-content"
                         id="panel1a-header"
                     >
-                        <TextTitle sx={{ cursor: "pointer" }}>{item.buttonText}</TextTitle>
+                        <TextTitle sx={{ pl: 0.5, cursor: "pointer" }}>{item.buttonText}</TextTitle>
                     </AccordionSummary>
                     <AccordionDetails sx={{ width: '80%' }}>
                         {item.texts.map((itemText, index) => (
