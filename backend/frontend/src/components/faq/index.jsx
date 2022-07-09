@@ -14,8 +14,17 @@ const TextTitle = styled(Typography)(({ theme }) => ({
     lineHeight: '19px',
     align: 'left',
     verticalAlign: 'top',
+    [theme.breakpoints.down("lg")]:{
+        fontSize: "14px",
+    },
+    [theme.breakpoints.down("md")]:{
+        fontSize: "14px",
+        // lineHeight: "15px",
+    },
     [theme.breakpoints.down("sm")]:{
-    }
+        fontSize: "14px",
+        // lineHeight: "15px",
+    },
 }));
 const TextBody = styled(Typography)(({ theme }) => ({
     whiteSpace: "pre-wrap",
@@ -27,8 +36,18 @@ const TextBody = styled(Typography)(({ theme }) => ({
         marginBottom: 0,
     },
     verticalAlign: 'top',
+    [theme.breakpoints.down("lg")]:{
+        fontSize: "12px",
+        marginBottom: "14px",
+    },
+    [theme.breakpoints.down("md")]:{
+        fontSize: "14px",
+        // lineHeight: "15px",
+    },
     [theme.breakpoints.down("sm")]:{
-    }
+        fontSize: "14px",
+        // lineHeight: "15px",
+    },
 }));
 function Faq() {
     const texts = [
@@ -68,7 +87,7 @@ function Faq() {
     return(
         <Box>
             {texts.map((item, index) => (
-                <CustomAccordion key={index}>
+                <CustomAccordion key={index} >
                     <AccordionSummary 
                         expandIcon={<ExpandMoreIcon />}
                         aria-controls="panel1a-content"

@@ -26,6 +26,7 @@ const MyTitle = styled(Typography)(({ theme }) => ({
     fontSize: "96px",
     lineHeight: "112px",
     marginBottom: "10px",
+    color: "#000000",
     [theme.breakpoints.down('md')]: {
         fontSize: "80px",
         marginBottom: "0px",
@@ -68,6 +69,8 @@ const InteractionsContent = styled(Box)(({ theme }) => ({
     paddingTop: 10,
     flexDirection: 'column',
     overflow: 'auto',
+    padding: '7px 11px',
+    fontSize: '12px',
 }));
 const InfoBlock_Item = styled(Box)(({ theme }) => ({
     display: 'flex',
@@ -80,9 +83,14 @@ const InfoBlock_Item = styled(Box)(({ theme }) => ({
     },
 }));
 const TextAreaBox = styled(Grid)(({ theme }) => ({
-    backgroundColor: '#fff',
-    borderRadius: 40,
-    padding: "33px 55px",[theme.breakpoints.down('md')]: {
+    alignItems: "space-between",
+    padding: "30px 35px",
+
+    background: "#FFFFFF",
+    boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.08)",
+    borderRadius: "40px",
+    
+    [theme.breakpoints.down('md')]: {
         marginTop: 20,
     },
     [theme.breakpoints.down('sm')]: {
@@ -100,12 +108,16 @@ const ActivePart__input = styled(Autocomplete)(({ theme }) => ({
     alignItems: "center",
 }));
 const ActivePart__inputBox = styled(Box)(({ theme }) => ({
+    marginTop: "30px",
     width: '100%',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'flex-start',
     flexDirection: 'column',
-    
+    gap: "20px",
+    [theme.breakpoints.down("md")]:{
+        gap: "10px"
+    },
 }));
 const ActivePart__inputBox_item = styled(Box)(({ theme }) => ({
     height: 70,
@@ -116,9 +128,11 @@ const ActivePart__inputBox_item = styled(Box)(({ theme }) => ({
     boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.08)",
     borderRadius: "119px",
     flexDirection: 'row',
-    marginTop: 10,
     padding: "0 20px",
     width: '100%',
+    [theme.breakpoints.down("lg")]:{
+        height: 60,
+    },
 }));
 const ActivePart__cancelButton = styled(Button)(({ theme }) => ({
     display: 'flex',
@@ -143,8 +157,6 @@ const ActivePart__Button = styled(Button)(({ theme }) => ({
     backgroundColor: '#0E1B4F',
     borderRadius: '119px',
     color: 'white',
-    marginLeft: 5,
-    marginTop: 10,
     width: '100%',
     fontSize: 24,
     lineHeight: "28.13px",
@@ -154,18 +166,22 @@ const ActivePart__Button = styled(Button)(({ theme }) => ({
     '&:hover': {
         backgroundColor: '#0E1B4F',
     },
-    [theme.breakpoints.down('md')]: {
-        maxWidth: 500
+    [theme.breakpoints.down("lg")]:{
+        fontSize: 20,
+        height: 60,
     },
-    
 }));
 const ActivePart__ButtonBox = styled(Box)(({ theme }) => ({    
     display: 'flex',
     justifyContent: 'left',
     alignItems: 'left',
     flexDirection: 'column',
-    marginTop: 10,
+    marginTop: 50,
     width: '100%',
+    gap: 12,
+    [theme.breakpoints.down("md")]:{
+        marginTop: 30,
+    },
 }));
 const InfoBlock = styled(Box)(({ theme }) => ({
     width: '100%',
@@ -180,6 +196,7 @@ const InfoBLock_label = styled(Typography)(({ theme }) => ({
     lineHeight: '150%',
 }));
 const InfoBLock_Button = styled(Button)(({ theme }) => ({
+    textTransform: "none",
     display: 'flex',
     backgroundColor: '#0E1B4F',
     borderRadius: 53,
@@ -187,7 +204,7 @@ const InfoBLock_Button = styled(Button)(({ theme }) => ({
     justifyContent: 'center',
     alignItems: 'center',   
     padding: "16px 20px",
-    
+    height: 55,
     fontWeight: 500,
     fontSize: '20px',
     lineHeight: '23px',
@@ -196,14 +213,14 @@ const InfoBLock_Button = styled(Button)(({ theme }) => ({
         padding: "16px 18px",
         fontSize: "16px",
         lineHeight: "15px",
+        height: 50,
     },
     [theme.breakpoints.down("md")]:{
-        padding: "16px 20px",
         fontSize: 16,
         lineHeight: "15px",
+        height: 47,
     },
     [theme.breakpoints.down("sm")]:{
-        padding: "16px 10px",
         fontSize: 13,
         lineHeight: "15px",
     },
@@ -221,9 +238,12 @@ const CustomTextField = styled(TextField)(({ theme }) => ({
 }));
 const InteractionText = styled(Typography)(({ theme }) => ({
     fontWeight: 500,
+    fontStyle: "normal",
     mb: 0.7,
-    fontSize: "20px",
+    fontSize: "24px",
     lineHeight: "28px",
+    color: "#000000",
+    marginBottom: "7px",
     [theme.breakpoints.down("sm")]:{
         fontSize: "16px",
     }
@@ -233,6 +253,7 @@ const InteractionTextD = styled(Typography)(({ theme }) => ({
     mb: 0.7,
     fontSize: "16px",
     lineHeight: "19px",
+    color: "#000000",
     [theme.breakpoints.down("sm")]:{
         fontSize: "14px",
     }
@@ -372,7 +393,7 @@ const Interactions = () => {
                             <MyTitle>DDI</MyTitle>
                         </TitleBox>
                         <InteractionBox container >
-                            <ActivePart item lg={4} sm={12} md={4} xl={4} xs={12}>
+                            <ActivePart item lg={5} sm={12} md={4} xl={4} xs={12}>
                             <InteractionText variant="h5">Взаимодействия лекарственных средств</InteractionText>
                             <InteractionTextD variant="body2">Международное непатентованное наименование (МНН)</InteractionTextD>
                                 <ActivePart__inputBox>
@@ -396,26 +417,23 @@ const Interactions = () => {
                                     ))}
                                 </ActivePart__inputBox>
                                 <ActivePart__ButtonBox>
-                                    <ActivePart__Button variant="contained" onClick={() => { addInput() }}>Добавить лекарства</ActivePart__Button>
-                                    <ActivePart__Button style={{backgroundColor: '#11A9E5'}} variant="contained" onClick={() => { compareInteractions() }}>Посмотреть совместимости</ActivePart__Button>
+                                    <ActivePart__Button variant="contained" onClick={() => { addInput() }}>Добавить лекарство</ActivePart__Button>
+                                    <ActivePart__Button style={{backgroundColor: '#11A9E5'}} variant="contained" onClick={() => { compareInteractions() }}>Посмотреть взаимодействия</ActivePart__Button>
                                 </ActivePart__ButtonBox>
                             </ActivePart>
-                            <TextAreaBox item lg={7} sm={12} md={7} xl={7} xs={12}>
+                            <TextAreaBox item lg={6} sm={12} md={7} xl={7} xs={12}>
                                 <Box sx={{ display: "flex", justifyContent: "space-evenly", mb: 3 }}>
                                     <InfoBLock_Button onClick={() => {setPage(0)}}>Взаимодействие</InfoBLock_Button>
                                     <InfoBLock_Button onClick={() => {setPage(1)}} style={{backgroundColor: 'rgba(14, 27, 79, 0.2)', color: 'black'}}>Вопросы и ответы</InfoBLock_Button>
                                 </Box>
                                 {page === 0 ? 
                                     <Box>
-                                        <Box style={{ display: 'flex', flexDirection: 'row', marginBottom: 10 }}>
-                                            <Typography style={{ fontWeight: 700, fontSize: '12px', lineHeight: '150%' }} variant="body2">Взаимодействие:</Typography>
-                                        </Box>
                                         <InteractionsContent>
                                             {/* <Box>{effect !== 'нету эффектов' ? mnn1 + ' и ' + mnn2 + ' взаимодействуют: ' : ''} {effect !== 'нету эффектов' ? colorBox() : ''}{effect}</Box> */}
                                             {effect ? effect.map((item, index) => (
                                                 console.log(item.drug_1, " ", item.drug_2),
                                                 <div key={index}>
-                                                    <span style={{ fontWeight: 'bold' }}>{item.drug_1}</span> и <span style={{ fontWeight: 'bold' }}>{item.drug_2}</span> взаимодействуют: <span style={{ backgroundColor: `${item.effect !== 'not effect' ? item.color : 'grey'}`, width: 15, height: 20, margin: 5, border: '1px solid black', color: `${item.effect !== 'not effect' ? item.color : 'grey'}` }}>__</span> {Object.values(item.effect)}
+                                                    <span style={{ fontWeight: 'bold' }}>{item.drug_1}</span> и <span style={{ fontWeight: 'bold' }}>{item.drug_2}</span> взаимодействуют: <span style={{ backgroundColor: `${item.effect !== 'not effect' ? item.color : 'grey'}`, width: 20, height: 20, borderRadius: 45, margin: 5, border: '1px solid black', color: `${item.effect !== 'not effect' ? item.color : 'grey'}` }}>__</span> {Object.values(item.effect)}
                                                 </div>
                                             )) : 'нету эффектов'}
                                         </InteractionsContent>
