@@ -63,7 +63,7 @@ const InfoBlock_Content = styled(Box)(({ theme }) => ({
 const InteractionsContent = styled(Box)(({ theme }) => ({
     display: 'flex',
     width: '100%',
-    height: 300,
+    minHeight: 200,
     border: '1px solid black',
     borderRadius: '10px',
     paddingTop: 10,
@@ -194,6 +194,23 @@ const InfoBLock_label = styled(Typography)(({ theme }) => ({
     fontWeight: 700,
     fontSize: '12px',
     lineHeight: '150%',
+}));
+const InfoBLock_ButtonBox = styled(Box)(({ theme }) => ({
+    display: "flex",
+    justifyContent: "space-evenly",
+    marginBottom: 30,
+    [theme.breakpoints.down(992)]:{
+        flexDirection: "column",
+        gap: 10,
+    },
+    [theme.breakpoints.down(900)]:{
+        flexDirection: "row",
+        gap: 0,
+    },
+    [theme.breakpoints.down(400)]:{
+        flexDirection: "column",
+        gap: 10,
+    },
 }));
 const InfoBLock_Button = styled(Button)(({ theme }) => ({
     textTransform: "none",
@@ -422,10 +439,10 @@ const Interactions = () => {
                                 </ActivePart__ButtonBox>
                             </ActivePart>
                             <TextAreaBox item lg={6} sm={12} md={7} xl={7} xs={12}>
-                                <Box sx={{ display: "flex", justifyContent: "space-evenly", mb: 3 }}>
+                                <InfoBLock_ButtonBox>
                                     <InfoBLock_Button onClick={() => {setPage(0)}}>Взаимодействие</InfoBLock_Button>
                                     <InfoBLock_Button onClick={() => {setPage(1)}} style={{backgroundColor: 'rgba(14, 27, 79, 0.2)', color: 'black'}}>Вопросы и ответы</InfoBLock_Button>
-                                </Box>
+                                </InfoBLock_ButtonBox>
                                 {page === 0 ? 
                                     <Box>
                                         <InteractionsContent>
@@ -433,7 +450,7 @@ const Interactions = () => {
                                             {effect ? effect.map((item, index) => (
                                                 console.log(item.drug_1, " ", item.drug_2),
                                                 <div key={index}>
-                                                    <span style={{ fontWeight: 'bold' }}>{item.drug_1}</span> и <span style={{ fontWeight: 'bold' }}>{item.drug_2}</span> взаимодействуют: <span style={{ backgroundColor: `${item.effect !== 'not effect' ? item.color : 'grey'}`, width: 20, height: 20, borderRadius: 45, margin: 5, border: '1px solid black', color: `${item.effect !== 'not effect' ? item.color : 'grey'}` }}>__</span> {Object.values(item.effect)}
+                                                    <span style={{ fontWeight: 'bold' }}>{item.drug_1}</span> и <span style={{ fontWeight: 'bold' }}>{item.drug_2}</span> взаимодействуют: <span style={{ backgroundColor: `${item.effect !== 'not effect' ? item.color === 'red' ? '#EE889D' : item.color === 'yellow' ? '#EFDB95' : item.color === 'green' ? '#A2F295' : 'grey' : 'grey'}`, width: 20, height: 20, borderRadius: 45, margin: 5, border: '1px solid black', color: `${item.effect !== 'not effect' ? item.color === 'red' ? '#EE889D' : item.color === 'yellow' ? '#EFDB95' : item.color === 'green' ? '#A2F295' : 'grey' : 'grey'}` }}>....</span> {item.effect !== 'not effect' ? Object.values(item.effect) : "нету эффектов."}
                                                 </div>
                                             )) : 'нету эффектов'}
                                         </InteractionsContent>
