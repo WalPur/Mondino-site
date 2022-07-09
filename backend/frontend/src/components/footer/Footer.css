@@ -3,7 +3,6 @@
     color: white;
 }
 .footer__container {
-    /* margin: 0 150px; */
     padding: 75px 0;
     display: flex;
     justify-content: space-between;
@@ -45,7 +44,6 @@
 .phone_number, .bottom_footer {
     font-weight: 700;
 }
-
 .footer_menu {
     display: flex;
     flex-direction: column;
@@ -69,10 +67,6 @@
     .geo_image{
         height: 29px;
     }
-    .footer__container {
-        /* padding: 50px 0;
-        margin: 0 100px; */
-    }
     .phone_text, .geo_text, .bottom_footer {
         font-size: 13px;
     }
@@ -83,19 +77,12 @@
 }
 
 @media (max-width: 768px) {
-    .footer__container {
-        /* margin: 0 50px; */
-    }
     .top_footer{
         max-width: 300px;
     }
 }
 
 @media (max-width: 650px) {
-    .footer__container {
-        /* margin: 0;
-        padding: 25px; */
-    }
     .phone_text, .geo_text, .bottom_footer {
         font-size: 8px;
     }
@@ -119,9 +106,6 @@
 }
 
 @media (max-width: 400px){
-    .footer__container{
-        /* padding: 15px; */
-    }
     .phone_text, .geo_text, .bottom_footer {
         font-size: 6px;
     }
