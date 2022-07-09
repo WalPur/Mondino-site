@@ -28,8 +28,9 @@
 }
 
 @media (min-width: 1440px){
-    .health__images{
-        justify-content: center;
+    .health__content-img{
+        height: auto;
+        width: 33.3333%;
     }
 }
 
