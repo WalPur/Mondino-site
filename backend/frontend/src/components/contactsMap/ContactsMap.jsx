@@ -20,7 +20,7 @@ function ContactsMap(){
                         <Placemark geometry={mapPlacemarkGeometry} />
                     </Map>
                 </YMaps> */}
-                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Afa51e6c28df90ba42cb5e98612768fbc28871de0ed99e6319c18e8175ba34dd3&amp;source=constructor" className='contactsMap__map' frameborder="0"></iframe>
+                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Afa51e6c28df90ba42cb5e98612768fbc28871de0ed99e6319c18e8175ba34dd3&amp;source=constructor" className='contactsMap__map' frameBorder="0"></iframe>
                 <div className="contactsMap__content">
                     <div className="contactsMap__content-title">
                         MONDINO tracker  - мобильные технологии на страже вашего здоровья.
