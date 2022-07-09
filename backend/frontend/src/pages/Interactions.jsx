@@ -389,7 +389,7 @@ const Interactions = () => {
         },
     ]
     return (
-        <CustomBox sx={{ padding: "60px 0"}}>
+        <CustomBox className="wrapper" sx={{ padding: "60px 0"}}>
             <div>
                 <Helmet>
                     <title>Mondino Tracker - DDI</title>

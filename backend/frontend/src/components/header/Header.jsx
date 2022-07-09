@@ -8,7 +8,7 @@ import { NavLink } from 'react-router-dom';
 function Header() {
 
     return (
-        <header className="container-fluid">
+        <header className="container-fluid" id="header">
             <NavLink className={({ isActive }) => (isActive ? 'active nav-link logo-img' : 'inactive nav-link logo-img')}  to="/">
                 <img src={Images.logo}/>
             </NavLink>

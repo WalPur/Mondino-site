@@ -4,7 +4,7 @@ import {Helmet} from "react-helmet";
 
 function Home() {
     return(
-        <div className='wrapper'>
+        <div className="wrapper">
             <Helmet>
                 <title>Mondino Tracker - Главная</title>
             </Helmet>
