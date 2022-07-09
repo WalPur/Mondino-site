@@ -199,12 +199,12 @@ const InfoBLock_Button = styled(Button)(({ theme }) => ({
     },
     [theme.breakpoints.down("md")]:{
         padding: "16px 20px",
-        fontSize: 16,
+        fontSize: "16px",
         lineHeight: "15px",
     },
     [theme.breakpoints.down("sm")]:{
         padding: "16px 10px",
-        fontSize: 13,
+        fontSize: "13px",
         lineHeight: "15px",
     },
     '&:focus': {
