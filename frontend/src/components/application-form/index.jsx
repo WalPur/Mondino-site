@@ -45,7 +45,7 @@ const MyTextField = styled(TextField)(({ theme }) => ({
     [theme.breakpoints.down("sm")]:{
         fontSize: "16px!important",
         lineHeight: "20px",
-    }
+    },
 }));
 const InputBox = styled(Box)(({ theme }) => ({
     padding: "3px 36px",
@@ -77,11 +77,11 @@ function ApplicationForm(){
     // const [value, setValue] = useState('')
 
     const data = [
-        "Наименование организации",
-        "Ф.И.О ответственного лица",
-        "Номер ответственного лица",
-        "Эл. почта",
-        "Кол-во сотрудников",
+        "Наименование организации*",
+        "Ф.И.О ответственного лица*",
+        "Номер ответственного лица*",
+        "Эл. почта*",
+        "Кол-во сотрудников*",
     ];
    
     return(
@@ -107,7 +107,7 @@ function ApplicationForm(){
                                 {item}
                             </MyText>
                             <InputBox>
-                                <MyTextField label="Обязательно для заполнения" required variant="standard"/>
+                                <MyTextField label=" " variant="standard"/>
                             </InputBox>
                         </Box>
                     ))}
