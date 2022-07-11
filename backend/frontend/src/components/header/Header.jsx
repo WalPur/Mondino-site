@@ -8,13 +8,13 @@ import { NavLink } from 'react-router-dom';
 function Header() {
 
     return (
-        <header className="container-fluid" id="header">
+        <header id="header">
             <div className="header__container container">
                 <NavLink className={({ isActive }) => (isActive ? 'active nav-link logo-img' : 'inactive nav-link logo-img')}  to="/">
                     <img src={Images.logo}/>
                 </NavLink>
                 <Navbar expand="lg" className="navbar navbar-expand-lg navbar-light">
-                    <Container>
+                    <Container className="nav__container">
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="me-auto navbar-nav">
