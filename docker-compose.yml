@@ -1,10 +1,30 @@
 version: "3.9"
    
 services:
-  web:
-    build: .
-    command: python manage.py runserver 0.0.0.0:8000
+  postgres:
+    image: postgres:12
+    env_file:
+      - './infrastucture/services/postgres/.env'
+  django:
+    build: ./backend
+    command: "python manage.py runserver 0.0.0.0:8000"
     volumes:
-      - .:/code
+      - ./backend:/app/api
+    env_file:
+      - './infrastucture/services/postgres/.env'
+      - './infrastucture/apps/backend/.env'
     ports:
       - "8000:8000"
+    depends_on:
+      - postgres
+  frontend:
+    build: ./frontend
+    command: "npm run start"
+    volumes:
+      - ./frontend:/app/frontend
+      - node-modules:/app/frontend/node_modules
+    ports:
+      - "3000:3000"
+
+volumes:
+  node-modules:
