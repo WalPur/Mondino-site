@@ -21,9 +21,6 @@ header {
 .nav__container{
     padding: 0;
 }
-.logo-img{
-    align-self: flex-start;
-}
 
 @media (max-width: 1200px){
     .nav-link {
