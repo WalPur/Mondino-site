@@ -4,7 +4,9 @@ div,
 p,
 a,
 h1, h2, h3, h4, h5, h6,
-label {
+label,
+td,
+th {
   font-family: "Roboto", sans-serif!important;
   font-style: normal!important;
 }
