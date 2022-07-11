@@ -427,7 +427,7 @@ const Interactions = () => {
                                             />
                                             {item.close == false ? <Box style={{ display: "none" }}></Box> :
                                                 // <ActivePart__cancelButton variant="contained" >
-                                                    <img src={Images.cancel_button} onClick={() => { handleDelete(item.id) }} style={{ marginLeft: 10, marginRight: -12, width: "auto", height: "80%", cursor: "pointer" }}/>
+                                                    <img src={Images.cancel_button} onClick={() => { handleDelete(item.id) }} style={{marginLeft: 10, marginRight: -12, width: "auto", height: "80%", cursor: "pointer" }}/>
                                                 // </ActivePart__cancelButton>
                                             }
                                         </ActivePart__inputBox_item>
