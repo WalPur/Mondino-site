@@ -33,6 +33,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'rest_framework',
+    'corsheaders',
+
+    'api.apps.ApiConfig'
 ]
 
 MIDDLEWARE = [
@@ -99,5 +104,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+
+CORS_ALLOWED_ORIGINS = env('CORS_ALLOWED_ORIGINS_URLS').split(', ')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
