@@ -78,8 +78,8 @@ const InfoBlock_Item = styled(Box)(({ theme }) => ({
     marginTop: 5,
     width: '100%',
     borderTop: '1px solid black',
-    [theme.breakpoints.down('xs')]: {
-    flexDirection: 'column',
+    [theme.breakpoints.down("sm")]: {
+        flexDirection: 'column',
     },
 }));
 const TextAreaBox = styled(Grid)(({ theme }) => ({
@@ -281,6 +281,18 @@ const CustomBox = styled(Box)(({ theme }) => ({
         padding: "30px 0",
     }
 }));
+const InfoBlock_ItemBox = styled(Box)(({ theme }) => ({
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'start',
+    justifyContent: 'center',
+    marginTop: 5,
+    [theme.breakpoints.down("sm")]:{
+        flexDirection: 'row-reverse',
+        justifyContent: 'start',
+        alignItems: 'center',
+    }
+}))
 
 const Interactions = () => {
     let [idCounter, setIdCounter] = useState(1)
@@ -447,7 +459,7 @@ const Interactions = () => {
                                             <InfoBlock_Content>
                                                 {arrayInfoDrug.map((item, index) => (
                                                     <InfoBlock_Item key={index}>
-                                                        <Box style={{ display: 'flex', flexDirection: 'row', alignItems: 'start', justifyContent: 'center', marginTop: 5 }}><InfoBLock_label variant="body2">{item.label}</InfoBLock_label><Box style={{borderRadius: 45, height: 20, backgroundColor: `${item.color}`, width: 20, marginRight: 16,  }}></Box></Box>
+                                                        <InfoBlock_ItemBox><InfoBLock_label variant="body2">{item.label}</InfoBLock_label><Box style={{borderRadius: 45, height: 20, backgroundColor: `${item.color}`, width: 20, marginRight: 16,  }}></Box></InfoBlock_ItemBox>
                                                         <Typography style={{fontWeight: 400, fontSize: '12px', lineHeight: '150%', marginTop: 5}} variant="body2">{item.value}</Typography>
                                                     </InfoBlock_Item>
                                                 ))}
