@@ -102,7 +102,8 @@ USE_L10N = True
 USE_TZ = True
 
 
-STATIC_URL = 'static/'
+STATIC_URL = '/django_static/'
+STATIC_ROOT = "/static"
 
 
 CORS_ALLOWED_ORIGINS = env('CORS_ALLOWED_ORIGINS_URLS').split(', ')
