@@ -14,8 +14,8 @@ services:
     env_file:
       - './infrastucture/services/postgres/.env'
       - './infrastucture/apps/backend/.env'
-    ports:
-      - "8000:8000"
+    expose:
+      - 8000   
     depends_on:
       - postgres
   nginx:
@@ -25,7 +25,7 @@ services:
     volumes:
       - static_volume:/static
     ports:
-      - 1337:80
+      - 80:80
     depends_on: 
       - django
   # frontend:
