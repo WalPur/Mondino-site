@@ -103,8 +103,20 @@ function ApplicationForm(){
     const onSubmit = (data) => {
         reset();
     };
-    const sendForm = () => {
-        
+    handleSubmit = (e) => {
+        e.preventDefault();
+        const data = { name: value };
+        console.log('submit');
+        console.log(value);
+        fetch('http://127.0.0.1:5000/api/', {
+        method: 'POST',
+        headers: {
+            'Content-type': 'application/json',
+        },
+        body: JSON.stringify(data),
+        })
+        .then(res => res.json())
+        .then(res => console.log(res));
     }
 
     return(
@@ -127,7 +139,7 @@ function ApplicationForm(){
                         width: "100%",
                     }}
                     component="form"
-                    onSubmit={handleSubmit(onSubmit)}
+                    onSubmit={handleSubmit}
                 >   
                     <Box sx={{ mb: 2, width: "100%" }} onSubmit={handleSubmit(onSubmit)}>
                         <MyText>
@@ -211,7 +223,7 @@ function ApplicationForm(){
                         />
                         {errors?.kolvo && <CustomError>{errors?.kolvo?.message || "Errors"}</CustomError>}
                     </Box>
-                    <CustomButton onClick={sendForm()} type="submit" disabled={!isValid}>Отправить</CustomButton>
+                    <CustomButton type="submit" disabled={!isValid}>Отправить</CustomButton>
                 </Box>
             </Box> 
         </CustomBox>
