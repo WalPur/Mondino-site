@@ -7,9 +7,10 @@ services:
       - './infrastucture/services/postgres/.env'
   django:
     build: ./backend
-    command: "python manage.py runserver 0.0.0.0:8000"
+    command: "gunicorn backend.wsgi --bind 0.0.0.0:8000"
     volumes:
       - ./backend:/app/api
+      - static_volume:/static
     env_file:
       - './infrastucture/services/postgres/.env'
       - './infrastucture/apps/backend/.env'
@@ -17,14 +18,25 @@ services:
       - "8000:8000"
     depends_on:
       - postgres
-  frontend:
-    build: ./frontend
-    command: "npm run start"
+  nginx:
+    build:
+      context: .
+      dockerfile: ./nginx/dockerfile
     volumes:
-      - ./frontend:/app/frontend
-      - node-modules:/app/frontend/node_modules
+      - static_volume:/static
     ports:
-      - "3000:3000"
+      - 1337:80
+    depends_on: 
+      - django
+  # frontend:
+  #   build: ./frontend
+  #   command: "npm run start"
+  #   volumes:
+  #     - ./frontend:/app/frontend
+  #     - node-modules:/app/frontend/node_modules
+  #   ports:
+  #     - "3000:3000"
 
 volumes:
   node-modules:
+  static_volume:
