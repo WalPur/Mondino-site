@@ -4,7 +4,9 @@ div,
 p,
 a,
 h1, h2, h3, h4, h5, h6,
-label {
+label,
+td,
+th {
   font-family: "Roboto", sans-serif!important;
   font-style: normal!important;
 }
@@ -48,15 +50,15 @@ body{
     font-size: 20px;
   }
   .text{
-    font-size: 10px;
+    font-size: 12px;
   }
 }
 
 @media (max-width: 576px){
   .title{
-    font-size: 14px;
+    font-size: 16px;
   }
   .text{
-    font-size: 7px;
+    font-size: 10px;
   }
 }
