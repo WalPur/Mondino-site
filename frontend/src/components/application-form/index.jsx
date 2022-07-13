@@ -1,7 +1,11 @@
 import React, {useState} from "react";
+import { useForm } from "react-hook-form";
+
 import { Box, Container, Button, Typography, TextField, Input } from "@mui/material";
 import { styled } from "@mui/system";
-import { useForm } from "react-hook-form";
+
+import axios from "axios";
+
 import Images from "../../images";
 
 const CustomBox = styled(Box)(({ theme }) => ({
@@ -100,24 +104,16 @@ function ApplicationForm(){
         } = useForm({
           mode: 'all'
         });
-    const onSubmit = (data) => {
+    const onSubmit = (data, e) => {
         reset();
+        data = JSON.stringify(data);
+        console.log(data);
+        const headers = {
+            'Content-Type': 'application/json'
+        }
+        const url = 'http://mondinotracker.com/api/partner';
+        axios.post(url, data, { headers })
     };
-    handleSubmit = (e) => {
-        e.preventDefault();
-        // const data = { name: value };
-        console.log('submit');
-        // console.log(value);
-        fetch('http://127.0.0.1:5000/api/', {
-        method: 'POST',
-        headers: {
-            'Content-type': 'application/json',
-        },
-        // body: JSON.stringify(data),
-        })
-        .then(res => res.json())
-        .then(res => console.log(res));
-    }
 
     return(
         <CustomBox>
@@ -139,23 +135,24 @@ function ApplicationForm(){
                         width: "100%",
                     }}
                     component="form"
-                    onSubmit={handleSubmit}
+                    onSubmit={handleSubmit(onSubmit)}
                 >   
-                    <Box sx={{ mb: 2, width: "100%" }} onSubmit={handleSubmit(onSubmit)}>
+                    <Box sx={{ mb: 2, width: "100%" }}>
                         <MyText>
                             Наименование организации*
                         </MyText>
                         <MyTextField 
                             label=" "
                             variant="standard"
-                            {...register("org", {
+                            {...register("org_name", {
                                 required: "Поле обязательно к заполнению.",
                                 pattern: {
+                                    // value: /^(\S+\s*)+$/,
                                     message: "Введенное значение не соответствует формату."
                                 },
                             })}
                         />
-                        {errors?.org && <CustomError>{errors?.org?.message || "Errors"}</CustomError>}
+                        {errors?.org_name && <CustomError>{errors?.org_name?.message || "Errors"}</CustomError>}
                     </Box>
                     <Box sx={{ mb: 2, width: "100%" }} onSubmit={handleSubmit(onSubmit)}>
                         <MyText>
@@ -164,7 +161,7 @@ function ApplicationForm(){
                         <MyTextField 
                             label=" "
                             variant="standard"
-                            {...register("fio", {
+                            {...register("full_name", {
                                 required: "Поле обязательно к заполнению.",
                                 pattern: {
                                     value: /^([^\s\d]+)\s([^\s\d]+)\s([^\s\d]+)$/,
@@ -172,7 +169,7 @@ function ApplicationForm(){
                                 },
                             })}
                         />
-                        {errors?.fio && <CustomError>{errors?.fio?.message || "Errors"}</CustomError>}
+                        {errors?.full_name && <CustomError>{errors?.full_name?.message || "Errors"}</CustomError>}
                     </Box>
                     <Box sx={{ mb: 2, width: "100%" }} onSubmit={handleSubmit(onSubmit)}>
                         <MyText>
@@ -181,7 +178,7 @@ function ApplicationForm(){
                         <MyTextField 
                             label=" "
                             variant="standard"
-                            {...register("number", {
+                            {...register("phone_number", {
                                 required: "Поле обязательно к заполнению.",
                                 pattern: {
                                     value: /^((8|\+7)[\- ]?)(\(?\d{3}\)?[\- ]?)[\d\- ]{7}$/,
@@ -189,14 +186,14 @@ function ApplicationForm(){
                                 },
                             })}
                         />
-                        {errors?.number && <CustomError>{errors?.number?.message || "Errors"}</CustomError>}
+                        {errors?.phone_number && <CustomError>{errors?.phone_number?.message || "Errors"}</CustomError>}
                     </Box>
                     <Box sx={{ mb: 2, width: "100%" }} onSubmit={handleSubmit(onSubmit)}>
                         <MyText>
                             Эл. почта*
                         </MyText>
                         <MyTextField label=" " variant="standard"
-                            {...register("mail", {
+                            {...register("org_email", {
                                 required: "Поле обязательно к заполнению.",
                                 pattern: {
                                     value: /\S+@\S+\.\S+/,
@@ -204,7 +201,7 @@ function ApplicationForm(){
                                 },
                             })}
                         />
-                        {errors?.mail && <CustomError>{errors?.mail?.message || "Errors"}</CustomError>}
+                        {errors?.org_email && <CustomError>{errors?.org_email?.message || "Errors"}</CustomError>}
                     </Box>
                     <Box sx={{ mb: 2, width: "100%" }} onSubmit={handleSubmit(onSubmit)}>
                         <MyText>
@@ -213,7 +210,7 @@ function ApplicationForm(){
                         <MyTextField
                             label=" "
                             variant="standard"
-                            {...register("kolvo", {
+                            {...register("org_employees", {
                                 required: "Поле обязательно к заполнению.",
                                 pattern: {
                                     value: /^[0-9]+$/,
@@ -221,9 +218,9 @@ function ApplicationForm(){
                                 },
                             })}
                         />
-                        {errors?.kolvo && <CustomError>{errors?.kolvo?.message || "Errors"}</CustomError>}
+                        {errors?.org_employees && <CustomError>{errors?.org_employees?.message || "Errors"}</CustomError>}
                     </Box>
-                    <CustomButton type="submit" disabled={!isValid}>Отправить</CustomButton>
+                    <CustomButton type="submit">Отправить</CustomButton>
                 </Box>
             </Box> 
         </CustomBox>
