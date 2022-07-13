@@ -111,7 +111,7 @@ function ApplicationForm(){
         const headers = {
             'Content-Type': 'application/json'
         }
-        const url = 'http://mondinotracker.com/api/partner';
+        const url = 'https://mondinotracker.com/api/partner';
         axios.post(url, data, { headers })
     };
 
