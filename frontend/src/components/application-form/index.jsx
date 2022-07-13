@@ -105,15 +105,15 @@ function ApplicationForm(){
     };
     handleSubmit = (e) => {
         e.preventDefault();
-        const data = { name: value };
+        // const data = { name: value };
         console.log('submit');
-        console.log(value);
+        // console.log(value);
         fetch('http://127.0.0.1:5000/api/', {
         method: 'POST',
         headers: {
             'Content-type': 'application/json',
         },
-        body: JSON.stringify(data),
+        // body: JSON.stringify(data),
         })
         .then(res => res.json())
         .then(res => console.log(res));
