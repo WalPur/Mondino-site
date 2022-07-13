@@ -10,6 +10,7 @@ class PartnerSerializer(serializers.ModelSerializer):
             "id",
             "org_name",
             "full_name",
+            "phone_number",
             "org_email",
             "org_employees"
         )

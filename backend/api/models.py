@@ -5,6 +5,7 @@ class Partner(models.Model):
 
     org_name = models.CharField(max_length=255, verbose_name="Название организации")
     full_name = models.CharField(max_length=255, verbose_name="ФИО ответственного")
+    phone_number = models.CharField(max_length=255, verbose_name="Номер ответственного лица")
     org_email = models.EmailField(max_length=255, verbose_name="Эл. почта")
     org_employees = models.CharField(max_length=255, verbose_name="Кол-во сотрудников")
     date = models.DateTimeField(auto_now=True, verbose_name="Время отправки формы")
