@@ -33,8 +33,6 @@ services:
     depends_on: 
       - django
   certbot:
-    restart: unless-stopped
-    container_name: certbot
     image: certbot/certbot
     volumes:
       - ./data/certbot/conf:/etc/letsencrypt
