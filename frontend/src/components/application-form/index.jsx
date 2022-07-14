@@ -220,7 +220,7 @@ function ApplicationForm(){
                         />
                         {errors?.org_employees && <CustomError>{errors?.org_employees?.message || "Errors"}</CustomError>}
                     </Box>
-                    <CustomButton type="submit">Отправить</CustomButton>
+                    <CustomButton type="submit" disabled={!isValid}>Отправить</CustomButton>
                 </Box>
             </Box> 
         </CustomBox>
