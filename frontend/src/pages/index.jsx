@@ -11,5 +11,5 @@ export {
     Contacts,
     Application,
     Interactions,
-    Request
+    Request,
 };
