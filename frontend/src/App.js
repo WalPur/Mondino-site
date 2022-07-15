@@ -15,6 +15,7 @@ import {
   Contacts,
   Application,
   Interactions,
+  Request
 } from './pages';
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Route path="/contacts" element={<Contacts/>}></Route>
           <Route path="/interactions" element={<Interactions/>}></Route>
           <Route path="/application" element={<Application/>}></Route>
+          <Route path="/request" element={<Request/>}></Route>
         </Routes>
         <Footer/>
       </BrowserRouter>

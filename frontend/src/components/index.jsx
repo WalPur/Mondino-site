@@ -12,6 +12,7 @@ import Showboat from './showboat/Showboat';
 import Medicine from './medicine/Medicine';
 import ApplicationForm from './application-form/index';
 import Faq from './faq';
+import Request from './request';
 
 export {
     General,
@@ -28,4 +29,5 @@ export {
     Medicine,
     ApplicationForm,
     Faq,
+    Request
 };

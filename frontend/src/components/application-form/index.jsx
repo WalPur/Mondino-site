@@ -5,6 +5,7 @@ import { Box, Container, Button, Typography, TextField, Input } from "@mui/mater
 import { styled } from "@mui/system";
 
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 import Images from "../../images";
 
@@ -96,6 +97,7 @@ const CustomError = styled(Typography)(({ theme }) => ({
 
 
 function ApplicationForm(){
+    const navigate = useNavigate();
     const {
           register,
           formState: { errors, isValid },
@@ -113,6 +115,7 @@ function ApplicationForm(){
         }
         const url = 'https://mondinotracker.com/api/partner/';
         axios.post(url, data, { headers })
+        .then(response => navigate("/request/" + response.data.id))
     };
 
     return(
