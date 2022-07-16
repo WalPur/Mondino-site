@@ -16,7 +16,9 @@ import {
   Application,
   Interactions,
   Request,
+  Faq,
 } from './pages';
+import Topic from './components/topic/topic';
 
 function App() {
   return (
@@ -30,6 +32,8 @@ function App() {
           <Route path="/interactions" element={<Interactions/>}></Route>
           <Route path="/application" element={<Application/>}></Route>
           <Route path="/request/:id" element={<Request/>}></Route>
+          <Route path="/faq" element={<Faq/>}></Route>
+          <Route path="/faq/topic/:id" element={<Topic/>}></Route>
         </Routes>
         <Footer/>
       </BrowserRouter>

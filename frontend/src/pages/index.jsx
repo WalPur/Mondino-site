@@ -4,6 +4,7 @@ import Contacts from './Contacts';
 import Application from './Application';
 import Interactions from './Interactions';
 import Request from './Request'
+import Faq from './Faq'
 
 export {
     Home,
@@ -12,4 +13,5 @@ export {
     Application,
     Interactions,
     Request,
+    Faq,
 };
