@@ -11,9 +11,12 @@ function General() {
                 <div className="general__content">
                     <div className="general__title">
                         <img src={Images.mondino_title} alt='mondino_title'/>
+                        <div className="general__title-text">
+                            Tracker
+                        </div>
                     </div>
                     <div className="general__subtitle">
-                        Tracker  - мобильные технологии на страже вашего здоровья.
+                        Mondino Tracker  - мобильные технологии на страже вашего здоровья.
                     </div>
                     <HashLink to="#download" className="general__button">
                         <img className='general__button-img' src={Images.download_icon}/>
