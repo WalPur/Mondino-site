@@ -15,6 +15,24 @@ const CustomBox = styled(Box)(({ theme }) => ({
         padding: "30px 0",
     }
 }));
+const MondinoTitle = styled(Typography)(({ theme }) => ({
+    fontWeight: 700,
+    fontSize: 90,
+    lineHeight: "121%",
+    color: "#0E1B4F",
+    [theme.breakpoints.down("sm")]:{
+        fontSize: 70,
+    },
+    [theme.breakpoints.down(500)]:{
+        fontSize: 60,
+    },
+    [theme.breakpoints.down(400)]:{
+        fontSize: 50,
+    },
+    [theme.breakpoints.down(300)]:{
+        fontSize: 40,
+    },
+}));
 const MyTextTitle = styled(Typography)(({ theme }) => ({
     fontWeight: 700,
     fontSize: 48,
@@ -24,6 +42,11 @@ const MyTextTitle = styled(Typography)(({ theme }) => ({
     color: "#1B1642",
     [theme.breakpoints.down("sm")]:{
         fontSize: 32,
+        marginBottom: 14,
+        marginTop: 10,
+    },
+    [theme.breakpoints.down(400)]:{
+        fontSize: 24,
         marginBottom: 14,
         marginTop: 10,
     }
@@ -129,6 +152,9 @@ function ApplicationForm(){
                             width: "100%",
                         }}
                     />
+                    <MondinoTitle>
+                        Tracker
+                    </MondinoTitle>
                     <MyTextTitle>
                         Заявка для партнерства
                     </MyTextTitle>

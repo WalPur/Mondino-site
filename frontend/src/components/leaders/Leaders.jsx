@@ -8,7 +8,7 @@ function Leaders (){
             <div className="leaders__container container">
                 <div className="leaders_content">
                     <div className="leaders_title">
-                        Команда Mondino
+                        Команда Mondino Tracker
                     </div>
                     <div className="leaders_text">
                         Команда ООО “Мондино Технолоджес”
