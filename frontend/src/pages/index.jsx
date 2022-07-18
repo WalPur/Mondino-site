@@ -5,6 +5,7 @@ import Application from './Application';
 import Interactions from './Interactions';
 import Request from './Request'
 import Faq from './Faq'
+import Registration from './Registration';
 
 export {
     Home,
@@ -14,4 +15,5 @@ export {
     Interactions,
     Request,
     Faq,
+    Registration
 };

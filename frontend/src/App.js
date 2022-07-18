@@ -17,9 +17,9 @@ import {
   Interactions,
   Request,
   Faq,
+  Registration,
 } from './pages';
 import Topic from './components/topic/topic';
-
 function App() {
   return (
     <div className="App">
@@ -34,6 +34,7 @@ function App() {
           <Route path="/request/:id" element={<Request/>}></Route>
           <Route path="/faq" element={<Faq/>}></Route>
           <Route path="/faq/topic/:id" element={<Topic/>}></Route>
+          <Route path="/faq/page/:id" element={<Registration/>}></Route>
         </Routes>
         <Footer/>
       </BrowserRouter>
