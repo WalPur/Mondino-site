@@ -1,7 +1,5 @@
 import './Tasks.css'
 
-import Images from '../../images/index'
-
 function Tasks(){
     return(
         <div className="tasks__block">
@@ -52,12 +50,12 @@ function Tasks(){
                                 </div>
                             </div>
                             <div className="tasks_content_icon">
-                                <img src={Images.mondino_tech} alt="mondino_tech" className="tasks__content-img" />
+                                <img src="/images/mondino_technologies.svg" alt="mondino_tech" className="tasks__content-img" />
                             </div>
                         </div>
                     </div>
                 </div>
-                <img src={Images.team_general} alt="team_general" className="tasks__img" />
+                <img src="/images/team_general_img.png" alt="team_general" className="tasks__img" />
             </div>
         </div>
     )

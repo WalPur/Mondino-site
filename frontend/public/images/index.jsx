@@ -50,7 +50,7 @@ import team_medicine from './team_medicine_img.svg'
 import download_icon from './download_icon.png'
 import cancel_button from './cancel_button.png'
 
-const Images = {
+export {
     team_general,
     mondino_tech,
     team_icon_1,
@@ -103,5 +103,3 @@ const Images = {
     download_icon,
     cancel_button,
 }
-
-export default Images;

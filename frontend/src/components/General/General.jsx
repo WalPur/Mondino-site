@@ -2,7 +2,7 @@ import './General.css';
 
 import { HashLink } from 'react-router-hash-link';
 
-import Images from '../../images/index';
+// import Images from '../../images/index';
 
 function General() {
     return (
@@ -10,7 +10,7 @@ function General() {
             <div className="general__container">
                 <div className="general__content">
                     <div className="general__title">
-                        <img src={Images.mondino_title} alt='mondino_title'/>
+                        <img src="/images/mondino_title.svg" alt='mondino_title'/>
                         <div className="general__title-text">
                             Tracker
                         </div>
@@ -19,11 +19,11 @@ function General() {
                         Mondino Tracker  - мобильные технологии на страже вашего здоровья.
                     </div>
                     <HashLink to="#download" className="general__button">
-                        <img className='general__button-img' src={Images.download_icon}/>
+                        <img className='general__button-img' src="/images/download_icon.png"/>
                         Скачать
                     </HashLink>
                 </div>
-                <img className='general__img' src={Images.general} alt='general_img'/>
+                <img className='general__img' src="/images/general_img.png" alt='general_img'/>
             </div>
         </div>
     )
