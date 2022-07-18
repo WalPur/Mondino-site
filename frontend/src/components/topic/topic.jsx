@@ -1,6 +1,6 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { Helmet } from 'react-helmet';
-import { Typography, Grid, } from "@mui/material";
+import { Typography, Box, } from "@mui/material";
 
 function Topic () {
     const topic = [
@@ -21,38 +21,45 @@ function Topic () {
     const params = useParams();
     const prodId = params.id;
     return(
-        <Grid container gap={2} 
-            sx={{
-                p: 10,
-                justifyContent: 'center'
-            }}>
+        <div className="container" style={{ display: "flex", justifyContent: "center" }}>
+            <Box 
+                gap={3} 
+                sx={{
+                    mt: '100px',
+                    mb: '100px',
+                    p: 1,
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    width: "100%",
+                    justifyContent: "space-between",
+                }}>
                {topic[prodId].label.map((item, index) => (
-                <Grid item 
-                    key={index} 
-                    sx={{
-                        display: "flex",
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        width: 250,
-                        height: 50,
-                        borderRadius: 5,
-                        backgroundColor: "aquamarine",
-                        opacity: [0.9],
-                        cursor: 'pointer',
-                        '&:hover': {
-                        opacity: [1],
-                    }}}
-                    onClick={() => navigate("/faq/page/" + item.id)}
-                >
-                    <Typography sx={{
-                        color: 'black',
-                        fontSize: 16,
-                    }}  variant="body2">{item.label}</Typography>
-                </Grid>
-               ))}
-                
-        </Grid>
-        
+                    <Box item 
+                        key={index} 
+                        sx={{
+                            // maxWidth: 550,
+                            height: 161,
+                            width: "49%",
+                            borderRadius: '20px',
+                            backgroundColor: '#EDEDED',
+                            cursor: 'pointer',
+                            '&:hover': {
+                            backgroundColor: '#D3CFEC',
+                        }}}
+                        onClick={() => navigate("/faq/page/" + item.id)}
+                    >
+                        <Typography sx={{
+                            mt: '36px',
+                            ml: '40px',
+                            color: '#000000',
+                            fontWeight: 700,
+                            fontSize: '24px',
+                            lineHeight: '28px',
+                        }}>{item.label}</Typography>
+                    </Box>
+                ))}
+            </Box>
+        </div>
     );
 }
 

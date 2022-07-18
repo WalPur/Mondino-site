@@ -46,10 +46,10 @@ function Faq() {
                 gap={5} 
                 sx={{
                     mt: '100px',
+                    mb: '100px',
                     p: 1,
                     display: 'flex',
-                    flexWrap: 'wrap',
-                    
+                    flexWrap: 'wrap',                    
                 }}>
             {text.map((item, index) => (
                 <Box item 
@@ -70,13 +70,15 @@ function Faq() {
                         color: 'black',
                         mt:'26px',
                         ml: '30px',
+                        mr: '30px',
                         fontWeight: 700,
                         fontSize: '24px',
                         lineHeight: '28px' 
                         }}>{item.label}</Typography>                                 
                     <Typography sx={{
                         mt: "30px",
-                        mr: "176px",
+                        // mr: "176px",
+                        width: '135px',
                         ml: "30px",
                         color: 'black',
                         fontWeight: 500,
