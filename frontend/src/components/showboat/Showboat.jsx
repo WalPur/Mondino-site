@@ -1,13 +1,11 @@
 import './Showboat.css'
 
-import Images from '../../images/index'
-
 function Showboat (){
     return(
         <div className="showboat_block">
             <div className="showboat_container container">
                 <div className="showboat_block_img">
-                    <img src={Images.team_icon_1} alt="team_icon_1" className="showboat_img" />
+                    <img src="/images/team_icon_1.svg" alt="team_icon_1" className="showboat_img" />
                     <div className="showboat_title">
                         Командный дух
                     </div>
@@ -16,7 +14,7 @@ function Showboat (){
                     </div>
                 </div>
                 <div className="showboat_block_img">
-                    <img src={Images.team_icon_2} alt="team_icon_2" className="showboat_img" />
+                    <img src="/images/team_icon_2.svg" alt="team_icon_2" className="showboat_img" />
                     <div className="showboat_title">
                         Гибкость
                     </div>
@@ -25,7 +23,7 @@ function Showboat (){
                     </div>
                 </div>
                 <div className="showboat_block_img">
-                    <img src={Images.team_icon_3} alt="team_icon_3" className="showboat_img" />
+                    <img src="/images/team_icon_3.svg" alt="team_icon_3" className="showboat_img" />
                     <div className="showboat_title">
                         Позитивный настрой
                     </div>
@@ -34,7 +32,7 @@ function Showboat (){
                     </div>
                 </div>
                 <div className="showboat_block_img">
-                    <img src={Images.team_icon_4} alt="team_icon_4" className="showboat_img" />
+                    <img src="/images/team_icon_4.svg" alt="team_icon_4" className="showboat_img" />
                     <div className="showboat_title">
                         Проактивность
                     </div>
@@ -43,7 +41,7 @@ function Showboat (){
                     </div>
                 </div>
                 <div className="showboat_block_img">
-                    <img src={Images.team_icon_5} alt="team_icon_5" className="showboat_img" />
+                    <img src="/images/team_icon_5.svg" alt="team_icon_5" className="showboat_img" />
                     <div className="showboat_title">
                         Вовлеченность
                     </div>
@@ -52,7 +50,7 @@ function Showboat (){
                     </div>
                 </div>
                 <div className="showboat_block_img">
-                    <img src={Images.team_icon_6} alt="team_icon_6" className="showboat_img" />
+                    <img src="/images/team_icon_6.svg" alt="team_icon_6" className="showboat_img" />
                     <div className="showboat_title">
                         Уважение и доверие 
                     </div>

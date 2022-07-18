@@ -7,8 +7,6 @@ import { styled } from "@mui/system";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-import Images from "../../images";
-
 const CustomBox = styled(Box)(({ theme }) => ({
     padding: "100px 0",
     [theme.breakpoints.down("sm")]:{
@@ -146,7 +144,7 @@ function ApplicationForm(){
             <Box className="container" sx={{ display: "flex", flexDirection: "column", alignItems: "center", maxWidth: 650 }}>
                 <Box>
                     <img
-                        src={Images.mondino_title}
+                        src="/images/mondino_title.svg"
                         style={{
                             maxWidth: 590,
                             width: "100%",

@@ -1,14 +1,12 @@
 import './Advantage.css'
 
-import Images from '../../images/index'
-
 function Advantage(){
     return(
         <div className="advantage__block">
             <div className="advantage__container container">
                 <div className="advantage__items">
                     <div className="advantage__item">
-                        <img src={Images.advantage_icon_1} alt="icon" className="advantage__item-logo" />
+                        <img src="/images/advantage_icon_1.svg" alt="icon" className="advantage__item-logo" />
                         <div className="advantage__item-content">
                             <div className="advantage__content-title">
                                 Поток пациентов
@@ -19,7 +17,7 @@ function Advantage(){
                         </div>
                     </div>
                     <div className="advantage__item">
-                        <img src={Images.advantage_icon_2} alt="icon" className="advantage__item-logo" />
+                        <img src="/images/advantage_icon_2.svg" alt="icon" className="advantage__item-logo" />
                         <div className="advantage__item-content">
                             <div className="advantage__content-title">
                                 Инструменты
@@ -30,7 +28,7 @@ function Advantage(){
                         </div>
                     </div>
                     <div className="advantage__item">
-                        <img src={Images.advantage_icon_3} alt="icon" className="advantage__item-logo" />
+                        <img src="/images/advantage_icon_3.svg" alt="icon" className="advantage__item-logo" />
                         <div className="advantage__item-content">
                             <div className="advantage__content-title">
                                 Качество
@@ -41,7 +39,7 @@ function Advantage(){
                         </div>
                     </div>
                     <div className="advantage__item">
-                        <img src={Images.advantage_icon_4} alt="icon" className="advantage__item-logo" />
+                        <img src="/images/advantage_icon_4.svg" alt="icon" className="advantage__item-logo" />
                         <div className="advantage__item-content">
                             <div className="advantage__content-title">
                                 Онлайн
@@ -52,7 +50,7 @@ function Advantage(){
                         </div>
                     </div>
                     <div className="advantage__item">
-                        <img src={Images.advantage_icon_5} alt="icon" className="advantage__item-logo" />
+                        <img src="/images/advantage_icon_5.svg" alt="icon" className="advantage__item-logo" />
                         <div className="advantage__item-content">
                             <div className="advantage__content-title">
                                 Эффективность
@@ -63,7 +61,7 @@ function Advantage(){
                         </div>
                     </div>
                     <div className="advantage__item">
-                        <img src={Images.advantage_icon_6} alt="icon" className="advantage__item-logo" />
+                        <img src="/images/advantage_icon_6.svg" alt="icon" className="advantage__item-logo" />
                         <div className="advantage__item-content">
                             <div className="advantage__content-title">
                                 Анализ

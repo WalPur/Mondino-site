@@ -1,5 +1,5 @@
 import General from './general/General';
-import Functional from './functional/Functional';
+import Functional from './functional';
 import Economize from './economize/Economize';
 import Health from './health/Health';
 import Community from './community/Community';

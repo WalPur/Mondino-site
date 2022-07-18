@@ -2,7 +2,6 @@ import "./Header.css";
 
 import { Container, Nav, Navbar } from 'react-bootstrap'
 
-import Images from '../../images/header'
 import { NavLink } from 'react-router-dom';
 
 function Header() {
@@ -11,7 +10,7 @@ function Header() {
         <header id="header">
             <div className="header__container container">
                 <NavLink className={({ isActive }) => (isActive ? 'active nav-link logo-img' : 'inactive nav-link logo-img')}  to="/">
-                    <img src={Images.logo}/>
+                    <img src="/images/mondino_logo.svg"/>
                     <div className="header__title">
                         Tracker
                     </div>
