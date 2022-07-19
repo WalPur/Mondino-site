@@ -1,6 +1,6 @@
 import './Leaders.css'
 
-import Images from '../../images/index'
+// import Images from '../../images/index'
 
 function Leaders (){
     return(
@@ -8,7 +8,7 @@ function Leaders (){
             <div className="leaders__container container">
                 <div className="leaders_content">
                     <div className="leaders_title">
-                        Команда Mondino
+                        Команда Mondino Tracker
                     </div>
                     <div className="leaders_text">
                         Команда ООО “Мондино Технолоджес”
@@ -21,7 +21,7 @@ function Leaders (){
                 </div>
                 <div className="leaders_content_lower">
                     <div className="leaders_block_img">
-                        <img src={Images.team_img_1} alt="team_img_1" className="leaders_img" />
+                        <img src="/images/team_img_1.svg" alt="team_img_1" className="leaders_img" />
                         <div className="leaders_title_block">
                             Титов Михаил
                         </div>
@@ -30,7 +30,7 @@ function Leaders (){
                         </div>
                     </div>
                     <div className="leaders_block_img">
-                        <img src={Images.team_img_2} alt="team_img_2" className="leaders_img" />
+                        <img src="/images/team_img_2.svg" alt="team_img_2" className="leaders_img" />
                         <div className="leaders_title_block">
                             Белостоцкий Виктор
                         </div>
@@ -39,7 +39,7 @@ function Leaders (){
                         </div>
                     </div>
                     <div className="leaders_block_img">
-                        <img src={Images.team_img_3} alt="team_img_3" className="leaders_img" />
+                        <img src="/images/team_img_3.svg" alt="team_img_3" className="leaders_img" />
                         <div className="leaders_title_block">
                             Виктор Павлов
                         </div>
@@ -48,7 +48,7 @@ function Leaders (){
                         </div>
                     </div>
                     <div className="leaders_block_img">
-                        <img src={Images.team_img_4} alt="team_img_4" className="leaders_img" />
+                        <img src="/images/team_img_4.svg" alt="team_img_4" className="leaders_img" />
                         <div className="leaders_title_block">
                             Слава Скосырский
                         </div>

@@ -5,7 +5,6 @@ import { styled } from "@mui/system";
 
 import axios from 'axios';
 
-import Images from '../images/index';
 
 import { Faq } from '../components';
 
@@ -428,7 +427,7 @@ const Interactions = () => {
                                                 )}
                                             />
                                             {item.close == false ? <Box style={{ display: "none" }}></Box> :
-                                                    <img src={Images.cancel_button} onClick={() => { handleDelete(item.id) }} style={{marginLeft: 10, marginRight: -12, width: "auto", height: "80%", cursor: "pointer" }}/>
+                                                    <img src="/images/cancel_button.png" onClick={() => { handleDelete(item.id) }} style={{marginLeft: 10, marginRight: -12, width: "auto", height: "80%", cursor: "pointer" }}/>
                                                
                                             }
                                         </ActivePart__inputBox_item>

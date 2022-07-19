@@ -5,14 +5,31 @@ import { Box, Container, Button, Typography, TextField, Input } from "@mui/mater
 import { styled } from "@mui/system";
 
 import axios from "axios";
-
-import Images from "../../images";
+import { useNavigate } from "react-router-dom";
 
 const CustomBox = styled(Box)(({ theme }) => ({
     padding: "100px 0",
     [theme.breakpoints.down("sm")]:{
         padding: "30px 0",
     }
+}));
+const MondinoTitle = styled(Typography)(({ theme }) => ({
+    fontWeight: 700,
+    fontSize: 90,
+    lineHeight: "121%",
+    color: "#0E1B4F",
+    [theme.breakpoints.down("sm")]:{
+        fontSize: 70,
+    },
+    [theme.breakpoints.down(500)]:{
+        fontSize: 60,
+    },
+    [theme.breakpoints.down(400)]:{
+        fontSize: 50,
+    },
+    [theme.breakpoints.down(300)]:{
+        fontSize: 40,
+    },
 }));
 const MyTextTitle = styled(Typography)(({ theme }) => ({
     fontWeight: 700,
@@ -23,6 +40,11 @@ const MyTextTitle = styled(Typography)(({ theme }) => ({
     color: "#1B1642",
     [theme.breakpoints.down("sm")]:{
         fontSize: 32,
+        marginBottom: 14,
+        marginTop: 10,
+    },
+    [theme.breakpoints.down(400)]:{
+        fontSize: 24,
         marginBottom: 14,
         marginTop: 10,
     }
@@ -96,6 +118,7 @@ const CustomError = styled(Typography)(({ theme }) => ({
 
 
 function ApplicationForm(){
+    const navigate = useNavigate();
     const {
           register,
           formState: { errors, isValid },
@@ -113,6 +136,7 @@ function ApplicationForm(){
         }
         const url = 'https://mondinotracker.com/api/partner/';
         axios.post(url, data, { headers })
+        .then(response => navigate("/request/" + response.data.id))
     };
 
     return(
@@ -120,12 +144,15 @@ function ApplicationForm(){
             <Box className="container" sx={{ display: "flex", flexDirection: "column", alignItems: "center", maxWidth: 650 }}>
                 <Box>
                     <img
-                        src={Images.mondino_title}
+                        src="/images/mondino_title.svg"
                         style={{
                             maxWidth: 590,
                             width: "100%",
                         }}
                     />
+                    <MondinoTitle>
+                        Tracker
+                    </MondinoTitle>
                     <MyTextTitle>
                         Заявка для партнерства
                     </MyTextTitle>
@@ -220,7 +247,7 @@ function ApplicationForm(){
                         />
                         {errors?.org_employees && <CustomError>{errors?.org_employees?.message || "Errors"}</CustomError>}
                     </Box>
-                    <CustomButton type="submit">Отправить</CustomButton>
+                    <CustomButton type="submit" disabled={!isValid}>Отправить</CustomButton>
                 </Box>
             </Box> 
         </CustomBox>

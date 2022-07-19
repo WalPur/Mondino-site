@@ -1,7 +1,5 @@
 import './Medicine.css'
 
-import Images from '../../images/index'
-
 function Medicine (){
     return(
         <div className="medicine_block">
@@ -14,7 +12,7 @@ function Medicine (){
                         Наша команда тесно сотрудничает с врачами и фармакологами для того, чтобы делать наш сервис лучше и эффективнее для пользователей. Мы работаем в “Национальном центре медицины” РБ-№1 Республики Саха (Якутия) в г. Якутске, который находится по адресу Сергеляхское шоссе, 4.
                     </div>
                 </div>
-                <img src={Images.team_medicine} alt="team_medicine" className="medicine__img" />
+                <img src="/images/team_medicine_img.svg" alt="team_medicine" className="medicine__img" />
             </div>
         </div>
     )

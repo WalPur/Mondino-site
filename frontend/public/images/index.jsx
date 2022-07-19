@@ -34,7 +34,7 @@ import mondino_icon from './mondino_icon.svg'
 import mondino_logo from './mondino_logo.svg'
 import mondino_title from './mondino_title.svg'
 import mondino_icon_dark from './mondino_icon_dark.svg'
-import team_general from './team_general_img.svg'
+import team_general from './team_general_img.png'
 import mondino_tech from './mondino_technologies.svg'
 import team_icon_1 from './team_icon_1.svg'
 import team_icon_2 from './team_icon_2.svg'
@@ -50,7 +50,7 @@ import team_medicine from './team_medicine_img.svg'
 import download_icon from './download_icon.png'
 import cancel_button from './cancel_button.png'
 
-const Images = {
+export {
     team_general,
     mondino_tech,
     team_icon_1,
@@ -103,5 +103,3 @@ const Images = {
     download_icon,
     cancel_button,
 }
-
-export default Images;

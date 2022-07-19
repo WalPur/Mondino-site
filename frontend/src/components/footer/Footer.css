@@ -21,6 +21,14 @@
     height: auto;
     max-width: 430px;
 }
+.footer__title{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 70px;
+    line-height: 121%;
+    color: #ffffff;
+}
 .mid_footer {
     display: flex;
     margin-top: 30px;
@@ -66,6 +74,9 @@
     .top_footer{
         max-width: 350px;
     }
+    .footer__title{
+        font-size: 56px;
+    }
     .phone_image{
         max-height: 29px;
     }
@@ -91,6 +102,9 @@
     .top_footer{
         max-width: 300px;
     }
+    .footer__title{
+        font-size: 48px;
+    }
 }
 
 @media (max-width: 650px) {
@@ -113,6 +127,9 @@
     .top_footer {
         max-width: 200px;
         width: 100%;
+    }
+    .footer__title{
+        font-size: 32px;
     }
     .phone_image,
     .geo_image,
@@ -145,6 +162,9 @@
     }
     .top_footer {
         max-width: 120px;
+    }
+    .footer__title{
+        font-size: 20px;
     }
     .geo{
         margin-left: 10px;

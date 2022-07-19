@@ -1,5 +1,5 @@
 import General from './general/General';
-import Functional from './functional/Functional';
+import Functional from './functional';
 import Economize from './economize/Economize';
 import Health from './health/Health';
 import Community from './community/Community';
@@ -12,6 +12,7 @@ import Showboat from './showboat/Showboat';
 import Medicine from './medicine/Medicine';
 import ApplicationForm from './application-form/index';
 import Faq from './faq';
+import RequestComponent from './request';
 
 export {
     General,
@@ -28,4 +29,5 @@ export {
     Medicine,
     ApplicationForm,
     Faq,
+    RequestComponent,
 };

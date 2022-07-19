@@ -1,6 +1,6 @@
 import './Footer.css'
 
-import Images from '../../images/footer'
+// import Images from '../../images/footer'
 import { NavLink } from 'react-router-dom';
 
 function Footer(){
@@ -9,17 +9,20 @@ function Footer(){
         <div className='footer__block'>
             <div className="footer__container container">
                 <div className="col-10 left_footer">
-                    <img src={Images.logo} alt="" className="top_footer" />
+                    <img src="/images/footer_logo.svg" alt="" className="top_footer" />
+                    <div className="footer__title">
+                        Tracker
+                    </div>
                     <div className="mid_footer">
                         <div className="phone">
-                            <img src={Images.phone} alt="" className='phone_image' />
+                            <img src="/images/footer_phone.svg" alt="" className='phone_image' />
                             <div className="phone_text">
                                 <div className="phone_number">+7 914 278 64 40</div>
                                 <div className="phone_bottom">24 часа на связи</div>
                             </div>
                         </div>
                         <div className="geo">
-                            <img src={Images.geo} className="geo_image" alt="" />
+                            <img src="/images/footer_geo.svg" className="geo_image" alt="" />
                             <div className="geo_text">
                                 <div className="geo_top">
                                     Россия, Республика Саха 
@@ -31,7 +34,7 @@ function Footer(){
                         </div>
                     </div>
                     <div className="bottom_footer">
-                        <img src={Images.mail} alt="" className='mail_image' />
+                        <img src="/images/footer_mail.svg" alt="" className='mail_image' />
                         mondino.tech@gmail.com
                     </div>
                 </div>
