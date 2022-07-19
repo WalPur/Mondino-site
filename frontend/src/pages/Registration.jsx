@@ -112,13 +112,14 @@ function Registration () {
                 }}>
                 {data[pageId].obj.map(( item, index ) => (
                     <Box key={index}>
-                        <Typography sx={{
-                                    mt: '28px',
-                                    mb: '28px',
-                                    fontWeight: 700,
-                                    fontSize: "24px",
-                                    lineHeight: '28px',
-                                    }}
+                        <Typography
+                            sx={{
+                                mt: '28px',
+                                mb: '28px',
+                                fontWeight: 700,
+                                fontSize: "24px",
+                                lineHeight: '28px',
+                            }}
                         >
                             {item.title}
                         </Typography>
