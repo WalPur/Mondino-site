@@ -1,79 +1,88 @@
+import { React } from "react";
+
+import { Box, Typography } from "@mui/material";
+import { styled } from "@mui/system";
+
 import './Advantage.css'
 
+const Img = styled('img')(({ theme }) => ({
+    marginRight: "32px",
+    height: "auto",
+    boxShadow: "0px 13.2687px 41px 11.2274px rgba(0, 0, 0, 0.09)",
+    borderRadius: "50%",
+}))
+const CustomBox = styled(Box)(({ theme }) => ({
+    padding: "40px 0",
+    background: "#ffffff",
+}))
+const ItemBox = styled(Box)(({ theme }) => ({
+    margin: "85px 0",
+    maxWidth: "460px",
+    display: "flex",
+}))
+
 function Advantage(){
+    const  data = [
+        {
+            img: "/images/advantage_icon_1.svg",
+            title: "Поток пациентов",
+            desc: "Больше пациентов благодаря нашему удобному сервису",
+        },
+        {
+            img: "/images/advantage_icon_2.svg",
+            title: "Инструменты",
+            desc: "Все инструменты нужные для врачей в одном месте",
+        },
+        {
+            img: "/images/advantage_icon_3.svg",
+            title: "Качество",
+            desc: "Увеличивется качество обслуживания",
+        },
+        {
+            img: "/images/advantage_icon_4.svg",
+            title: "Онлайн",
+            desc: "Взаимодействие с пациентами онлайн",
+        },
+        {
+            img: "/images/advantage_icon_5.svg",
+            title: "Эффективность",
+            desc: "У персонала увеличивается работоспособность",
+        },
+        {
+            img: "/images/advantage_icon_6.svg",
+            title: "Анализ",
+            desc: "Аналитическая панель по всем пациентам для врача",
+        },
+    ];
+
     return(
-        <div className="advantage__block">
-            <div className="advantage__container container">
-                <div className="advantage__items">
-                    <div className="advantage__item">
-                        <img src="/images/advantage_icon_1.svg" alt="icon" className="advantage__item-logo" />
-                        <div className="advantage__item-content">
-                            <div className="advantage__content-title">
-                                Поток пациентов
-                            </div>
-                            <div className="advantage__content-text">
-                                Больше пациентов благодаря нашему удобному сервису
-                            </div>
-                        </div>
-                    </div>
-                    <div className="advantage__item">
-                        <img src="/images/advantage_icon_2.svg" alt="icon" className="advantage__item-logo" />
-                        <div className="advantage__item-content">
-                            <div className="advantage__content-title">
-                                Инструменты
-                            </div>
-                            <div className="advantage__content-text">
-                                Все инструменты нужные для врачей в одном месте
-                            </div>
-                        </div>
-                    </div>
-                    <div className="advantage__item">
-                        <img src="/images/advantage_icon_3.svg" alt="icon" className="advantage__item-logo" />
-                        <div className="advantage__item-content">
-                            <div className="advantage__content-title">
-                                Качество
-                            </div>
-                            <div className="advantage__content-text">
-                                Увеличивется качество обслуживания
-                            </div>
-                        </div>
-                    </div>
-                    <div className="advantage__item">
-                        <img src="/images/advantage_icon_4.svg" alt="icon" className="advantage__item-logo" />
-                        <div className="advantage__item-content">
-                            <div className="advantage__content-title">
-                                Онлайн
-                            </div>
-                            <div className="advantage__content-text">
-                                Взаимодействие с пациентами онлайн
-                            </div>
-                        </div>
-                    </div>
-                    <div className="advantage__item">
-                        <img src="/images/advantage_icon_5.svg" alt="icon" className="advantage__item-logo" />
-                        <div className="advantage__item-content">
-                            <div className="advantage__content-title">
-                                Эффективность
-                            </div>
-                            <div className="advantage__content-text">
-                                У персонала увеличивается работоспособность
-                            </div>
-                        </div>
-                    </div>
-                    <div className="advantage__item">
-                        <img src="/images/advantage_icon_6.svg" alt="icon" className="advantage__item-logo" />
-                        <div className="advantage__item-content">
-                            <div className="advantage__content-title">
-                                Анализ
-                            </div>
-                            <div className="advantage__content-text">
-                                Аналитическая панель по всем пациентам для врача
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <CustomBox>
+            <Box className="container">
+                <Box 
+                    sx={{
+                        display: "flex",
+                        flexWrap: "wrap",
+                        justifyContent: "space-evenly",
+                    }}
+                >
+                    {data.map(( item, index ) => (
+                        <ItemBox 
+                            key={index}
+                        >
+                            <Img src={item.img} alt="icon"/>
+                            <Box>
+                                <Typography>
+                                    {item.title}
+                                </Typography>
+                                <Typography>
+                                    {item.desc}
+                                </Typography>
+                            </Box>
+                        </ItemBox>
+                    ))}
+                </Box>
+            </Box>
+        </CustomBox>
     )
 }
 
