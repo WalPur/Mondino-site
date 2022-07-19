@@ -21,13 +21,36 @@ function Topic () {
     const params = useParams();
     const prodId = params.id;
     return(
-        <div className="container" style={{ display: "flex", justifyContent: "center" }}>
+        <div className="container" style={{ display: "flex", justifyContent: "center", flexDirection: "column" }}>
+            <Box sx={{
+                    mt: '100px',
+                    mb: '80px',
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    width: "100%",
+                    alignItems: 'center',
+                    fontWeight: 700,
+                    fontSize: '36px',
+                    lineHeight: '56px',
+                    color: '#000000', 
+                }}
+            >
+                <img 
+                    src="/images/arrowback.png" 
+                    onClick={()=>navigate(-1)}
+                    style={{
+                        width: '70px',
+                        height: 'auto',
+                        marginRight: 44,                   
+                        cursor: 'pointer', 
+                    }} 
+                />                
+                Справочный центр
+            </Box>
             <Box 
                 gap={3} 
                 sx={{
-                    mt: '100px',
                     mb: '100px',
-                    p: 1,
                     display: 'flex',
                     flexWrap: 'wrap',
                     width: "100%",
@@ -37,9 +60,10 @@ function Topic () {
                     <Box item 
                         key={index} 
                         sx={{
-                            // maxWidth: 550,
-                            height: 161,
-                            width: "49%",
+                            display: "flex",
+                            alignItems: "center",
+                            height: 120,
+                            width: "32%",
                             borderRadius: '20px',
                             backgroundColor: '#EDEDED',
                             cursor: 'pointer',
@@ -49,8 +73,8 @@ function Topic () {
                         onClick={() => navigate("/faq/page/" + item.id)}
                     >
                         <Typography sx={{
-                            mt: '36px',
-                            ml: '40px',
+                            pl: '40px',
+                            pr: '40px',
                             color: '#000000',
                             fontWeight: 700,
                             fontSize: '24px',
