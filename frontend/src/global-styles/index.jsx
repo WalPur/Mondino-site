@@ -1,7 +1,8 @@
-import { Typography } from '@mui/material';
-import { styled, Typography } from '@mui/system';
 
-const Title = styled(Typography)(({ theme }) => ({
+import { Typography } from '@mui/material';
+import { styled, typography } from '@mui/system';
+
+const Title = styled (Typography)(({ theme }) => ({
     fontFamily: 'Roboto',
     fontSize: "48px",
     lineHeight: "108%",
@@ -20,7 +21,7 @@ const Title = styled(Typography)(({ theme }) => ({
         lineHeight: "25px",
     },
 }));
-const SubTitle = styled(Typography)(({ theme }) => ({
+const SubTitle = styled (Typography)(({ theme }) => ({
     fontFamily: 'Roboto',
     fontSize: "32px",
     lineHeight: "38px",
@@ -39,7 +40,7 @@ const SubTitle = styled(Typography)(({ theme }) => ({
         lineHeight: "25px",
     },
 }));
-const Text = styled(Typography)(({ theme }) => ({
+const Text = styled (Typography)(({ theme }) => ({
     fontFamily: 'Roboto',
     fontSize: "20px",
     lineHeight: "160%",
@@ -58,7 +59,7 @@ const Text = styled(Typography)(({ theme }) => ({
         lineHeight: "16px",
     },
 }));
-const MyText = styled(Typography)(({ theme }) => ({
+const MyText = styled (Typography)(({ theme }) => ({
     fontFamily: 'Roboto',
     fontSize: "20px",
     lineHeight: "24px",
@@ -77,4 +78,31 @@ const MyText = styled(Typography)(({ theme }) => ({
         lineHeight: "16px",
     },
 }));
+const CustomImage = styled('img')(({ theme }) => ({
+    width: "134px",
+    height: "134px",
+    marginBottom: 24,
+    boxShadow: "0px 4px 41px rgba(0, 0, 0, 0.25)",
+    borderRadius: "50%",
+    [theme.breakpoints.down("lg")]:{
+        width: "74px",
+        height: "74px",
+    },
+    [theme.breakpoints.down("md")]:{
+        width: "64px",
+        height: "64px",
+    },
+    [theme.breakpoints.down("sm")]:{
+        width: "54px",
+        height: "54px", 
+        marginBottom: 14,
+    },
+}));
 
+export {
+    Title,
+    SubTitle,
+    Text,
+    MyText,
+    CustomImage
+}
