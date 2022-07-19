@@ -3,14 +3,8 @@ import { React } from "react";
 import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/system";
 
-import './Advantage.css'
+import { SubTitle, MyText, CustomImage } from '../../global-styles';
 
-const Img = styled('img')(({ theme }) => ({
-    marginRight: "32px",
-    height: "auto",
-    boxShadow: "0px 13.2687px 41px 11.2274px rgba(0, 0, 0, 0.09)",
-    borderRadius: "50%",
-}))
 const CustomBox = styled(Box)(({ theme }) => ({
     padding: "40px 0",
     background: "#ffffff",
@@ -18,7 +12,26 @@ const CustomBox = styled(Box)(({ theme }) => ({
 const ItemBox = styled(Box)(({ theme }) => ({
     margin: "85px 0",
     maxWidth: "460px",
+    width: "40%",
     display: "flex",
+    [theme.breakpoints.down(1200)]:{
+        // maxWidth: 420,
+    },
+    [theme.breakpoints.down(1024)]:{
+        // maxWidth: 300,
+        margin: "40px 0",
+    },
+    [theme.breakpoints.down(767)]:{
+        // maxWidth: 250,
+        margin: "30px 0",
+    },
+    [theme.breakpoints.down(576)]:{
+        // maxWidth: 200,
+        margin: "20px 0",
+    },
+    [theme.breakpoints.down(400)]:{
+        // maxWidth: 120,
+    },
 }))
 
 function Advantage(){
@@ -69,14 +82,14 @@ function Advantage(){
                         <ItemBox 
                             key={index}
                         >
-                            <Img src={item.img} alt="icon"/>
+                            <CustomImage sx={{ mr: 3 }} src={item.img} alt="icon"/>
                             <Box>
-                                <Typography>
+                                <SubTitle sx={{ mb: 2 }}>
                                     {item.title}
-                                </Typography>
-                                <Typography>
+                                </SubTitle>
+                                <MyText>
                                     {item.desc}
-                                </Typography>
+                                </MyText>
                             </Box>
                         </ItemBox>
                     ))}
