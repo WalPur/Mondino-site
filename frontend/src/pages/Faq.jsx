@@ -1,46 +1,26 @@
+import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Helmet } from 'react-helmet';
 import { Typography, Box, } from "@mui/material";
 
+import axios from 'axios';
+
 function Faq() {
+
+    const [data, setData] = useState([]);
     
-    const text = [
-        {
-            id: 0,
-            label: "Личный кабинет",
-            description: "Узнайте как создать личный кабинет и тд",
-            type: "topic",
-            img: "/images/card_image_1.png"
-        },
-        {
-            id: 1,
-            label: "Таблетница",
-            description: "Узнайте как создать, редактировать, удалять таблетницу",
-            type: "topic",
-            img: "/images/card_image_1.png"
-        },
-        {
-            id: 2,
-            label: "Врачи онлайн",
-            description: "Узнайте как начать чат с врачом",   
-            type: "topic",
-            img: "/images/card_image_1.png"
-        },
-        {
-            id: 3,
-            label: "Клиники",
-            description: "Узнайте как прикрепить аккаунт к клинике",  
-            type: "topic",
-            img: "/images/card_image_1.png"
-        },
-        {
-            id: 4,
-            label: "Взаимодействия лекарственных средств",
-            description: "Узнайте, насколько лекарственные препараты подходят друг к другу",
-            type: "page",
-            img: "/images/card_image_1.png"
-        }
-    ];
+    useEffect(() => {
+        axios
+            .get('https://mondinotracker.com/api/cards/')
+            .then(response => {
+                const request = response.data
+                setData(request)
+            }).catch((error) => {
+                console.log('error', error)
+            })
+        console.log(data)
+    }, []);
+
     const navigate=useNavigate();
     return(
         <div className="container" style={{ display: "flex", justifyContent: "center" }}>
@@ -56,7 +36,7 @@ function Faq() {
                     display: 'flex',
                     flexWrap: 'wrap',                    
                 }}>
-            {text.map((item, index) => (
+            {data.map((item, index) => (
                 <Box item 
                     key={index} 
                     sx={{
@@ -68,7 +48,7 @@ function Faq() {
                         borderRadius: '20px',
                         width: "100%",
                         backgroundColor: 'none',
-                        backgroundImage: "url(" + item.img + ")",
+                        backgroundImage: "url(https://mondinotracker.com" + item.image + ")",
                         backgroundRepeat: 'no-repeat',
                         backgroundPosition: '100% 100%',
                         cursor: 'pointer',
@@ -85,7 +65,7 @@ function Faq() {
                             backgroundColor: '#9F97DE',
                         }
                     }}
-                    onClick={() => item.type === "topic" ? navigate('/faq/topic/'+item.id) : navigate('/faq/9')}>
+                    onClick={() => navigate('/faq/topic/'+(item.id))}>
                     <Typography sx={{
                         color: 'black',
                         mt:'26px',
@@ -96,7 +76,7 @@ function Faq() {
                         lineHeight: '28px' 
                         }}
                     >
-                        {item.label}
+                        {item.title}
                     </Typography>                            
                     <Typography sx={{
                             mt: "30px",
@@ -108,7 +88,7 @@ function Faq() {
                             lineHeight: '19px'
                         }}
                     >
-                        {item.description}
+                        {item.desc}
                     </Typography>       
                 </Box>
             ))}

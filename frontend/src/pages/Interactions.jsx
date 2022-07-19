@@ -5,7 +5,6 @@ import { styled } from "@mui/system";
 
 import axios from 'axios';
 
-
 import { Faq } from '../components';
 
 const ContentBox = styled(Box)(({ theme }) => ({
