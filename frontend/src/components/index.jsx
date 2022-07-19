@@ -1,6 +1,6 @@
 import General from './general/General';
 import Functional from './functional';
-import Economize from './economize/Economize';
+import Economize from './economize';
 import Health from './health/Health';
 import Community from './community/Community';
 import Advantage from './advantage/Advantage';
