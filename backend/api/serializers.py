@@ -1,43 +1,52 @@
 from rest_framework import serializers
 
-from api.models import Partner, Card, Article
+from api.models import Partner, Card, Article, TextLine, TextBlock
 
 
 class PartnerSerializer(serializers.ModelSerializer):
     class Meta:
         model = Partner
-        fields = (
-            "id",
-            "org_name",
-            "full_name",
-            "phone_number",
-            "org_email",
-            "org_employees"
-        )
+        fields = "__all__"
 
 
-class ArticleSerializer(serializers.ModelSerializer):
+class TextLineSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Article
+        model = TextLine
+        fields = ("text", )
+
+class TextBlockSerializer(serializers.ModelSerializer):
+    lines = serializers.SerializerMethodField()
+    class Meta:
+        model = TextBlock
         fields = (
             "id",
             "title",
-            "content",
-            "card"
+            "lines",
+            "image"
         )
+    @staticmethod
+    def get_lines(obj):
+        print(TextLineSerializer(obj.lines.all(), many=True))
+        return TextLineSerializer(obj.lines.all(), many=True).data
+
+
+class ArticleSerializer(serializers.ModelSerializer):
+    blocks = serializers.SerializerMethodField()
+    class Meta:
+        model = Article
+        fields = "__all__"
+    @staticmethod
+    def get_blocks(obj):
+        return TextBlockSerializer(obj.blocks.all(), many=True).data
 
 
 class CardSerializer(serializers.ModelSerializer):
     class Meta:
         model = Card
-        fields = (
-            "id",
-            "title",
-            "desc",
-            "image",
-            "slug",
-        )
+        fields = "__all__"
 
     @staticmethod
     def get_articles(obj):
         return ArticleSerializer(Article.objects.filter(q=obj), many=True).data
+
+

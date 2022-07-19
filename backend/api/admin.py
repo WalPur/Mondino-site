@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
-from .models import Partner, Card, Article
+from .models import Partner, Card, Article, TextLine, TextBlock
 
 
 @admin.register(Partner)
@@ -17,6 +17,18 @@ class CardAdmin(admin.ModelAdmin):
 
 
 @admin.register(Article)
-class CardAdmin(SummernoteModelAdmin):
+class CardAdmin(admin.ModelAdmin):
     list_display = ['id', 'content']
     search_fields = ['content', ]
+
+
+@admin.register(TextLine)
+class CardAdmin(admin.ModelAdmin):
+    list_display = ['id', 'text']
+    search_fields = ['text', ]
+
+
+@admin.register(TextBlock)
+class CardAdmin(admin.ModelAdmin):
+    list_display = ['id', 'title']
+    search_fields = ['text', ]

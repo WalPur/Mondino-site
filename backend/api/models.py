@@ -1,3 +1,4 @@
+from pyexpat import model
 from django.db import models
 
 
@@ -35,11 +36,41 @@ class Card(models.Model):
         verbose_name_plural = 'Карточки статей'
 
 
+class TextLine(models.Model):
+    """Модель параграфа"""
+
+    text = models.TextField(verbose_name="Параграф")
+
+    def __str__(self):
+        return self.text
+
+    class Meta:
+        verbose_name = "Параграф"
+        verbose_name_plural = "Параграфы"
+
+
+class TextBlock(models.Model):
+    """Модель блока статьи"""
+
+    title = models.CharField(max_length=255, verbose_name="Заголовок блока")
+    lines = models.ManyToManyField(TextLine, verbose_name="Параграфы")
+    image = models.ImageField(upload_to="blocks/", verbose_name="Картинка блока статьи")
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "Блок"
+        verbose_name_plural = "Блоки"
+    
+
+
 class Article(models.Model):
     """Модель статьи"""
 
     title = models.CharField(max_length=255, verbose_name="Заголовок статьи")
     content = models.TextField(verbose_name="Содержимое статьи")
+    blocks = models.ManyToManyField(TextBlock, verbose_name="Блоки статьи")
     card = models.ForeignKey(Card, on_delete=models.CASCADE, verbose_name="Карточка статьи")
 
     def __str__(self):

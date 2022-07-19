@@ -3,8 +3,8 @@ from rest_framework.views import APIView
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
-from api.serializers import PartnerSerializer, CardSerializer, ArticleSerializer
-from api.models import Partner, Card, Article
+from api.serializers import PartnerSerializer, CardSerializer, ArticleSerializer, TextLineSerializer, TextBlockSerializer
+from api.models import Partner, Card, Article, TextLine, TextBlock
 
 
 class formPartner(generics.CreateAPIView):
