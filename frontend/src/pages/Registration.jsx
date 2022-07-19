@@ -10,29 +10,29 @@ function Registration () {
                 {
                     title: "Регистрация",
                     texts: [
-                        "авфыавыа",
-                        "аываыв",
+                        "Перейдите на сайт или скачайте мобильное приложение iOS или Android",
+                        "Если вы используете web-версию кабинета для регистрации, нажмите «Создать бесплатный аккаунт» или «Регистрация»:",
                         "оррпрпрпрпрпрпрпрпрпрпрп"
                     ],
-                    type: "text",
+                    img: "/images/health_1_2.svg",
                 },
                 {
-                    img: "https://lk.ondoc.me/uploads/files/2021/47a4d1ba/8b8402c9/866e86f6f88bf872_79d2c8ecce.jpg",
+                    title: "Регистрация",
                     texts: [
-                        "dsf",
-                        "",
-                        "fdhfgh",
-                    ],
-                    type: "img",
-                },
-                {
-                    title: "Заголовок2",
-                    texts: [
-                        "авфыавыа",
-                        "аываыв",
+                        "Перейдите на сайт или скачайте мобильное приложение iOS или Android",
+                        "Если вы используете web-версию кабинета для регистрации, нажмите «Создать бесплатный аккаунт» или «Регистрация»:",
                         "оррпрпрпрпрпрпрпрпрпрпрп"
                     ],
-                    type: "text",
+                    img: "/images/health_1_2.svg",
+                },
+                {
+                    title: "Регистрация",
+                    texts: [
+                        "Перейдите на сайт или скачайте мобильное приложение iOS или Android",
+                        "Если вы используете web-версию кабинета для регистрации, нажмите «Создать бесплатный аккаунт» или «Регистрация»:",
+                        "оррпрпрпрпрпрпрпрпрпрпрп"
+                    ],
+                    img: "/images/health_1_2.svg",
                 },
             ],
         },
@@ -45,25 +45,25 @@ function Registration () {
                         "аываыв",
                         "оррпрпрпрпрпрпрпрпрпрпрп"
                     ],
-                    type: "text",
-                },
-                {
                     img: "../images/advantage_icon_1.svg",
-                    texts: [
-                        "dsf",
-                        "",
-                        "fdhfgh",
-                    ],
-                    type: "img",
                 },
                 {
-                    title: "Заголовок2",
+                    title: "Заполнение профиля",
                     texts: [
                         "авфыавыа",
                         "аываыв",
                         "оррпрпрпрпрпрпрпрпрпрпрп"
                     ],
-                    type: "text",
+                    img: "../images/advantage_icon_1.svg",
+                },
+                {
+                    title: "Заполнение профиля",
+                    texts: [
+                        "авфыавыа",
+                        "аываыв",
+                        "оррпрпрпрпрпрпрпрпрпрпрп"
+                    ],
+                    img: "../images/advantage_icon_1.svg",
                 },
             ],
         },
@@ -106,21 +106,40 @@ function Registration () {
             <Helmet>
                 <title>Mondino Tracker - Справочный центр</title>
             </Helmet>
-            <Box>
+            <Box 
+                sx={{
+                    width: '60%'
+                }}>
                 {data[pageId].obj.map(( item, index ) => (
-                    item.type === "text" ?
                     <Box key={index}>
-                        <Typography>{item.title}</Typography>
+                        <Typography sx={{
+                                    mt: '28px',
+                                    mb: '28px',
+                                    fontWeight: 700,
+                                    fontSize: "24px",
+                                    lineHeight: '28px',
+                                    }}
+                        >
+                            {item.title}
+                        </Typography>
                         {item.texts.map(( texts, index ) => (
-                            <Typography key={index}>{texts}</Typography>
+                            <Typography key={index}
+                                sx={{fontWeight: 300,
+                                    fontSize: 20,
+                                    lineHeight: "23px",
+                                    color: "#000",
+                                    mb: '10px',
+                                    }}>
+                                {texts}
+                            </Typography>
                         ))}
-                    </Box>
-                    :
-                    <Box key={index}>
-                        <img src={item.img}/>
-                        {item.texts.map(( texts, index ) => (
-                            <Typography key={index}>{texts}</Typography>
-                        ))}
+                         <img 
+                            style={{ 
+                                // maxHeight: 400,
+                                margin: "0 auto",
+                            }} 
+                            src={item.img}
+                        />
                     </Box>
                 ))}
             </Box>

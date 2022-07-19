@@ -54,7 +54,7 @@ function Topic () {
                     display: 'flex',
                     flexWrap: 'wrap',
                     width: "100%",
-                    justifyContent: "space-between",
+                    justifyContent: "flex-start",
                 }}>
                {topic[prodId].label.map((item, index) => (
                     <Box item 
