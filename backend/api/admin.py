@@ -9,12 +9,14 @@ class PartnerAdmin(admin.ModelAdmin):
     list_filter = ['date', 'org_employees']
     search_fields = ['org_name', 'full_name']
 
+
 @admin.register(Card)
 class CardAdmin(admin.ModelAdmin):
     list_display = ['id', 'title']
     search_fields = ['title', 'desc']
 
+
 @admin.register(Article)
 class CardAdmin(SummernoteModelAdmin):
     list_display = ['id', 'content']
-    search_fields = ['content',]
+    search_fields = ['content', ]
