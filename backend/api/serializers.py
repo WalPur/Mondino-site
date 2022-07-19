@@ -15,6 +15,7 @@ class PartnerSerializer(serializers.ModelSerializer):
             "org_employees"
         )
 
+
 class ArticleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Article
@@ -24,6 +25,7 @@ class ArticleSerializer(serializers.ModelSerializer):
             "content",
             "card"
         )
+
 
 class CardSerializer(serializers.ModelSerializer):
     class Meta:
@@ -35,6 +37,7 @@ class CardSerializer(serializers.ModelSerializer):
             "image",
             "slug",
         )
+
     @staticmethod
     def get_articles(obj):
         return ArticleSerializer(Article.objects.filter(q=obj), many=True).data

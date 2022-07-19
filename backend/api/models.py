@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Partner(models.Model):
     """Модель заявки партнера."""
 
@@ -17,6 +18,7 @@ class Partner(models.Model):
         verbose_name = 'Заявка партнера'
         verbose_name_plural = 'Заявки партнеров'
 
+
 class Card(models.Model):
     """Модель карточки"""
 
@@ -27,11 +29,11 @@ class Card(models.Model):
 
     def __str__(self):
         return self.title
-    
+
     class Meta:
         verbose_name = 'Карточка статей'
         verbose_name_plural = 'Карточки статей'
-    
+
 
 class Article(models.Model):
     """Модель статьи"""
