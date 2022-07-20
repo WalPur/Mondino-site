@@ -1,6 +1,6 @@
 
 import { Typography } from '@mui/material';
-import { styled, typography } from '@mui/system';
+import { styled } from '@mui/system';
 
 const Title = styled (Typography)(({ theme }) => ({
     fontSize: "48px",
@@ -37,24 +37,6 @@ const Text = styled (Typography)(({ theme }) => ({
     lineHeight: "136%",
     fontWeight: 300,
     color: "#575A7B",
-    // [theme.breakpoints.down("lg")]:{
-    //     lineHeight: "16px",
-    // },
-    [theme.breakpoints.down("md")]:{
-        fontSize: 16,
-    },
-    [theme.breakpoints.down("sm")]:{
-        fontSize: 14,
-    },
-}));
-const MyText = styled (Typography)(({ theme }) => ({
-    fontSize: "20px",
-    lineHeight: "136%",
-    fontWeight: 300,
-    color: "#000000",
-    // [theme.breakpoints.down("lg")]:{
-    //     lineHeight: "16px",
-    // },
     [theme.breakpoints.down("md")]:{
         fontSize: 16,
     },
@@ -104,7 +86,6 @@ export {
     Title,
     SubTitle,
     Text,
-    MyText,
     CustomImage,
     ArrowImage,
 }

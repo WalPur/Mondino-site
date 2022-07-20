@@ -4,7 +4,7 @@ import Economize from './economize';
 import Health from './health';
 import Community from './community/Community';
 import Advantage from './advantage/Advantage';
-import Ease from './ease/Ease';
+import Ease from './ease';
 import ContactsMap from './contactsMap/ContactsMap';
 import Tasks from './tasks/Tasks';
 import Leaders from './leaders/Leaders';

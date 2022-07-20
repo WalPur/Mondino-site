@@ -7,7 +7,7 @@ import { styled } from "@mui/system";
 
 import axios from 'axios';
 
-import { Title, MyText, ArrowImage } from "../../global-styles";
+import { Title, Text, ArrowImage } from "../../global-styles";
 
 const CustomBox = styled(Box)(({ theme }) => ({
     margin: "50px 0",
@@ -50,7 +50,6 @@ function Topic () {
             .then(response => {
                 const request = response.data
                 setTopic(request)
-                console.log(topic)
             }).catch((error) => {
                 console.log('error', error)
             })
@@ -59,7 +58,6 @@ function Topic () {
         .then(response => {
             const request = response.data.find(item => item.id == topicId).title
             setData(request)
-            console.log(data)
         }).catch((error) => {
             console.log('error', error)
         })
@@ -101,14 +99,15 @@ function Topic () {
                             key={index}
                             onClick={() => navigate("/faq/page/" + item.id)}
                         >
-                            <MyText 
+                            <Text 
                                 sx={{
                                     pl: '40px',
                                     pr: '40px',
+                                    color: '#000'
                                 }}
                             >
                                 {item.title}
-                            </MyText>
+                            </Text>
                         </TopicBox>
                     ))}
                 </Box>

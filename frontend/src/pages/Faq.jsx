@@ -45,7 +45,6 @@ function Faq() {
             }).catch((error) => {
                 console.log('error', error)
             })
-        console.log(data)
     }, []);
 
     return(

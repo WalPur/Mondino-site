@@ -7,7 +7,7 @@ import { styled } from "@mui/system";
 
 import axios from 'axios';
 
-import { Title, SubTitle, MyText, ArrowImage } from "../global-styles";
+import { Title, SubTitle, Text, ArrowImage } from "../global-styles";
 
 const CustomBox = styled(Box)(({ theme }) => ({
     margin: "50px 0",
@@ -32,7 +32,6 @@ function Registration () {
             .then(response => {
                 const request = response.data[0]
                 setData(request)
-                console.log(data)
             }).catch((error) => {
                 console.log('error', error)
             })
@@ -67,14 +66,14 @@ function Registration () {
                                 {item.title}
                             </SubTitle>
                             {item.lines.map(( texts, index ) => (
-                                <MyText key={index}
+                                <Text key={index}
                                     sx={{fontWeight: 300,
                                         fontSize: 20,
                                         color: "#000",
                                         mb: '8px',
                                         }}>
                                     {texts.text}
-                                </MyText>
+                                </Text>
                             ))}
                             <img 
                                 style={{ 
