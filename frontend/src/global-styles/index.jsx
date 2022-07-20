@@ -10,15 +10,12 @@ const Title = styled (Typography)(({ theme }) => ({
     color: "#1B1642",
     [theme.breakpoints.down("lg")]:{
         fontSize: 32,
-        lineHeight: "25px",
     },
     [theme.breakpoints.down("md")]:{
         fontSize: 32,
-        lineHeight: "30px",
     },
     [theme.breakpoints.down("sm")]:{
         fontSize: 24,
-        lineHeight: "25px",
     },
 }));
 const SubTitle = styled (Typography)(({ theme }) => ({
@@ -29,51 +26,28 @@ const SubTitle = styled (Typography)(({ theme }) => ({
     color: "#000000",
     [theme.breakpoints.down("lg")]:{
         fontSize: 24,
-        lineHeight: "25px",
+        lineHeight: "28px",
     },
     [theme.breakpoints.down("md")]:{
         fontSize: 24,
-        lineHeight: "30px",
+        lineHeight: "28px",
     },
     [theme.breakpoints.down("sm")]:{
-        fontSize: 18,
-        lineHeight: "25px",
+        fontSize: 14,
+        lineHeight: "22px",
     },
 }));
 const Text = styled (Typography)(({ theme }) => ({
     fontFamily: 'Roboto',
     fontSize: "20px",
-    lineHeight: "160%",
+    lineHeight: "136%",
     fontWeight: 300,
     color: "#575A7B",
-    // [theme.breakpoints.down("lg")]:{
-    //     lineHeight: "16px",
-    // },
     [theme.breakpoints.down("md")]:{
         fontSize: 16,
-        lineHeight: "18px",
     },
     [theme.breakpoints.down("sm")]:{
         fontSize: 14,
-        lineHeight: "16px",
-    },
-}));
-const MyText = styled (Typography)(({ theme }) => ({
-    fontFamily: 'Roboto',
-    fontSize: "20px",
-    lineHeight: "24px",
-    fontWeight: 300,
-    color: "#000000",
-    // [theme.breakpoints.down("lg")]:{
-    //     lineHeight: "16px",
-    // },
-    [theme.breakpoints.down("md")]:{
-        fontSize: 16,
-        lineHeight: "18px",
-    },
-    [theme.breakpoints.down("sm")]:{
-        fontSize: 14,
-        lineHeight: "16px",
     },
 }));
 const CustomImage = styled('img')(({ theme }) => ({
@@ -101,6 +75,5 @@ export {
     Title,
     SubTitle,
     Text,
-    MyText,
     CustomImage
 }

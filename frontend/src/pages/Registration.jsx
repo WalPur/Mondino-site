@@ -6,7 +6,7 @@ import { Typography, Box } from '@mui/material';
 
 import axios from 'axios';
 
-import { Title, SubTitle, MyText } from "../global-styles";
+import { Title, SubTitle, Text } from "../global-styles";
 
 function Registration () {
     const navigate = useNavigate();
@@ -57,7 +57,7 @@ function Registration () {
                             {item.title}
                         </SubTitle>
                         {item.lines.map(( texts, index ) => (
-                            <MyText key={index}
+                            <Text key={index}
                                 sx={{fontWeight: 300,
                                     fontSize: 20,
                                     lineHeight: "23px",
@@ -65,7 +65,7 @@ function Registration () {
                                     mb: '10px',
                                     }}>
                                 {texts.text}
-                            </MyText>
+                            </Text>
                         ))}
                          <img 
                             style={{ 
