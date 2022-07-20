@@ -9,15 +9,15 @@ const Title = styled (Typography)(({ theme }) => ({
     fontWeight: 700,
     color: "#1B1642",
     [theme.breakpoints.down("lg")]:{
-        fontSize: 16,
+        fontSize: 32,
         lineHeight: "25px",
     },
     [theme.breakpoints.down("md")]:{
-        fontSize: 16,
+        fontSize: 32,
         lineHeight: "30px",
     },
     [theme.breakpoints.down("sm")]:{
-        fontSize: 9,
+        fontSize: 24,
         lineHeight: "25px",
     },
 }));
@@ -28,15 +28,15 @@ const SubTitle = styled (Typography)(({ theme }) => ({
     fontWeight: 700,
     color: "#000000",
     [theme.breakpoints.down("lg")]:{
-        fontSize: 16,
+        fontSize: 24,
         lineHeight: "25px",
     },
     [theme.breakpoints.down("md")]:{
-        fontSize: 16,
+        fontSize: 24,
         lineHeight: "30px",
     },
     [theme.breakpoints.down("sm")]:{
-        fontSize: 9,
+        fontSize: 18,
         lineHeight: "25px",
     },
 }));
@@ -46,16 +46,15 @@ const Text = styled (Typography)(({ theme }) => ({
     lineHeight: "160%",
     fontWeight: 300,
     color: "#575A7B",
-    [theme.breakpoints.down("lg")]:{
-        fontSize: 16,
-        lineHeight: "16px",
-    },
+    // [theme.breakpoints.down("lg")]:{
+    //     lineHeight: "16px",
+    // },
     [theme.breakpoints.down("md")]:{
         fontSize: 16,
         lineHeight: "18px",
     },
     [theme.breakpoints.down("sm")]:{
-        fontSize: 8.5,
+        fontSize: 14,
         lineHeight: "16px",
     },
 }));
@@ -65,16 +64,15 @@ const MyText = styled (Typography)(({ theme }) => ({
     lineHeight: "24px",
     fontWeight: 300,
     color: "#000000",
-    [theme.breakpoints.down("lg")]:{
-        fontSize: 16,
-        lineHeight: "16px",
-    },
+    // [theme.breakpoints.down("lg")]:{
+    //     lineHeight: "16px",
+    // },
     [theme.breakpoints.down("md")]:{
         fontSize: 16,
         lineHeight: "18px",
     },
     [theme.breakpoints.down("sm")]:{
-        fontSize: 8.5,
+        fontSize: 14,
         lineHeight: "16px",
     },
 }));
