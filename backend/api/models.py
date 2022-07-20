@@ -52,9 +52,9 @@ class TextLine(models.Model):
 class TextBlock(models.Model):
     """Модель блока статьи"""
 
-    title = models.CharField(max_length=255, verbose_name="Заголовок блока")
+    title = models.CharField(max_length=255, blank=True, verbose_name="Заголовок блока")
     lines = models.ManyToManyField(TextLine, verbose_name="Параграфы")
-    image = models.ImageField(upload_to="blocks/", verbose_name="Картинка блока статьи")
+    image = models.ImageField(upload_to="blocks/", blank=True, verbose_name="Картинка блока статьи")
 
     def __str__(self):
         return self.title
@@ -73,7 +73,7 @@ class Article(models.Model):
     card = models.ForeignKey(Card, on_delete=models.CASCADE, verbose_name="Карточка статьи")
 
     def __str__(self):
-        return f'{self.card} {self.content[:25]}'
+        return f'{self.card} {self.title}'
 
     class Meta:
         verbose_name = "Статья"
