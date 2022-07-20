@@ -22,21 +22,23 @@ import {
 import Topic from './components/topic/topic';
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{ display: 'flex', flexDirection: 'column', height: "100vh" }}>
       <BrowserRouter>
         <Header/>
-        <Routes>
-          <Route path="" element={<Home/>}></Route>
-          <Route path="/team" element={<Team/>}></Route>
-          <Route path="/contacts" element={<Contacts/>}></Route>
-          <Route path="/interactions" element={<Interactions/>}></Route>
-          <Route path="/application" element={<Application/>}></Route>
-          <Route path="/request/:id" element={<Request/>}></Route>
-          <Route path="/faq" element={<Faq/>}></Route>
-          <Route path="/faq/topic/:id" element={<Topic/>}></Route>
-          <Route path="/faq/page/:id" element={<Registration/>}></Route>
-        </Routes>
-        <Footer/>
+          <div style={{ flexGrow: 1 }}>
+            <Routes>
+              <Route path="" element={<Home/>}></Route>
+              <Route path="/team" element={<Team/>}></Route>
+              <Route path="/contacts" element={<Contacts/>}></Route>
+              <Route path="/interactions" element={<Interactions/>}></Route>
+              <Route path="/application" element={<Application/>}></Route>
+              <Route path="/request/:id" element={<Request/>}></Route>
+              <Route path="/faq" element={<Faq/>}></Route>
+              <Route path="/faq/topic/:id" element={<Topic/>}></Route>
+              <Route path="/faq/page/:id" element={<Registration/>}></Route>
+            </Routes>
+          </div>
+        <Footer style={{ justifySelf: "end" }} />
       </BrowserRouter>
     </div>
   );

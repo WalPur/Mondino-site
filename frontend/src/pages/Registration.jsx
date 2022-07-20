@@ -3,10 +3,22 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
 import { Typography, Box } from '@mui/material';
+import { styled } from "@mui/system";
 
 import axios from 'axios';
 
-import { Title, SubTitle, MyText } from "../global-styles";
+import { Title, SubTitle, MyText, ArrowImage } from "../global-styles";
+
+const CustomBox = styled(Box)(({ theme }) => ({
+    margin: "50px 0",
+    [theme.breakpoints.down("sm")]:{
+        margin: "25px 0",
+    }
+}))
+const TitleBox = styled(Box)(({ theme }) => ({
+    display: "flex",
+    alignItems: "center",
+}))
 
 function Registration () {
     const navigate = useNavigate();
@@ -26,57 +38,55 @@ function Registration () {
             })
     }, []);
     return(
-        <div
-            className='container'
-        >
-            <Helmet>
-                <title>Mondino Tracker - Справочный центр</title>
-            </Helmet>
-            <Box>
-                <Title>
-                    <img 
-                        src="/images/arrowback.png" 
-                        onClick={()=>navigate(-1)}
-                        style={{
-                            width: '70px',
-                            height: 'auto',
-                            marginRight: 44,                   
-                            cursor: 'pointer', 
-                        }} 
-                    />     
-                    {data.title}
-                </Title>
-                {data.blocks?.map(( item, index ) => (
-                    <Box key={index}>
-                        <SubTitle
-                            sx={{
-                                mt: '28px',
-                                mb: '28px',
-                            }}
-                        >
-                            {item.title}
-                        </SubTitle>
-                        {item.lines.map(( texts, index ) => (
-                            <MyText key={index}
-                                sx={{fontWeight: 300,
-                                    fontSize: 20,
-                                    lineHeight: "23px",
-                                    color: "#000",
-                                    mb: '10px',
-                                    }}>
-                                {texts.text}
-                            </MyText>
-                        ))}
-                         <img 
-                            style={{ 
-                                margin: "0 auto",
-                            }} 
-                            src={item.image != null ? "https://mondinotracker.com" + item.image : ""}
-                        />
-                    </Box>
-                ))}
+        <CustomBox>
+            <Box
+                className='container'
+            >
+                <Helmet>
+                    <title>Mondino Tracker - Справочный центр</title>
+                </Helmet>
+                <Box>
+                    <TitleBox>
+                        <ArrowImage
+                            sx={{ alignSelf: "start" }}
+                            src="/images/arrowback.png" 
+                            onClick={()=>navigate(-1)}
+                        />  
+                        <Title>   
+                            {data.title}
+                        </Title>
+                    </TitleBox>
+                    {data.blocks?.map(( item, index ) => (
+                        <Box key={index}>
+                            <SubTitle
+                                sx={{
+                                    mt: '28px',
+                                    mb: '28px',
+                                }}
+                            >
+                                {item.title}
+                            </SubTitle>
+                            {item.lines.map(( texts, index ) => (
+                                <MyText key={index}
+                                    sx={{fontWeight: 300,
+                                        fontSize: 20,
+                                        color: "#000",
+                                        mb: '8px',
+                                        }}>
+                                    {texts.text}
+                                </MyText>
+                            ))}
+                            <img 
+                                style={{ 
+                                    margin: "0 auto",
+                                }} 
+                                src={item.image != null ? "https://mondinotracker.com" + item.image : ""}
+                            />
+                        </Box>
+                    ))}
+                </Box>
             </Box>
-        </div>
+        </CustomBox>
     );
 }
 
