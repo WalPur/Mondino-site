@@ -18,8 +18,8 @@ class CardAdmin(admin.ModelAdmin):
 
 @admin.register(Article)
 class CardAdmin(admin.ModelAdmin):
-    list_display = ['id', 'content']
-    search_fields = ['content', ]
+    list_display = ['id', 'title']
+    search_fields = ['title']
 
 
 @admin.register(TextLine)

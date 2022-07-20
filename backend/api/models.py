@@ -69,7 +69,6 @@ class Article(models.Model):
     """Модель статьи"""
 
     title = models.CharField(max_length=255, verbose_name="Заголовок статьи")
-    content = models.TextField(verbose_name="Содержимое статьи")
     blocks = models.ManyToManyField(TextBlock, verbose_name="Блоки статьи")
     card = models.ForeignKey(Card, on_delete=models.CASCADE, verbose_name="Карточка статьи")
 

@@ -26,7 +26,6 @@ class TextBlockSerializer(serializers.ModelSerializer):
         )
     @staticmethod
     def get_lines(obj):
-        print(TextLineSerializer(obj.lines.all(), many=True))
         return TextLineSerializer(obj.lines.all(), many=True).data
 
 
