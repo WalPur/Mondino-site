@@ -73,7 +73,7 @@ class Article(models.Model):
     card = models.ForeignKey(Card, on_delete=models.CASCADE, verbose_name="Карточка статьи")
 
     def __str__(self):
-        return f'{self.card} {self.content[:25]}'
+        return f'{self.card} {self.title}'
 
     class Meta:
         verbose_name = "Статья"
