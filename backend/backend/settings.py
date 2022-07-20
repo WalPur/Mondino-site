@@ -110,7 +110,7 @@ USE_TZ = True
 STATIC_URL = '/django_static/'
 STATIC_ROOT = "/static"
 MEDIA_URL = '/django_media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = '/media'
 
 
 CORS_ALLOWED_ORIGINS = env('CORS_ALLOWED_ORIGINS_URLS').split(', ')
