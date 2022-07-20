@@ -6,6 +6,8 @@ import { Typography, Box } from '@mui/material';
 
 import axios from 'axios';
 
+import { Title, SubTitle, MyText } from "../global-styles";
+
 function Registration () {
     const navigate = useNavigate();
     const params = useParams();
@@ -24,62 +26,14 @@ function Registration () {
             })
     }, []);
     return(
-        <div style={{ display: "flex", justifyContent: "center" }}>
+        <div
+            className='container'
+        >
             <Helmet>
                 <title>Mondino Tracker - Справочный центр</title>
             </Helmet>
-            {/* <Box
-                sx={{
-                    width: '60%'
-                }}
-            >
-                {data[pageId-1].map(( item, index ) => (
-                    <Box key={index}>
-                        <Typography
-                            sx={{
-                                mt: '28px',
-                                mb: '28px',
-                                fontWeight: 700,
-                                fontSize: "24px",
-                                lineHeight: '28px',
-                            }}
-                        >
-                            {item.title}
-                        </Typography>
-                        {item.texts.map(( texts, index ) => (
-                            <Typography key={index}
-                                sx={{fontWeight: 300,
-                                    fontSize: 20,
-                                    lineHeight: "23px",
-                                    color: "#000",
-                                    mb: '10px',
-                                    }}>
-                                {texts}
-                            </Typography>
-                        ))}
-                         <img 
-                            style={{ 
-                                margin: "0 auto",
-                            }} 
-                            src={item.img}
-                        />
-                    </Box>
-                ))}
-            </Box> */}
-            <Box
-                sx={{
-                    width: "60%",
-                }}    
-            >
-                <Typography
-                    sx={{
-                        mt: '28px',
-                        mb: '28px',
-                        fontWeight: 700,
-                        fontSize: "24px",
-                        lineHeight: '28px',
-                    }}
-                >
+            <Box>
+                <Title>
                     <img 
                         src="/images/arrowback.png" 
                         onClick={()=>navigate(-1)}
@@ -89,10 +43,38 @@ function Registration () {
                             marginRight: 44,                   
                             cursor: 'pointer', 
                         }} 
-                    />   
+                    />     
                     {data.title}
-                </Typography>
-                {data.content}
+                </Title>
+                {data.blocks?.map(( item, index ) => (
+                    <Box key={index}>
+                        <SubTitle
+                            sx={{
+                                mt: '28px',
+                                mb: '28px',
+                            }}
+                        >
+                            {item.title}
+                        </SubTitle>
+                        {item.lines.map(( texts, index ) => (
+                            <MyText key={index}
+                                sx={{fontWeight: 300,
+                                    fontSize: 20,
+                                    lineHeight: "23px",
+                                    color: "#000",
+                                    mb: '10px',
+                                    }}>
+                                {texts.text}
+                            </MyText>
+                        ))}
+                         <img 
+                            style={{ 
+                                margin: "0 auto",
+                            }} 
+                            src={item.image != null ? "https://mondinotracker.com" + item.image : ""}
+                        />
+                    </Box>
+                ))}
             </Box>
         </div>
     );

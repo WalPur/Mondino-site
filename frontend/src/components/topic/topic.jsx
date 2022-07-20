@@ -6,6 +6,8 @@ import { Typography, Box, } from "@mui/material";
 
 import axios from 'axios';
 
+import { Title, SubTitle, MyText } from "../../global-styles";
+
 function Topic () {
     // const topic = [
     //     {
@@ -25,6 +27,7 @@ function Topic () {
     const navigate=useNavigate();
     const params = useParams();
     const topicId = params.id;
+    const [data, setData] = useState([]);
     const [topic, setTopic] = useState([]);
     
     useEffect(() => {
@@ -33,10 +36,19 @@ function Topic () {
             .then(response => {
                 const request = response.data
                 setTopic(request)
+                console.log(topic)
             }).catch((error) => {
                 console.log('error', error)
             })
-        console.log(topic)
+        axios
+        .get('https://mondinotracker.com/api/cards/')
+        .then(response => {
+            const request = response.data.find(item => item.id == topicId).title
+            setData(request)
+            console.log(data)
+        }).catch((error) => {
+            console.log('error', error)
+        })
     }, []);
 
     return(
@@ -64,7 +76,9 @@ function Topic () {
                         cursor: 'pointer', 
                     }} 
                 />                
-                Справочный центр
+                <SubTitle>
+                    {data}
+                </SubTitle>
             </Box>
             <Box 
                 gap={3} 
