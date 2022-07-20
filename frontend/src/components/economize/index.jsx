@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import { styled } from '@mui/system';
-import {Title, MyText} from '../../global-styles'
+import {Title, MyText, CustomImage } from '../../global-styles'
 
 
 const CustomBox = styled(Box)(({ theme }) => ({
@@ -16,9 +16,6 @@ const Img = styled('img')(({ theme }) => ({
         maxWidth: "100%",
         maxHeight: "100%"
     }
-}));
-const MyImage = styled(Img)(({ theme }) => ({
-
 }));
 function Economize(){
     return(
@@ -37,7 +34,7 @@ function Economize(){
                         </MyText>
                     </Box>
                     <Box>
-                        <MyImage src="/images/mondino_icon_dark.svg"/>
+                        <CustomImage src="/images/mondino_icon_dark.svg"/>
                     </Box>
                 </Box>
             </Box>
