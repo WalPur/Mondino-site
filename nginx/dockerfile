@@ -3,10 +3,10 @@
 FROM node as build
 
 WORKDIR /app/frontend
-COPY ./frontend/package.json /app/frontend
-COPY ./frontend/package-lock.json /app/frontend
+# COPY ./frontend/package.json /app/frontend
+# COPY ./frontend/package-lock.json /app/frontend
+COPY ./* /app/frontend
 RUN npm install
-COPY ./ /app/frontend
 RUN npm run build
 
 # The second stage
