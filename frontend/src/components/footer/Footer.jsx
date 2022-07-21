@@ -45,6 +45,7 @@ function Footer(){
                         <NavLink to="/contacts">Контакты</NavLink>
                         <NavLink to="/interactions">DDI</NavLink>
                         <NavLink to="/application">Заявка для партнерства</NavLink>
+                        <NavLink to="/faq">FAQ</NavLink>
                     </div>
                 </div>
             </div>

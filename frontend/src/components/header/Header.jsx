@@ -25,6 +25,7 @@ function Header() {
                                 <NavLink className={({ isActive }) => (isActive ? 'active nav-link' : 'inactive nav-link')}  to="/contacts">Контакты</NavLink>
                                 <NavLink className={({ isActive }) => (isActive ? 'active nav-link' : 'inactive nav-link')} to="/interactions">DDI</NavLink>
                                 <NavLink className={({ isActive }) => (isActive ? 'active nav-link' : 'inactive nav-link')} to="/application">Заявка для партнерства</NavLink>
+                                <NavLink className={({ isActive }) => (isActive ? 'active nav-link' : 'inactive nav-link')} to="/faq">FAQ</NavLink>
                             </Nav>
                         </Navbar.Collapse>
                     </Container>
