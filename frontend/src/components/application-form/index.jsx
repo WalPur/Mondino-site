@@ -1,9 +1,8 @@
-import { useForm } from "react-hook-form";
-
-import { Box, Button, Typography, TextField } from "@mui/material";
-import { styled } from "@mui/system";
+import { Box, Button, TextField, Typography } from "@mui/material";
 
 import axios from "axios";
+import { styled } from "@mui/system";
+import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
 const CustomBox = styled(Box)(({ theme }) => ({
@@ -13,6 +12,7 @@ const CustomBox = styled(Box)(({ theme }) => ({
     }
 }));
 const MondinoTitle = styled(Typography)(({ theme }) => ({
+    fontFamily: "Montserrat!important",
     fontWeight: 700,
     fontSize: 90,
     lineHeight: "121%",

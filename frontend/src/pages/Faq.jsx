@@ -65,7 +65,8 @@ function Faq() {
                     gap={5} 
                     sx={{
                         display: 'flex',
-                        flexWrap: 'wrap',                    
+                        flexWrap: 'wrap',
+                        justifyContent: 'center',
                     }}
                 >
                 {data.map((item, index) => (
