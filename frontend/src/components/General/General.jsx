@@ -19,7 +19,7 @@ function General() {
                         Mondino Tracker  - мобильные технологии на страже вашего здоровья.
                     </div>
                     <HashLink to="#download" className="general__button">
-                        <img className='general__button-img' src="/images/download_icon.png"/>
+                        <img className='general__button-img' src="/images/download_icon.png" alt='Кнопка для перехода на скачивание'/>
                         Скачать
                     </HashLink>
                 </div>

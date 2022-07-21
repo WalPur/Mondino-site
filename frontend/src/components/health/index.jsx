@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import { styled } from '@mui/system';
 
 import { Text, Title } from "../../global-styles"
@@ -26,9 +26,9 @@ function Health(){
                 </Box>
                 <Box>
                     <Box sx = {{display: "flex", justifyContent: "space-evenly", mb: 6.5}}>
-                        <img style={{ width: "33%" }} src="/images/health_1_2.png"/>
-                        <img style={{ width: "33%" }} src="/images/health_2_2.png"/>
-                        <img style={{ width: "33%" }} src="/images/health_3_2.png"/>
+                        <img style={{ width: "33%" }} src="/images/health_1_2.png" alt="Скриншот 1"/>
+                        <img style={{ width: "33%" }} src="/images/health_2_2.png" alt="Скриншот 2"/>
+                        <img style={{ width: "33%" }} src="/images/health_3_2.png" alt="Скриншот 3"/>
                     </Box>
                     <Box sx = {{ display: "flex", flexDirection: "row", width: "auto"}}>
                         <Myimg src="/images/appStore.svg"/>
