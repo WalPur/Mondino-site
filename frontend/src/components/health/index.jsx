@@ -1,7 +1,7 @@
+import { Text, Title } from "../../global-styles"
+
 import { Box } from "@mui/material";
 import { styled } from '@mui/system';
-
-import { Text, Title } from "../../global-styles"
 
 const CustomBox = styled(Box)(({ theme }) => ({
     padding: "100px 0",
@@ -17,7 +17,7 @@ const Myimg = styled('img')(({ theme }) => ({
 function Health(){
     return(
         <CustomBox>
-            <Box className="container">
+            <Box className="container" id="download">
                 <Box sx = {{display: "flex", alignItems: "center", flexDirection: "column"}}>
                     <Text sx = {{ mb: 1.4, color: "#EA5775", }}>Доступно в App Store и Google Play</Text>
                     <Box sx = {{mb: 7.5}}>
