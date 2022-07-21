@@ -3,7 +3,7 @@ import { React } from "react";
 import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/system";
 
-import { SubTitle, MyText, CustomImage } from '../../global-styles';
+import { SubTitle, Text,  CustomImage } from '../../global-styles';
 
 const CustomBox = styled(Box)(({ theme }) => ({
     padding: "40px 0",
@@ -11,26 +11,21 @@ const CustomBox = styled(Box)(({ theme }) => ({
 }))
 const ItemBox = styled(Box)(({ theme }) => ({
     margin: "85px 0",
-    maxWidth: "460px",
-    width: "40%",
+    maxWidth: "450px",
+    width: "100%",
     display: "flex",
     [theme.breakpoints.down(1200)]:{
-        // maxWidth: 420,
     },
     [theme.breakpoints.down(1024)]:{
-        // maxWidth: 300,
         margin: "40px 0",
     },
     [theme.breakpoints.down(767)]:{
-        // maxWidth: 250,
         margin: "30px 0",
     },
     [theme.breakpoints.down(576)]:{
-        // maxWidth: 200,
         margin: "20px 0",
     },
     [theme.breakpoints.down(400)]:{
-        // maxWidth: 120,
     },
 }))
 
@@ -87,9 +82,9 @@ function Advantage(){
                                 <SubTitle sx={{ mb: 2 }}>
                                     {item.title}
                                 </SubTitle>
-                                <MyText>
+                                <Text sx={{ color: "#000000" }}>
                                     {item.desc}
-                                </MyText>
+                                </Text>
                             </Box>
                         </ItemBox>
                     ))}

@@ -3,8 +3,22 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
 import { Typography, Box } from '@mui/material';
+import { styled } from "@mui/system";
 
 import axios from 'axios';
+
+import { Title, SubTitle, Text, ArrowImage } from "../global-styles";
+
+const CustomBox = styled(Box)(({ theme }) => ({
+    margin: "50px 0",
+    [theme.breakpoints.down("sm")]:{
+        margin: "25px 0",
+    }
+}))
+const TitleBox = styled(Box)(({ theme }) => ({
+    display: "flex",
+    alignItems: "center",
+}))
 
 function Registration () {
     const navigate = useNavigate();
@@ -18,83 +32,60 @@ function Registration () {
             .then(response => {
                 const request = response.data[0]
                 setData(request)
-                console.log(data)
             }).catch((error) => {
                 console.log('error', error)
             })
     }, []);
     return(
-        <div style={{ display: "flex", justifyContent: "center" }}>
-            <Helmet>
-                <title>Mondino Tracker - Справочный центр</title>
-            </Helmet>
-            {/* <Box
-                sx={{
-                    width: '60%'
-                }}
-            >
-                {data[pageId-1].map(( item, index ) => (
-                    <Box key={index}>
-                        <Typography
-                            sx={{
-                                mt: '28px',
-                                mb: '28px',
-                                fontWeight: 700,
-                                fontSize: "24px",
-                                lineHeight: '28px',
-                            }}
-                        >
-                            {item.title}
-                        </Typography>
-                        {item.texts.map(( texts, index ) => (
-                            <Typography key={index}
-                                sx={{fontWeight: 300,
-                                    fontSize: 20,
-                                    lineHeight: "23px",
-                                    color: "#000",
-                                    mb: '10px',
-                                    }}>
-                                {texts}
-                            </Typography>
-                        ))}
-                         <img 
-                            style={{ 
-                                margin: "0 auto",
-                            }} 
-                            src={item.img}
-                        />
-                    </Box>
-                ))}
-            </Box> */}
+        <CustomBox>
             <Box
-                sx={{
-                    width: "60%",
-                }}    
+                className='container'
             >
-                <Typography
-                    sx={{
-                        mt: '28px',
-                        mb: '28px',
-                        fontWeight: 700,
-                        fontSize: "24px",
-                        lineHeight: '28px',
-                    }}
-                >
-                    <img 
-                        src="/images/arrowback.png" 
-                        onClick={()=>navigate(-1)}
-                        style={{
-                            width: '70px',
-                            height: 'auto',
-                            marginRight: 44,                   
-                            cursor: 'pointer', 
-                        }} 
-                    />   
-                    {data.title}
-                </Typography>
-                {data.content}
+                <Helmet>
+                    <title>Mondino Tracker - Справочный центр</title>
+                </Helmet>
+                <Box>
+                    <TitleBox>
+                        <ArrowImage
+                            sx={{ alignSelf: "start" }}
+                            src="/images/arrowback.png" 
+                            onClick={()=>navigate(-1)}
+                        />  
+                        <Title>   
+                            {data.title}
+                        </Title>
+                    </TitleBox>
+                    {data.blocks?.map(( item, index ) => (
+                        <Box key={index}>
+                            <SubTitle
+                                sx={{
+                                    mt: '28px',
+                                    mb: '28px',
+                                }}
+                            >
+                                {item.title}
+                            </SubTitle>
+                            {item.lines.map(( texts, index ) => (
+                                <Text key={index}
+                                    sx={{fontWeight: 300,
+                                        fontSize: 20,
+                                        color: "#000",
+                                        mb: '8px',
+                                        }}>
+                                    {texts.text}
+                                </Text>
+                            ))}
+                            <img 
+                                style={{ 
+                                    margin: "0 auto",
+                                }} 
+                                src={item.image != null ? "https://mondinotracker.com" + item.image : ""}
+                            />
+                        </Box>
+                    ))}
+                </Box>
             </Box>
-        </div>
+        </CustomBox>
     );
 }
 
