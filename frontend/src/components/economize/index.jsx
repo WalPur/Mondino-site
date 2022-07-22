@@ -19,7 +19,7 @@ const Img = styled('img')(({ theme }) => ({
         width: "25%",
     },
     [theme.breakpoints.down("992")]:{
-        width: "35%",
+        width: "40%",
     },
     
 }));
