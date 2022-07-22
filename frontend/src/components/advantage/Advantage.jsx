@@ -1,6 +1,6 @@
 import { React } from "react";
 
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import { styled } from "@mui/system";
 
 import { SubTitle, Text,  CustomImage } from '../../global-styles';

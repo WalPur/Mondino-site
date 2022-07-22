@@ -1,7 +1,7 @@
-import { Box, Typography } from "@mui/material";
-import { styled } from '@mui/system';
-
 import { Text, Title } from "../../global-styles"
+
+import { Box } from "@mui/material";
+import { styled } from '@mui/system';
 
 const CustomBox = styled(Box)(({ theme }) => ({
     padding: "100px 0",
@@ -17,7 +17,7 @@ const Myimg = styled('img')(({ theme }) => ({
 function Health(){
     return(
         <CustomBox>
-            <Box className="container">
+            <Box className="container" id="download">
                 <Box sx = {{display: "flex", alignItems: "center", flexDirection: "column"}}>
                     <Text sx = {{ mb: 1.4, color: "#EA5775", }}>Доступно в App Store и Google Play</Text>
                     <Box sx = {{mb: 7.5}}>
@@ -26,9 +26,9 @@ function Health(){
                 </Box>
                 <Box>
                     <Box sx = {{display: "flex", justifyContent: "space-evenly", mb: 6.5}}>
-                        <img style={{ width: "33%" }} src="/images/health_1_2.png"/>
-                        <img style={{ width: "33%" }} src="/images/health_2_2.png"/>
-                        <img style={{ width: "33%" }} src="/images/health_3_2.png"/>
+                        <img style={{ width: "33%" }} src="/images/health_1_2.png" alt="Скриншот 1"/>
+                        <img style={{ width: "33%" }} src="/images/health_2_2.png" alt="Скриншот 2"/>
+                        <img style={{ width: "33%" }} src="/images/health_3_2.png" alt="Скриншот 3"/>
                     </Box>
                     <Box sx = {{ display: "flex", flexDirection: "row", width: "auto"}}>
                         <Myimg src="/images/appStore.svg"/>

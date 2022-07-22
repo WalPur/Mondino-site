@@ -1,10 +1,8 @@
-import React, {useState} from "react";
-import { useForm } from "react-hook-form";
-
-import { Box, Container, Button, Typography, TextField, Input } from "@mui/material";
-import { styled } from "@mui/system";
+import { Box, Button, TextField, Typography } from "@mui/material";
 
 import axios from "axios";
+import { styled } from "@mui/system";
+import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
 const CustomBox = styled(Box)(({ theme }) => ({
@@ -14,6 +12,7 @@ const CustomBox = styled(Box)(({ theme }) => ({
     }
 }));
 const MondinoTitle = styled(Typography)(({ theme }) => ({
+    fontFamily: "Montserrat!important",
     fontWeight: 700,
     fontSize: 90,
     lineHeight: "121%",
@@ -76,14 +75,14 @@ const MyTextField = styled(TextField)(({ theme }) => ({
         lineHeight: "20px",
     },
 }));
-const InputBox = styled(Box)(({ theme }) => ({
-    padding: "3px 36px",
-    maxWidth: 650,
-    height: 70,
-    backgroundColor: "#fff",
-    boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.08)",
-    borderRadius: 119,
-}));
+// const InputBox = styled(Box)(({ theme }) => ({
+//     padding: "3px 36px",
+//     maxWidth: 650,
+//     height: 70,
+//     backgroundColor: "#fff",
+//     boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.08)",
+//     borderRadius: 119,
+// }));
 const CustomButton = styled(Button)(({ theme }) => ({
     padding: "21px 70px",
     marginBottom: "26px",
@@ -149,6 +148,7 @@ function ApplicationForm(){
                             maxWidth: 590,
                             width: "100%",
                         }}
+                        alt="Лого"
                     />
                     <MondinoTitle>
                         Tracker
@@ -219,7 +219,9 @@ function ApplicationForm(){
                         <MyText>
                             Эл. почта*
                         </MyText>
-                        <MyTextField label=" " variant="standard"
+                        <MyTextField 
+                            label=" " 
+                            variant="standard"
                             {...register("org_email", {
                                 required: "Поле обязательно к заполнению.",
                                 pattern: {

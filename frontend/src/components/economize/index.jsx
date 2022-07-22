@@ -1,6 +1,6 @@
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import { styled } from '@mui/system';
-import {Title, Text, CustomImage } from '../../global-styles'
+import {Title, Text } from '../../global-styles'
 
 
 const CustomBox = styled(Box)(({ theme }) => ({

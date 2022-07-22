@@ -1,11 +1,10 @@
 
 import { Typography } from '@mui/material';
-import { styled, typography } from '@mui/system';
+import { styled } from '@mui/system';
 
 const Title = styled (Typography)(({ theme }) => ({
-    fontFamily: 'Roboto',
     fontSize: "48px",
-    lineHeight: "108%",
+    lineHeight: "136%",
     fontWeight: 700,
     color: "#1B1642",
     [theme.breakpoints.down("lg")]:{
@@ -19,26 +18,21 @@ const Title = styled (Typography)(({ theme }) => ({
     },
 }));
 const SubTitle = styled (Typography)(({ theme }) => ({
-    fontFamily: 'Roboto',
     fontSize: "32px",
-    lineHeight: "38px",
+    lineHeight: "136%",
     fontWeight: 700,
     color: "#000000",
     [theme.breakpoints.down("lg")]:{
         fontSize: 24,
-        lineHeight: "28px",
     },
     [theme.breakpoints.down("md")]:{
         fontSize: 24,
-        lineHeight: "28px",
     },
     [theme.breakpoints.down("sm")]:{
-        fontSize: 14,
-        lineHeight: "22px",
+        fontSize: 18,
     },
 }));
 const Text = styled (Typography)(({ theme }) => ({
-    fontFamily: 'Roboto',
     fontSize: "20px",
     lineHeight: "136%",
     fontWeight: 300,
@@ -70,10 +64,28 @@ const CustomImage = styled('img')(({ theme }) => ({
         marginBottom: 14,
     },
 }));
+const ArrowImage = styled('img')(({ theme }) => ({
+    width: '70px',
+    marginRight: 44,
+    height: 'auto',
+    cursor: 'pointer',
+    [theme.breakpoints.down("lg")]:{
+        marginRight: 30,  
+    },
+    [theme.breakpoints.down("md")]:{
+        width: "50px",
+        marginRight: 20,  
+    },
+    [theme.breakpoints.down("sm")]:{
+        width: "40px",
+        marginRight: 10,  
+    },
+}))
 
 export {
     Title,
     SubTitle,
     Text,
-    CustomImage
+    CustomImage,
+    ArrowImage,
 }

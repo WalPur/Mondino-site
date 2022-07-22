@@ -10,7 +10,7 @@ function Header() {
         <header id="header">
             <div className="header__container container">
                 <NavLink className={({ isActive }) => (isActive ? 'active nav-link logo-img' : 'inactive nav-link logo-img')}  to="/">
-                    <img src="/images/mondino_logo.svg"/>
+                    <img src="/images/mondino_logo.svg" alt="Лого"/>
                     <div className="header__title">
                         Tracker
                     </div>
@@ -25,6 +25,7 @@ function Header() {
                                 <NavLink className={({ isActive }) => (isActive ? 'active nav-link' : 'inactive nav-link')}  to="/contacts">Контакты</NavLink>
                                 <NavLink className={({ isActive }) => (isActive ? 'active nav-link' : 'inactive nav-link')} to="/interactions">DDI</NavLink>
                                 <NavLink className={({ isActive }) => (isActive ? 'active nav-link' : 'inactive nav-link')} to="/application">Заявка для партнерства</NavLink>
+                                <NavLink className={({ isActive }) => (isActive ? 'active nav-link' : 'inactive nav-link')} to="/faq">FAQ</NavLink>
                             </Nav>
                         </Navbar.Collapse>
                     </Container>

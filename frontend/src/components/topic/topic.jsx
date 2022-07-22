@@ -3,27 +3,41 @@ import { useNavigate, useParams } from "react-router-dom";
 import { Helmet } from 'react-helmet';
 
 import { Typography, Box, } from "@mui/material";
+import { styled } from "@mui/system";
 
 import axios from 'axios';
 
-import { Title, SubTitle, MyText } from "../../global-styles";
+import { Title, Text, ArrowImage } from "../../global-styles";
+
+const CustomBox = styled(Box)(({ theme }) => ({
+    margin: "50px 0",
+    [theme.breakpoints.down("sm")]:{
+        margin: "25px 0",
+    }
+}));
+const TopicBox = styled(Box)(({ theme }) => ({
+    display: "flex",
+    alignItems: "center",
+    // height: 120,
+    padding: "20px 0",
+    width: "30%",
+    borderRadius: '20px',
+    backgroundColor: '#EDEDED',
+    cursor: 'pointer',
+    '&:hover': {
+        backgroundColor: '#D3CFEC',
+    },
+    [theme.breakpoints.down("lg")]:{
+        width: "45%",
+    },
+    [theme.breakpoints.down("md")]:{
+        flexWrap: "wrap",
+        maxWidth: 300,
+        width: "100%",
+    }
+}));
 
 function Topic () {
-    // const topic = [
-    //     {
-    //         label: [{label: "Регистрация", id: 0}, {label: "Заполнение профиля", id: 1}],
-    //     },
-    //     {
-    //         label:  [{label: "Добавить курс", id: 2}, {label: "Изменить курс", id: 3}, {label: "Удалить курс приема лекарств", id: 4}],
-    //     },
-    //     {
-    //         label:  [{label: "Чат с врачами", id: 5}]
-    //     },
-    //     {
-    //         label: [{label: "Присоедениться к клинике", id: 6}, {label: "Покинуть клинику", id: 7}]
-    //     },
-    // ]
-
     const navigate=useNavigate();
     const params = useParams();
     const topicId = params.id;
@@ -36,7 +50,6 @@ function Topic () {
             .then(response => {
                 const request = response.data
                 setTopic(request)
-                console.log(topic)
             }).catch((error) => {
                 console.log('error', error)
             })
@@ -45,78 +58,61 @@ function Topic () {
         .then(response => {
             const request = response.data.find(item => item.id == topicId).title
             setData(request)
-            console.log(data)
         }).catch((error) => {
             console.log('error', error)
         })
     }, []);
 
     return(
-        <div className="container" style={{ display: "flex", justifyContent: "center", flexDirection: "column" }}>
-            <Box sx={{
-                    mt: '100px',
-                    mb: '80px',
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    width: "100%",
-                    alignItems: 'center',
-                    fontWeight: 700,
-                    fontSize: '36px',
-                    lineHeight: '56px',
-                    color: '#000000', 
-                }}
-            >
-                <img 
-                    src="/images/arrowback.png" 
-                    onClick={()=>navigate(-1)}
-                    style={{
-                        width: '70px',
-                        height: 'auto',
-                        marginRight: 44,                   
-                        cursor: 'pointer', 
-                    }} 
-                />                
-                <SubTitle>
-                    {data}
-                </SubTitle>
+        <CustomBox>
+            <Helmet>
+                <title>Mondino Tracker - Справочный центр</title>
+            </Helmet>
+            <Box className="container" style={{ display: "flex", justifyContent: "center", flexDirection: "column" }}>
+                <Box sx={{
+                        display: 'flex',
+                        alignItems: "center",
+                        mb: '28px',
+                    }}
+                >
+                    <ArrowImage 
+                        src="/images/arrowback.png" 
+                        onClick={()=>navigate(-1)}
+                        style={{
+                            alignSelf: "start",
+                        }} 
+                    />                
+                    <Title>
+                        {data}
+                    </Title>
+                </Box>
+                <Box 
+                    gap={3} 
+                    sx={{
+                        display: 'flex',
+                        flexWrap: 'wrap',
+                        width: "100%",
+                        justifyContent: "flex-start",
+                    }}>
+                {topic.map((item, index) => (
+                        <TopicBox
+                            key={index}
+                            onClick={() => navigate("/faq/page/" + item.id)}
+                        >
+                            <Text 
+                                sx={{
+                                    pl: '40px',
+                                    pr: '40px',
+                                    color: '#000'
+                                }}
+                            >
+                                {item.title}
+                            </Text>
+                        </TopicBox>
+                    ))}
+                </Box>
             </Box>
-            <Box 
-                gap={3} 
-                sx={{
-                    mb: '100px',
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    width: "100%",
-                    justifyContent: "flex-start",
-                }}>
-               {topic.map((item, index) => (
-                    <Box item 
-                        key={index} 
-                        sx={{
-                            display: "flex",
-                            alignItems: "center",
-                            height: 120,
-                            width: "32%",
-                            borderRadius: '20px',
-                            backgroundColor: '#EDEDED',
-                            cursor: 'pointer',
-                            '&:hover': {
-                            backgroundColor: '#D3CFEC',
-                        }}}
-                        onClick={() => navigate("/faq/page/" + item.id)}
-                    >
-                        <Typography sx={{
-                            pl: '40px',
-                            pr: '40px',
-                            color: '#000000',
-                            fontWeight: 700,
-                            fontSize: '24px',
-                            lineHeight: '28px',
-                        }}>{item.title}</Typography>
-                    </Box>
-                ))}
-            </Box>
-        </div>
+        </CustomBox>
     );
 }
 
