@@ -13,6 +13,9 @@ const CustomBox = styled(Box)(({ theme }) => ({
 const Myimg = styled('img')(({ theme }) => ({
     marginRight: 27,
     width: "20%",
+    [theme.breakpoints.down("sm")]:{
+        width: "30%",
+    }
 }));
 function Ease(){
     return(

@@ -13,6 +13,9 @@ const CustomBox = styled(Box)(({ theme }) => ({
 const Myimg = styled('img')(({ theme }) => ({
     marginRight: 27,
     width: "20%",
+    [theme.breakpoints.down("sm")]:{
+        width: "30%"
+    }
 }));
 function Health(){
     return(
@@ -21,7 +24,7 @@ function Health(){
                 <Box sx = {{display: "flex", alignItems: "center", flexDirection: "column"}}>
                     <Text sx = {{ mb: 1.4, color: "#EA5775", }}>Доступно в App Store и Google Play</Text>
                     <Box sx = {{mb: 7.5}}>
-                        <Title sx={{ color: "#FFFFFF", }}>Сделайте свою работу проще и эффективнее</Title>
+                        <Title sx={{ color: "#FFFFFF", textAlign: "center" }}>Следите за своим здоровьем</Title>
                     </Box>
                 </Box>
                 <Box>
