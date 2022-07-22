@@ -32,6 +32,24 @@ const CustomBox = styled(Box)(({ theme }) => ({
     }
 }));
 
+const CustomContainer = styled(Box)(({ theme }) => ({
+    margin: "0 auto",
+    display: "flex", 
+    flexDirection: "column", 
+    alignItems: "start",
+    maxWidth: '1139px',
+    [theme.breakpoints.down(1200)]:{
+        maxWidth: '746px',
+    },
+    [theme.breakpoints.down(800)]:{
+        maxWidth: '353px',
+        alignItems: "center",
+    },
+    [theme.breakpoints.down(375)]:{
+        padding: '0 15px'
+    }
+}));
+
 function Faq() {
     const [data, setData] = useState([]);
     const navigate=useNavigate();
@@ -49,13 +67,12 @@ function Faq() {
 
     return(
         <CustomBox>
-            <div className="container" style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+            <CustomContainer>
                 <Helmet>
                     <title>Mondino Tracker - Поддержка пользователей</title>
                 </Helmet>
                 <Title
                     sx={{
-                        alignSelf: "start",
                         mb: '28px',
                     }}
                 >
@@ -66,7 +83,6 @@ function Faq() {
                     sx={{
                         display: 'flex',
                         flexWrap: 'wrap',
-                        justifyContent: 'center',
                     }}
                 >
                 {data.map((item, index) => (
@@ -84,6 +100,7 @@ function Faq() {
                             backgroundImage: "url(https://mondinotracker.com" + item.image + ")",
                             backgroundRepeat: 'no-repeat',
                             backgroundPosition: '100% 100%',
+                            backgroundSize: '50%',
                             cursor: 'pointer',
                             '&:after': {
                                 position: "absolute",
@@ -126,7 +143,7 @@ function Faq() {
                     </Box>
                 ))}
                 </Box>
-            </div>
+            </CustomContainer>
         </CustomBox>
     );
 }
