@@ -2,7 +2,7 @@ import General from './general/General';
 import Functional from './functional';
 import Economize from './economize';
 import Health from './health';
-import Community from './community/Community';
+import Community from './community';
 import Advantage from './advantage/Advantage';
 import Ease from './ease';
 import ContactsMap from './contactsMap/ContactsMap';
