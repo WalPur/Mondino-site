@@ -12,13 +12,24 @@ const CustomBox = styled(Box)(({ theme }) => ({
 }));
 const Img = styled('img')(({ theme }) => ({
     width: "20%",
+    [theme.breakpoints.down("sm")]:{
+        width: "35%",
+    },
+    [theme.breakpoints.down("md")]:{
+        width: "25%",
+    },
+    [theme.breakpoints.down("992")]:{
+        width: "35%",
+    },
+    
 }));
 const Image = styled('img')(({ theme }) => ({
     width: "100%",
 }));
 const MyText = styled(Text)(({ theme }) => ({
     [theme.breakpoints.down("lg")]:{
-        marginBottom: "40px"
+        marginBottom: "40px",
+        fontSize: 22,
     },
     [theme.breakpoints.down("md")]:{
         marginBottom: "35px",
@@ -31,7 +42,8 @@ const MyText = styled(Text)(({ theme }) => ({
 }));
 const MyTitle = styled(Title)(({ theme }) => ({
     [theme.breakpoints.down("lg")]:{
-        marginBottom: "20px"
+        marginBottom: "20px",
+        fontSize: 34,
     },
     [theme.breakpoints.down("md")]:{
         marginBottom: "15px",
@@ -43,14 +55,33 @@ const MyTitle = styled(Title)(({ theme }) => ({
 
     },
 }));
+const MyBox = styled('Box')(({ theme }) => ({
+    width: "100%",
+    alignSelf: "center",
+    [theme.breakpoints.down("lg")]:{
+        width: "150%",
+    },
+    [theme.breakpoints.down("md")]:{
+        width: "150%",
+    },
+    [theme.breakpoints.down("sm")]:{
+        width: "200%",
+    },
+    [theme.breakpoints.down("992")]:{
+        width: "350%",
+    },
+    [theme.breakpoints.down("900")]:{
+        width: "150%",
+    },
+}));
 function Economize(){
     return(
         <CustomBox>
-            <Box className="container" sx = {{ display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center" }}>
-                <Box sx={{ width: "30%" }}>
+            <Box className="container" sx = {{ display: "flex" }}>
+                <MyBox>
                     <Image src="/images/economize_img.svg"/>
-                </Box>
-                <Box sx = {{display: "flex", flexDirection: "column", justifyContent: "center", width: "50%"}}>
+                </MyBox>
+                <Box sx = {{display: "flex", flexDirection: "column", justifyContent: "center"}}>
                     <MyTitle sx = {{marginBottom: "20px"}}>
                         Экономьте деньги, не выходя из дома и без долгих поисков.
                     </MyTitle>
